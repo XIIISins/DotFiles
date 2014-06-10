@@ -47,7 +47,7 @@ source /usr/share/git/completion/git-completion.bash
 ##Custom Var##
 ##############
 
-#dropbox=/data/Dropbox
+dropbox=/data/Dropbox
 
 #############
 ##FUNCTIONS##
@@ -56,7 +56,7 @@ source /usr/share/git/completion/git-completion.bash
 sys_update () {
   LOGDATE=$(date +"%Y-%m-%d")
   LOGTIMESTAMP=$(date +"%Y-%m-%d_%T")
-  LOGDIR='/var/log'
+  LOGDIR='/data/__data/LOGS'
   LOGFILE="$LOGDIR/arch_update.log"
   LOGROT=$(date +"%Y%m%d_%H%M%S")
   if [ -e $LOGFILE ]; then
@@ -95,7 +95,7 @@ done
 #alias lock='i3lock -i .i3/lock.png'
 
 alias ctl_rld_usr='/bin/systemctl --user daemon-reload'
-#alias irssi='irssi -n <USERNAME>'
+alias irssi='irssi -n xiiisins'
 
 ##Other##
 alias vi='vim'
@@ -104,7 +104,10 @@ alias reboot='shutdown -r now'
 alias idle='cmatrix'
 
 ##SSH##
+alias zabbix='ssh mjanssen@10.31.52.18'
 alias wash='wsh'
+alias Y_backup='ssh mjanssen@yslxbk01'
+alias sins='ssh xiii@xiiisins.com'
 
 ###-------------------###
 ###WORK SPECIFIC ALIAS###
@@ -119,7 +122,7 @@ else
 fi
 }
 
-if [ $[RANDOM % $(ps -ef|grep [x]term | wc -l )] == 0 ]; then
+if [ $[RANDOM % $(ps -ef|grep $(if [[ $TERM == "rxvt-unicode-256color" ]]; then echo "urxvt"; else echo "$TERM"; fi) | wc -l )] == 0 ]; then
 	space_invaders
 	echo "reinvent transparent portals"
 else
@@ -131,3 +134,4 @@ else
 	echo "        \/           \/   |__|        \/           ";
 	fortune
 fi
+
