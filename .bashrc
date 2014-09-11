@@ -104,9 +104,7 @@ alias reboot='shutdown -r now'
 alias idle='cmatrix'
 
 ##SSH##
-alias zabbix='ssh mjanssen@10.31.52.18'
 alias wash='wsh'
-alias Y_backup='ssh mjanssen@yslxbk01'
 alias sins='ssh xiii@xiiisins.com'
 
 ###-------------------###
