@@ -23,6 +23,8 @@ alias ssh-sins="ssh xiii@xiiisins.com"
 alias flux="xflux -l 52.0248 -g 5.0918"
 export PATH=$PATH:/home/xiii/.gem/ruby/2.1.0/bin
 
+alias cat='colorize'
+
 # The 'ls' family (this assumes you use the GNU ls)
 alias la='ls -Al'               # show hidden files
 alias ls='ls -hF --color'    # add colors for filetype recognition

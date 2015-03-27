@@ -42,7 +42,7 @@ alias pacman="sudo pacman"
 sys_update () {
   LOGDATE=$(date +"%Y-%m-%d")
   LOGTIMESTAMP=$(date +"%Y-%m-%d_%T")
-  LOGDIR='/data/__data/LOGS'
+  LOGDIR='/data/HDD/LOGS'
   LOGFILE="$LOGDIR/arch_update.log"
   LOGROT=$(date +"%Y%m%d_%H%M%S")
   if [ -e $LOGFILE ]; then
