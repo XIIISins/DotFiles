@@ -1,0 +1,5 @@
+{
+	"glue_shellpath" : "/bin/bash" ,
+	"glue_userpath" : "/usr/local/sbin;/usr/local/bin;/usr/bin;/usr/lib32/jvm/default/bin;/usr/lib/jvm/default/bin;/usr/bin/site_perl;/usr/bin/vendor_perl;/usr/bin/core_perl;/usr/local/sbin;/usr/local/bin;/usr/bin;/usr/bin/site_perl;/usr/bin/vendor_perl;/usr/bin/core_perl;/home/xiii/.gem/ruby/2.1.0/bin"
+
+}

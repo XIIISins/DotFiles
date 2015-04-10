@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[if [ -e $LOG_FILE ]; then
+	echo -e "$@"
+	echo -e "$@" >> $LOG_FILE
+else 
+	echo -e "File in $LOG_FILE doesn't exist, creating.."
+	touch $LOG_FILE
+	echo -e "$@"
+	echo -e "$@" >> $LOG_FILE
+fi
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ifLog</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

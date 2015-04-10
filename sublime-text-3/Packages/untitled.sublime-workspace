@@ -1,0 +1,344 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"forin	for … in … done"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "█ [ /data/HDD/GIT/Arch_Scripts ] ls\ncaledonia.sh\nchromote.sh\ncolor2.sh\ncolor.sh\nconv7z2gz\nDevelopment\ndualscreen.sh\nduh\nfix-clock\ngame_dev\nhome\nhomescreen.sh\nhomescreen.sh~\nirc.sh\nmpdsetup.sh\nMusic\nmusic_Status.sh\nnext_wallpaper\npacker_shizzle.sh\npacman.sh\npantheon-session-sh\npercona.sh\npercona.sh.new\npower_status\nQCon.sh\nREADME.md\nreload_wl_mod_func\nroulette.sh\nSelectScreen.sh\nshell_func\nspace_invaders.sh\nsyn_home.sh\nsyn_home.sh~\nsys_stat.sh\nsys_stat.sh.new\ntest\ntest2\ntest_array.sh\ntest.sh\ntranspa\nuntitled.sh\nvpnc_autostart\nwso2-init\n\n█ [ /data/HDD/GIT/Arch_Scripts ] cat color.sh\n#!/usr/bin/bash\n# Original: http://frexx.de/xterm-256-notes/ [dead link 2013-11-21]\n#           http://frexx.de/xterm-256-notes/data/colortable16.sh [dead link 2013-11-21]\n# Modified by Aaron Griffin\n# and further by Kazuo Teramoto\n\n\nFGNAMES=(' black ' '  red  ' ' green ' ' yellow' '  blue ' 'magenta' '  cyan ' ' white ')\nBGNAMES=('DFT' 'BLK' 'RED' 'GRN' 'YEL' 'BLU' 'MAG' 'CYN' 'WHT')\necho \"     ----------------------------------------------------------------------------\"\nfor b in $(seq 0 8); do\n    if [ \"$b\" -gt 0 ]; then\n      bg=$(($b+39))\n    fi\n\n    echo -en \"\\033[0m ${BGNAMES[$b]} : \"\n    for f in $(seq 0 7); do\n      echo -en \"\\033[${bg}m\\033[$(($f+30))m ${FGNAMES[$f]} \"\n    done\n    echo -en \"\\033[0m :\"\n\n    echo -en \"\\033[0m\\n\\033[0m     : \"\n    for f in $(seq 0 7); do\n      echo -en \"\\033[${bg}m\\033[1;$(($f+30))m ${FGNAMES[$f]} \"\n    done\n    echo -en \"\\033[0m :\"\n        echo -e \"\\033[0m\"\n        \n  if [ \"$b\" -lt 8 ]; then\n    echo \"     ----------------------------------------------------------------------------\"\n  fi\ndone\necho \"     ----------------------------------------------------------------------------\"\n\n",
+			"settings":
+			{
+				"buffer_size": 1728,
+				"line_ending": "Unix",
+				"name": "terminal.glue"
+			}
+		},
+		{
+			"contents": "#!/usr/bin/bash\n#\n# Description:\n# \n#\n# Created by:\n#		Myron Janssen ",
+			"settings":
+			{
+				"buffer_size": 69,
+				"line_ending": "Unix",
+				"name": "bash_start"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"gist",
+				"Gist: Create Public Gist"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"perl",
+				"Set Syntax: Perl"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"snippet",
+				"SnippetManager: List"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 314.0,
+		"history":
+		[
+			"glue",
+			"exit",
+			"glue help",
+			"glue",
+			"glue help",
+			"glue"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/xiii/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/xiii/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/xiii/.config/sublime-text-3/Packages/User/Glue.sublime-settings",
+		"/home/xiii/.git/Scripts/geefheteennaam.sh",
+		"/home/xiii/.config/sublime-text-3/Packages/Glue/Glue.sublime-settings",
+		"/home/xiii/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/xiii/.config/sublime-text-3/Packages/Colorsublime/Colorsublime.sublime-settings",
+		"/home/xiii/.config/sublime-text-3/Packages/User/Colorsublime.sublime-settings",
+		"/home/xiii/.git/paste/error_chs",
+		"/data/HDD/Dropbox/Yenlo/[++]/unknown"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"ll",
+			"col",
+			":",
+			"VPN",
+			"VPNC",
+			"VPN",
+			"export",
+			"vpn",
+			"VPN",
+			"Monet Dump commit",
+			"zorze",
+			"failed",
+			"zorze-dcmaommsz-pdb",
+			"resulted in a empty file",
+			",",
+			"-rw",
+			"ppp0",
+			"/home",
+			"enp3s0f0",
+			"wlp4s0",
+			"  ",
+			"cpu3",
+			"wlp3s0",
+			"wlan0",
+			"W-s",
+			"command"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1728,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1728,
+								1728
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 645.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 69,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								69,
+								69
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"gist_description": "bash_script_start",
+							"gist_filename": "bash_start",
+							"gist_html_url": "https://gist.github.com/24346d2c3d52d58d209c",
+							"gist_url": "https://api.github.com/gists/24346d2c3d52d58d209c",
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 1,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 263.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
