@@ -1,0 +1,60 @@
+#!/bin/bash
+
+source $(dirname $0)/panel/panel_colors
+
+desktop_config() {
+	bspc config $1 $2
+	for M in $(bspc query -M); do
+		bspc config -m $M $1 $2
+	done
+}
+padding() {
+	for dir in {top,left,right,bottom}; do
+		bspc config ${dir}_padding $1
+	done
+}
+
+# Visual options
+#bspc monitor -d Main Web Media Games Steam Skype Other
+bspc monitor eDP1 -n 1 -d 1 2 3 
+bspc monitor HDMI1 -n 2 -d 4 5 6
+bspc monitor VGA1 -n 3 -d 7 8 9 0
+bspc config split_ratio         0.50
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_follows_pointer true
+bspc config auto_cancel true
+bspc config normal_border_color none
+bspc config active_border_color none
+bspc config focused_border_color none
+bspc config presel_border_color none
+bspc config urgent_border_color none
+padding 10
+desktop_config border_width	0
+desktop_config window_gap	15
+
+bspc config remove_disabled_monitor true
+
+# Rules
+bspc rule -a Thunderbird desktop=^2
+bspc rule -a Chromium desktop=^2
+bspc rule -a Deluge desktop=^2
+bspc rule -a Gw2.exe floating=on desktop=^4
+bspc rule -a Wine desktop=^4
+bspc rule -a Python2.7 desktop=^4
+bspc rule -a Battle.net.exe desktop=^4 floating=on
+bspc rule -a Hearthstone.exe desktop=^4 floating=on
+bspc rule -a Diablo\ III.exe desktop=^4 floating=on
+bspc rule -a SC2.exe desktop=^4 floating=on
+bspc rule -a Steam desktop=^5 floating=on
+bspc rule -a hl2_linux desktop=^5
+bspc rule -a csgo_linux desktop=^5
+bspc rule -a Skype desktop=^6 floating=on
+bspc rule -a MPlayer desktop=^3 floating=on
+bspc rule -a Vlc desktop=^3 floating=on
+bspc rule -a Pcmanfm floating=on
+
+# Autostart applications
+xscreensaver -no-splash &
+dropbox &
+(cd ~/.config/bspwm/panel && ./panel dzen2) &

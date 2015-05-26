@@ -1,0 +1,9 @@
+#!/bin/bash
+
+source $(dirname $0)/panel_colors
+
+DATE=`date +"%a %d %b %Y"`
+
+ICON="^i($PANEL_ICON_DIR/cal.xbm)"
+echo "^ca(1,./popup_cal)^fg($PANEL_COLOR_ICON)$ICON^ca() ^fg($PANEL_COLOR_TEXT)$DATE"
+#echo "^fg($PANEL_COLOR_ICON)$ICON ^fg($PANEL_COLOR_TEXT)$DATE"

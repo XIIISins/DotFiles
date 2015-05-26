@@ -1,0 +1,30 @@
+#!/bin/bash
+
+source $(dirname $0)/popup_colors
+
+ACT='onstart=uncollapse;button1=exit;button3=exit'
+WIDTH=120
+LINES=4
+XPOS=1350
+YPOS=15
+
+PIPE=/tmp/pipe_cpu
+
+[ -e "$PIPE" ] && rm "$PIPE"
+mkfifo $PIPE
+
+while true; do
+  CPUP=`grep "cpu " /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage}' | cut -c 1-4`
+  CPUTEMP=`sensors | grep "CPU Temp" | awk '{print $3}'`
+  CPUFREQ=`echo $( lscpu | grep "CPU MHz" | awk '{print $3}') / 1000 | bc -l | cut -c 1-4`
+  CPUBARUSED=`echo $CPUP / 2 | bc -l | awk '{print int($1+0.5)}'`
+  CPUGOV=`cpupower frequency-info | awk '{print $3}' | grep '"' | sed 's/\"//g'`
+  echo "CPU Info"
+  echo "CPU%: ${CPUP}%"
+  echo "CPU Temp: ${CPUTEMP}"
+  echo "CPU Freq: ${CPUFREQ}GHz"
+  echo "CPU Gov: ${CPUGOV}"
+  sleep 1
+done > "$PIPE" &
+
+cat "$PIPE" | dzen2 -u -p 3 -bg $COLOR_BACKGROUND -fg $COLOR_FOREGROUND -fn "${FONT_FAMILY}:pixelsize=${FONT_SIZE}" -x $XPOS -y $YPOS -w $WIDTH -l $LINES -sa 'l' -ta 'c' -e "$ACT" -title-name 'popup_info'

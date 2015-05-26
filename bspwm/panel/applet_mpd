@@ -1,0 +1,39 @@
+#!/bin/bash
+
+source $(dirname 0)/panel_colors
+
+FGT="^fg($PANEL_COLOR_TEXT)"
+FGI="^fg($PANEL_COLOR_ICON)"
+ARTIST=`mpc -f %artist% | head -n 1`
+TITLE=`mpc -f %title% | head -n 1`
+TIME=`echo "[$(mpc | tail -n 2 | head -n 1 | awk '{print $3}')]"`
+POSITION=`mpc | tail -n 2 | head -n 1 | awk '{print $3}' | sed 's/\/[^\/]*$//'`
+ENDTIME=`mpc | tail -n 2 | head -n 1 | awk '{print $3}' | sed 's/^[^/]*\///'`
+NOTE="$FGI^i($PANEL_ICON_DIR/note.xbm)"
+STATE=`mpc | tail -n 2 | head -n 1 | awk 'END{gsub(/\[|\]|%/,""); print $1}'`
+TIMEP=`mpc | head -n 2 | tail -n 1 | awk 'END{gsub(/\(|\)|%/,""); print $4}'`
+TIMEBARUSED=`echo $TIMEP / 2 | bc -l | awk '{print int($1+0.5)}'`
+TIMEBARUSED100=`echo $TIMEP | awk '{print int($1+0.5)}'`
+PLAYICO="^ca(1,mpc play)^i($PANEL_ICON_DIR/play.xbm)^ca()"
+PAUSEICO="^ca(1,mpc pause)^i($PANEL_ICON_DIR/pause.xbm)^ca()"
+
+timebar() {
+	echo "^ca(5, mpc seek -2)^ca(4, mpc seek +2)^fg($PANEL_COLOR_ICON)$POSITION ^fg($PANEL_COLOR_BAR)^r(${TIMEBARUSED100}x${PROGRESSBAR_HEIGHT})^fg(darkgrey)^r($(( 100 - $TIMEBARUSED100 ))x${PROGRESSBAR_HEIGHT}) ^fg($PANEL_COLOR_ICON)$ENDTIME^ca()^ca()"
+}
+
+if [ "$(pidof mpd)" ] ; then  
+  case "$STATE" in
+    playing)
+	  STATUS=`echo "$NOTE $PAUSEICO ^ca(1, ./popup_mpd)${FGT}$TITLE^ca() $(timebar) $NOTE"`
+      ;;
+    paused)
+	  STATUS=`echo "$NOTE ^ca(1,mpc play)$PLAYICO^ca() ${FGT}$TITLE $(timebar) $NOTE"`
+      ;;
+    *)
+	  STATUS=""
+      ;;
+  esac
+else
+  STATUS=""
+fi
+echo "$STATUS"
