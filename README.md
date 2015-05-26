@@ -1,7 +1,8 @@
 DotFiles
 ========
-<<<<<<< HEAD
+Configuation files for several WM's and other stuff.
 =======
 
 Archlinux .files
->>>>>>> d5899249d9ea90e904bc67230e2e3929646028dc
+
+Copy folders to .config, .files to home and stuff. I have no clue
