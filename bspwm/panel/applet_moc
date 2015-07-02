@@ -1,0 +1,28 @@
+#!/bin/bash
+
+source $(dirname 0)/panel_colors
+
+
+if [ "$(pidof mocp)" ] ; then  
+  ARTIST=`mocp -Q %a`
+  TITLE=`mocp -Q %t`
+  TIME=`echo "[$(mocp -Q %ct)/$(mocp -Q %tt)]"`
+  NOTE="^i($PANEL_ICON_DIR/note.xbm)"
+  case "$(mocp -i | grep State | awk '{print $2}')" in
+    PLAY)
+      ICON="^i($PANEL_ICON_DIR/play.xbm)"
+	  STATUS=`echo "^fg($PANEL_COLOR_ICON)$NOTE $ICON ^fg($PANEL_COLOR_TEXT)$TITLE - $ARTIST ^fg($PANEL_COLOR_ICON)$TIME $NOTE"`
+      echo "$STATUS"
+      ;;
+    PAUSE)
+      ICON="^i($PANEL_ICON_DIR/pause.xbm)"
+	  STATUS=`echo " ^fg($PANEL_COLOR_ICON)$NOTE $ICON ^fg($PANEL_COLOR_TEXT)$TITLE - $ARTIST ^fg($PANEL_COLOR_ICON)$TIME $NOTE"`
+      echo "$STATUS"
+      ;;
+    *)
+      echo ""
+      ;;
+  esac
+else
+  echo ""
+fi

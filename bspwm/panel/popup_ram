@@ -1,0 +1,28 @@
+#!/bin/bash
+
+source $(dirname $0)/popup_colors
+
+ACT='onstart=uncollapse;button1=exit;button3=exit'
+WIDTH=150
+LINES=2
+XPOS=1420
+YPOS=15
+
+PIPE=/tmp/pipe_ram
+
+[ -e "$PIPE" ] && rm "$PIPE"
+mkfifo $PIPE
+
+while true; do
+  RAM=`free -m | grep buffers/cache | awk '{print $3}'`
+  RAMT=`free -m | grep Mem: | awk '{print $2}'`
+  RAMP=`echo $RAM/$RAMT*100 | bc -l | cut -c 1-4`
+  RAMBARUSED=`echo $RAMP / 2 | bc -l | awk '{print int($1+0.5)}'`
+
+  echo "RAM Info"
+  echo "RAM: $RAM MB / $RAMT MB"
+  echo "RAM %: $RAMP%"
+  sleep 1
+done > "$PIPE" &
+
+cat "$PIPE" | dzen2 -u -p 3 -bg $COLOR_BACKGROUND -fg $COLOR_FOREGROUND -fn "${FONT_FAMILY}:pixelsize=${FONT_SIZE}" -x $XPOS -y $YPOS -w $WIDTH -l $LINES -sa 'l' -ta 'c' -e "$ACT" -title-name 'popup_ram'

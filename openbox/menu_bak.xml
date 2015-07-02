@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu>
+	<menu id="root-menu" label="OpenBox 3">
+		<item label="Terminal">
+			<action name="Execute">
+				<execute>urxvt</execute>
+			</action>
+		</item>
+		<item label="Browser">
+			<action name="Execute">
+				<execute>google-chrome-unstable</execute>
+			</action>
+		</item>
+		<item label="Run">
+			<action name="Execute">
+				<execute>
+					dmenu_run -b -l 5
+				</execute>
+			</action>
+		</item>
+		<item label="YenloVPN">
+			<action name="Execute">
+				<execute>
+					sslvpn
+				</execute>
+			</action>
+		</item>
+
+		<item label="Editor">
+			<action name="Execute">
+				<execute>
+					subl3
+				</execute>
+			</action>
+		</item>
+
+			<item label="Volume Control">
+				<action name="Execute">
+					<execute>pavucontrol</execute>
+				</action>
+			</item>
+
+		<separator/>
+		<menu id="6" label="Graphics">
+			<item label="Feh">
+				<action name="Execute">
+					<execute>feh</execute>
+				</action>
+			</item>
+
+			<item label="Gimp">
+				<action name="Execute">
+					<execute>gimp</execute>
+				</action>
+			</item>
+
+		</menu>
+		<menu id="7" label="Multimedia">
+			<item label="Spotify">
+				<action name="Execute">
+					<execute>spotify</execute>
+				</action>
+			</item>
+			<item label="Youtube">
+				<action name="Execute">
+					<execute>google-chrome-unstable --app=http://youtube.com/</execute>
+				</action>
+			</item>
+			<!--item label="ALSA mixer">
+				<action name="Execute">
+					<execute>xterm -e alsamixer</execute>
+				</action>
+			</item-->
+			<item label="Volume Control (Pulse)">
+				<action name="Execute">
+					<execute>pavucontrol</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="5" label="Network">
+			<item label="Avahi SSH Server Browser">
+				<action name="Execute">
+					<execute>bssh</execute>
+				</action>
+			</item>
+			<item label="Avahi VNC Server Browser">
+				<action name="Execute">
+					<execute>bvnc</execute>
+				</action>
+			</item>
+			<item label="Browser">
+				<action name="Execute">
+					<execute>google-chrome-unstable</execute>
+				</action>
+			</item>
+			<item label="FTP">
+				<action name="Execute">
+					<execute>xterm -e ftp</execute>
+				</action>
+			</item>
+			<item label="Mail">
+				<action name="Execute">
+					<execute>thunderburd</execute>
+				</action>
+			</item>
+			<item label="Mail Reader">
+				<action name="Execute">
+					<execute>exo-open --launch MailReader</execute>
+				</action>
+			</item>
+			<item label="Talk">
+				<action name="Execute">
+					<execute>xterm -e talk</execute>
+				</action>
+			</item>
+			<item label="Telnet">
+				<action name="Execute">
+					<execute>xterm -e telnet</execute>
+				</action>
+			</item>
+			<item label="TkVNC">
+				<action name="Execute">
+					<execute>xterm -e tkvnc</execute>
+				</action>
+			</item>
+			<item label="Web Browser">
+				<action name="Execute">
+					<execute>exo-open --launch WebBrowser</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="39" label="Miscellaneous">
+			<item label="compton">
+				<action name="Execute">
+					<execute>compton</execute>
+				</action>
+			</item>
+			<item label="Dropbox">
+				<action name="Execute">
+					<execute>dropboxd</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="19" label="Shells">
+			<item label="GIT">
+				<action name="Execute">
+					<execute>xterm -e git</execute>
+				</action>
+			</item>
+			<item label="Thunar File Manager">
+				<action name="Execute">
+					<execute>thunar</execute>
+				</action>
+			</item>
+			<item label="UXTerm">
+				<action name="Execute">
+					<execute>uxterm</execute>
+				</action>
+			</item>
+			<item label="Xterm">
+				<action name="Execute">
+					<execute>xterm</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="37" label="System">
+			<menu id="36" label="Settings">
+				<menu id="21" label="GNOME">
+					<item label="Network Connections">
+						<action name="Execute">
+							<execute>nm-connection-editor</execute>
+						</action>
+					</item>
+				</menu>
+				<menu id="35" label="Xfce">
+					<item label="Screensaver">
+						<action name="Execute">
+							<execute>xscreensaver-demo</execute>
+						</action>
+					</item>
+				</menu>
+				<item label="Customize Look and Feel">
+					<action name="Execute">
+						<execute>lxappearance</execute>
+					</action>
+				</item>
+				<item label="File Manager">
+					<action name="Execute">
+						<execute>thunar-settings</execute>
+					</action>
+				</item>
+				<item label="Notifications">
+					<action name="Execute">
+						<execute>xfce4-notifyd-config</execute>
+					</action>
+				</item>
+				<item label="NVIDIA X Server Settings">
+					<action name="Execute">
+						<execute>nvidia-settings</execute>
+					</action>
+				</item>
+				<item label="Openbox Configuration Manager">
+					<action name="Execute">
+						<execute>obconf</execute>
+					</action>
+				</item>
+				<item label="Panel tint2">
+					<action name="Execute">
+						<execute>tint2conf</execute>
+					</action>
+				</item>
+				<item label="Preferred Applications">
+					<action name="Execute">
+						<execute>exo-preferred-applications</execute>
+					</action>
+				</item>
+			</menu>
+			<item label="Avahi Zeroconf Browser">
+				<action name="Execute">
+					<execute>avahi-discover</execute>
+				</action>
+			</item>
+			<item label="Bulk Rename">
+				<action name="Execute">
+					<execute>/usr/lib/Thunar/ThunarBulkRename</execute>
+				</action>
+			</item>
+			<item label="dconf Editor">
+				<action name="Execute">
+					<execute>dconf-editor</execute>
+				</action>
+			</item>
+			<item label="pstree">
+				<action name="Execute">
+					<execute>xterm -e pstree.x11</execute>
+				</action>
+			</item>
+			<item label="pstree">
+				<action name="Execute">
+					<execute>xterm -e /usr/bin/pstree.x11</execute>
+				</action>
+			</item>
+			<item label="pstree">
+				<action name="Execute">
+					<execute>xterm -e pstree</execute>
+				</action>
+			</item>
+			<item label="Top">
+				<action name="Execute">
+					<execute>xterm -e top</execute>
+				</action>
+			</item>
+		</menu>
+		<menu id="38" label="Utilities">
+			<item label="About Xfce">
+				<action name="Execute">
+					<execute>xfce4-about</execute>
+				</action>
+			</item>
+			<item label="Activate ScreenSaver (Next)">
+				<action name="Execute">
+					<execute>xscreensaver-command -next</execute>
+				</action>
+			</item>
+			<item label="Activate ScreenSaver (Previous)">
+				<action name="Execute">
+					<execute>xscreensaver-command -prev</execute>
+				</action>
+			</item>
+			<item label="Activate ScreenSaver (Random)">
+				<action name="Execute">
+					<execute>xscreensaver-command -activate</execute>
+				</action>
+			</item>
+			<item label="Demo Screen Hacks">
+				<action name="Execute">
+					<execute>xscreensaver-command -demo</execute>
+				</action>
+			</item>
+			<item label="Disable XScreenSaver">
+				<action name="Execute">
+					<execute>xscreensaver-command -exit</execute>
+				</action>
+			</item>
+			<item label="Enable XScreenSaver">
+				<action name="Execute">
+					<execute>xscreensaver</execute>
+				</action>
+			</item>
+			<item label="File Manager">
+				<action name="Execute">
+					<execute>exo-open --launch FileManager</execute>
+				</action>
+			</item>
+			<item label="Info">
+				<action name="Execute">
+					<execute>xterm -e info</execute>
+				</action>
+			</item>
+			<item label="Reinitialize XScreenSaver">
+				<action name="Execute">
+					<execute>xscreensaver-command -restart</execute>
+				</action>
+			</item>
+			<item label="ScreenSaver Preferences">
+				<action name="Execute">
+					<execute>xscreensaver-command -prefs</execute>
+				</action>
+			</item>
+			<item label="Terminal Emulator">
+				<action name="Execute">
+					<execute>exo-open --launch TerminalEmulator</execute>
+				</action>
+			</item>
+			<item label="Xclock (analog)">
+				<action name="Execute">
+					<execute>xclock -analog</execute>
+				</action>
+			</item>
+			<item label="Xclock (digital)">
+				<action name="Execute">
+					<execute>xclock -digital</execute>
+				</action>
+			</item>
+			<item label="Xclock (digital)">
+				<action name="Execute">
+					<execute>xclock -digital -update 1</execute>
+				</action>
+			</item>
+			<item label="Xev">
+				<action name="Execute">
+					<execute>xterm -e xev</execute>
+				</action>
+			</item>
+			<item label="Xkill">
+				<action name="Execute">
+					<execute>xkill</execute>
+				</action>
+			</item>
+			<item label="Xrefresh">
+				<action name="Execute">
+					<execute>xrefresh</execute>
+				</action>
+			</item>
+			<item label="Xsetroot">
+				<action name="Execute">
+					<execute>xsetroot</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+			<item label="Reload OB Config">
+				<action name="Reconfigure"/>
+			</item>
+		<item label="logout">
+			<action name="Execute">
+				<execute>oblogout</execute>
+			</action>
+		</item>
+				<!--menu id="40" label="OpenBox">
+			<menu id="client-list-menu"/-->
+			<!--separator/-->
+			<!--item label="Exit">
+				<action name="Exit"/>
+			</item-->
+		</menu>
+	</menu>
+</openbox_menu>
