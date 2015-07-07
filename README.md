@@ -1,9 +1,10 @@
-DotFiles
-========
-Configuation files for several WM's and other stuff.
-=======
-
 Archlinux .files
+=================
+
+setup: 
+
+![Alt text] (/screenshot/20150707_desktop.png)
+
 
 The following folders should go into your .config folder:
   -  awesome
