@@ -42,7 +42,7 @@ alias pacman="sudo pacman"
 sys_update () {
   LOGDATE=$(date +"%Y-%m-%d")
   LOGTIMESTAMP=$(date +"%Y-%m-%d_%T")
-  LOGDIR='/data/HDD/LOGS'
+  LOGDIR='/data/HDD/'
   LOGFILE="$LOGDIR/arch_update.log"
   LOGROT=$(date +"%Y%m%d_%H%M%S")
   if [ -e $LOGFILE ]; then
@@ -58,7 +58,7 @@ sys_update () {
   fi
 }
 
-pack_update () {
+aur_update() {
     for i in $(packer --quickcheck); do
     packer -S $i
     done
