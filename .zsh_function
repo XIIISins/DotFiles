@@ -102,3 +102,10 @@ transpa () {
 transset-df -m 0.9 -p
 }
 
+ydl() {
+if [ $# -eq 1 ]; then
+    youtube-dl -x --audio-format mp3 --audio-quality 0 $1  -o "%(title)s.%(ext)s" --restrict-filenames
+else
+    echo "No URL given"
+fi
+}

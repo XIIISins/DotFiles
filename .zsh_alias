@@ -1,29 +1,51 @@
-# Alias #
+# Alias
+alias vi="vim"
 alias mc='mc / \~'
+alias cpr="cp -R"
+alias rm='rm -v'
+alias mv='mv -v'
+alias cp='cp -vr'
+alias c='clear'
+alias e='exit'
+alias x='startx'
+alias ncp='ncmpcpp'
+alias amix='alsamixer'
+alias hc="herbstclient"
+alias wee='weechat-curses'
+alias dir='dir --color=auto'
+alias paci='sudo pacman -S'
+alias pacse='sudo pacman -Ss'
+alias pacu='sudo pacman -Syu'
+alias pacre='sudo pacman -R'
+alias sreboot='systemctl reboot'
+alias spoweroff='systemctl poweroff'
+alias qwerty='setxkbmap fi; xmodmap ~/.xmodmap; xset r rate 350 45'
+alias svorak='setxkbmap -layout se -variant dvorak; xmodmap ~/.xmodmap; xset r rate 350 45'
+alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'s
+alias np="mpc current -f '%title% by %artist% from %album%' | xcmenu -ci"
+alias shot='screenfetch -D Archlinux'
 alias shutter="shutter -f -C -e -o /home/xiii/Pictures/screenshots/%Y-%m-%d-%T.png"
+alias mkdir='mkdir -p'
+alias modprobe="sudo modprobe"
+alias suvi="sudo vim"
+alias rmmod="sudo rmmod"
+alias less="vim"
+alias more="vim"
+alias usrrld="source ~/.zshrc"
+alias flux="xflux -l 52.0248 -g 5.0918"
+alias please='sudo $(fc -ln -1)'
+
 # Grep fix
 alias grep="grep $GREP_OPTIONS"
 unset GREP_OPTIONS
 
-alias mkdir='mkdir -p'
-#alias effacer="mv -t ~/.local/share/Trash/files --backup=t"
-alias usinit="sudo invoke-rc.d"
-alias modprobe="sudo modprobe"
-alias ncmpc="ncmpcpp"
-alias vi="vim"
-alias suvi="sudo vim"
-alias sgvi="sudo gvim"
-alias dezip="unfoo"
-alias rmmod="sudo rmmod"
-alias cpr="cp -R"
-alias less="vim"
-alias more="vim"
-alias irssi='irssi -n xiiisins'
-alias usrrld="source ~/.zshrc"
+# SSH Alias'
 alias ssh-sins="ssh xiii@xiiisins.com"
-alias flux="xflux -l 52.0248 -g 5.0918"
-alias please='sudo $(fc -ln -1)'
-export PATH=$PATH:/home/xiii/.gem/ruby/2.1.0/bin
+alias ssh-freyja="ssh xiii@xiiisins.zsh.jp"
+alias ssh-loki="ssh -t xiii@xiiisins.zsh.jp 'ssh loki'"
+alias ssh-odin="ssh -t xiii@xiiisins.zsh.jp 'ssh odin'"
+alias ssh-ullr="ssh -t xiii@xiiisins.zsh.jp 'ssh ullr'"
+
 
 # Broken
 #alias cat='pygmentize'
