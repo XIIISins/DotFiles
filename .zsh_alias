@@ -9,6 +9,8 @@ alias c='clear'
 alias e='exit'
 alias x='startx'
 alias ncp='ncmpcpp'
+alias scr='screen -q'
+alias screen='screen -q'
 alias amix='alsamixer'
 alias hc="herbstclient"
 alias wee='weechat-curses'
@@ -45,6 +47,7 @@ alias ssh-freyja="ssh xiii@xiiisins.zsh.jp"
 alias ssh-loki="ssh -t xiii@xiiisins.zsh.jp 'ssh loki'"
 alias ssh-odin="ssh -t xiii@xiiisins.zsh.jp 'ssh odin'"
 alias ssh-ullr="ssh -t xiii@xiiisins.zsh.jp 'ssh ullr'"
+alias ssh-frigg="ssh -t xiii@xiiisins.zsh.jp 'ssh frigg'"
 
 
 # Broken
