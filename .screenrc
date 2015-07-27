@@ -11,10 +11,10 @@ hardstatus string "%{+b wk} %-w%{+b wB} %n %t %{-}%+w %41=%H @ %l %-= %= %D, %c:
 altscreen on
 
 # Windows opening by default
-screen -t "SHELL" 1 
-screen -t "MPD" 2 ncmpcpp
-screen -t "IRC" 3 weechat-curses -d /home/xiii/.weechat
-screen -t "HTOP" 4 htop
+screen -t "" 1 
+screen -t "" 2 ncmpcpp
+screen -t "" 3 weechat-curses -d /home/xiii/.weechat
+screen -t "" 4 htop
 
 # keybinds
 #bindkey -k k; quit

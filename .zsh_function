@@ -109,3 +109,12 @@ else
     echo "No URL given"
 fi
 }
+
+function please() {
+    if [ $# -eq 0 ]; then
+        sudo $(fc -ln -1)
+    else
+        command="$@"
+        sudo $command
+    fi
+}
