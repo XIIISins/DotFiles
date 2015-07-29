@@ -54,6 +54,11 @@ bspc rule -a MPlayer desktop=^3 floating=on
 bspc rule -a Vlc desktop=^3 floating=on
 bspc rule -a Pcmanfm floating=on
 
+# Desktop modes
+
+bspc desktop ^3 -t floating=on
+bspc desktop ^5 -t floating=on
+
 # Autostart applications
 xscreensaver -no-splash &
 dropbox &
