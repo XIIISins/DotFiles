@@ -11,23 +11,44 @@ runtime! archlinux.vim
     Bundle 'scrooloose/nerdtree'
     Bundle 'scrooloose/syntastic'
     Bundle 'ervandew/supertab'
-    Bundle 'Lokaltog/vim-powerline'
+"    Bundle 'Lokaltog/vim-powerline'
+    Bundle 'bling/vim-airline'
     Bundle 'tpope/vim-fugitive'
     " vim-scripts Repos
     Bundle 'jellybeans.vim'
+" Git
+    Bundle 'airblade/vim-gitgutter'
+
+" Autocomplete
+    Bundle 'Valloric/YouCompleteMe'
+
+" Sublime like file opening
+    Bundle 'kien/ctrlp.vim'
+" Color Themes
+    Bundle 'flazz/vim-colorschemes'
 
 " Nerdtree
+    autocmd vimenter * NERDTree
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     map <F3> :NERDTreeToggle<CR>
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " Supertab
-    au FileType python set omnifunc=pythoncomplete#Complete
-    let g:SuperTabDefaultCompletionType = "context"
-    set completeopt=menuone,longest,preview
+"    au FileType python set omnifunc=pythoncomplete#Complete
+"    let g:SuperTabDefaultCompletionType = "context"
+  "  set completeopt=menuone,longest,preview
 
 " Powerline
-    set guifont=Inconsolata\ for\ Powerline
-    let g:Powerline_symbols = 'fancy'
+"    set guifont=Inconsolata\ for\ Powerline
+"    let g:Powerline_symbols = 'fancy'
+
+" Airline
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+
+" CtrlP
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 " }}}
 
 " General Settings {{{
@@ -39,12 +60,20 @@ runtime! archlinux.vim
     set mouse=a                    " Enable mouse
     set hidden                     " Quick buffer switching
     set ruler                      " Show cursor position
+
+" exit insert mode 
+    inoremap <C-c> <Esc>
+" Mouse works fine
+    if has('mouse')
+          set mouse=a
+    endif
 " }}}
     
 " Appearance Settings {{{
     set laststatus=2               " Show statusline even when no window split 
     set background=dark
-    colorscheme jellybeans
+"   colorscheme jellybeans
+    colorscheme Tomorrow-Night
     set gfn=inconsolata
     set number                     " Line numbers
     set cursorline                 " Highlights cursor line
@@ -95,6 +124,19 @@ runtime! archlinux.vim
     set noswapfile                 " Don't create a swap file
     set history=50                 " Keep 50 lines of command line history
 " }}}
+"
+" Tabs
+let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
+nnoremap <C-b>  :tabprevious<CR>
+inoremap <C-b>  <Esc>:tabprevious<CR>i
+nnoremap <C-n>  :tabnext<CR>
+inoremap <C-n>  <Esc>:tabnext<CR>i
+nnoremap <C-t>  :tabnew<CR>
+inoremap <C-t>  <Esc>:tabnew<CR>i
+nnoremap <C-k>  :tabclose<CR>
+inoremap <C-k>  <Esc>:tabclose<CR>i
+
 "
 " Other settings {{{
     set shortmess+=I               " No startup message
