@@ -38,9 +38,10 @@ done
 # fi
 
 # Desktop fixing
-bspc desktop ^2 -l monocle
-bspc desktop ^1 -t floating=on
-bspc desktop 2/1 -t floating=on
+#bspc desktop ^2 -l monocle
+bspc desktop ^2 -t floating=on
+bspc desktop ^5 -t floating=on
+#bspc desktop 2/1 -t floating=on
 
 # Rules
 # bspc rule -a Firefox desktop=^2
