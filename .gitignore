@@ -4,3 +4,5 @@ id_rsa.pub
 known_hosts
 xiii_git
 xiii_git.pub
+*.un\~
+*\~
