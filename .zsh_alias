@@ -36,6 +36,7 @@ alias more="vim"
 alias usrrld="source ~/.zshrc"
 alias flux="xflux -l 52.0248 -g 5.0918"
 alias please='sudo $(fc -ln -1)'
+alias irc="ssh -t freyja 'screen -d -r'"
 
 # Grep fix
 alias grep="grep $GREP_OPTIONS"

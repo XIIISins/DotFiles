@@ -1,7 +1,7 @@
 !------------------------------------------------------------------------------
 ! XFT Settings
 
-Xft.dpi:                                        96
+Xft.dpi:                                        72
 Xft.antialias:                                  true
 Xft.rgba:                                       rgb
 Xft.hinting:                                    true
@@ -28,11 +28,21 @@ URxvt*perl-ext-common:                          default,clipboard,url-select,key
 ! urxvt*font: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
 ! urxvt*boldFont: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
 
-urxvt*font: xft:envypn:pixelsize=12,style=regular
-urxvt*boldFont: xft:envypn:pixelsize=12,style=regular
+! urxvt*font: xft:envypn:pixelsize=12,style=regular
+! urxvt*boldFont: xft:envypn:pixelsize=12,style=regular
+
+! urxvt*font: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
+! urxvt*boldFont: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
+
+! urxvt*font: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
+! urxvt*boldFont: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
+
+urxvt*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+urxvt*boldFont: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+
 
 URxvt.underlineURLs:                            true
-URxvt.url-select.launcher:                      /usr/bin/iceweasel
+URxvt.url-select.launcher:                      /usr/bin/firefox
 URxvt.url-select.underline:                     true
 
 URxvt*background:        #282828
@@ -105,3 +115,10 @@ URxvt.color15: #F2F1F0
 *VT100.colorULMode:                             true
 *VT100.colorUL:                                 magenta
 *VT100.veryBoldColors:                          6
+
+
+!------------------------------------------------------------------------------
+! dzen2 bar
+dzen2*font: -*-berry-*-*-*-*-10-*-*-*-*-*-*-*
+dzen2*foreground: #9E8C7A
+dzen2*background: #111111
