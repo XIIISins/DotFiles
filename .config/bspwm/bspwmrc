@@ -44,6 +44,35 @@ bspc desktop ^5 -t floating=on
 #bspc desktop 2/1 -t floating=on
 
 # Rules
+<<<<<<< HEAD
+bspc rule -a Thunderbird desktop=^2
+bspc rule -a Chromium desktop=^2
+bspc rule -a Deluge desktop=^2
+bspc rule -a Gw2.exe floating=on desktop=^4
+bspc rule -a Wine desktop=^4
+bspc rule -a Python2.7 desktop=^4
+bspc rule -a Battle.net.exe desktop=^4 floating=on
+bspc rule -a Hearthstone.exe desktop=^4 floating=on
+bspc rule -a Diablo\ III.exe desktop=^4 floating=on
+bspc rule -a SC2.exe desktop=^4 floating=on
+bspc rule -a Steam desktop=^5 floating=on
+bspc rule -a hl2_linux desktop=^5
+bspc rule -a csgo_linux desktop=^5
+bspc rule -a Skype desktop=^6 floating=on
+bspc rule -a MPlayer desktop=^3 floating=on
+bspc rule -a Vlc desktop=^3 floating=on
+bspc rule -a Pcmanfm floating=on
+
+# Desktop modes
+
+bspc desktop ^3 -t floating=on
+bspc desktop ^5 -t floating=on
+
+# Autostart applications
+xscreensaver -no-splash &
+dropbox &
+(cd ~/.config/bspwm/panel && ./panel dzen2) &
+=======
 # bspc rule -a Firefox desktop=^2
 # bspc rule -a Gimp-2.8 desktop=^4 floating=on
 # bspc rule -a Gimp desktop=^4 floating=on
@@ -80,3 +109,4 @@ xsetroot -cursor_name left_ptr &
 #if [ $(ps -cx | grep panel | wc -l) -lt 3 ]; then
 #    (cd $HOME/scripts && sleep 5 && restart_panel.sh) &
 #fi
+>>>>>>> 8368b1bb9c3603403172b5e434dc9159179f9d26
