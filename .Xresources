@@ -105,3 +105,10 @@ URxvt.color15: #F2F1F0
 *VT100.colorULMode:                             true
 *VT100.colorUL:                                 magenta
 *VT100.veryBoldColors:                          6
+
+!------------------------------------------------------------------------------
+! dzen2 bar
+dzen2*font: -*-berry-*-*-*-*-10-*-*-*-*-*-*-*
+dzen2*foreground: #9E8C7A
+dzen2*background: #111111
+

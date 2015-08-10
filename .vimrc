@@ -43,7 +43,8 @@ runtime! archlinux.vim
     
 " Appearance Settings {{{
     set laststatus=2               " Show statusline even when no window split 
-    set background=dark
+"    set background=dark
+    set background=light
     colorscheme jellybeans
     set gfn=inconsolata
     set number                     " Line numbers
