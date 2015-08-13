@@ -49,12 +49,13 @@ sys_update () {
     mv $LOGFILE $LOGFILE.$LOGROT
     echo "Cycling logfiles" >> $LOGFILE
     echo "Cycling logfiles"
-    sudo pacman -Syu --verbose --noconfirm --logfile $LOGFILE
+#    sudo pacman -Syu --verbose --noconfirm --logfile $LOGFILE
+    yaourt -Syua --noconfirm > $LOGFILE ; tail -f $LOGFILE
   else
     echo -e "\t =-=Creating logfile=-="
     touch $LOGFILE
     echo "[$LOGTIMESTAMP]=-=Creating logfile=-=" >> $LOGFILE
-    sudo pacman -Syu --verbose --noconfirm --logfile $LOGFILE
+    yaourt -Syua --noconfirm > $LOGFILE
   fi
 }
 
