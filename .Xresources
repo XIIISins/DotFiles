@@ -28,8 +28,8 @@ URxvt*perl-ext-common:                          default,clipboard,url-select,key
 ! urxvt*font: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
 ! urxvt*boldFont: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
 
-! urxvt*font: xft:envypn:pixelsize=12,style=regular
-! urxvt*boldFont: xft:envypn:pixelsize=12,style=regular
+urxvt*font: xft:envypn:pixelsize=12,style=regular
+urxvt*boldFont: xft:envypn:pixelsize=12,style=regular
 
 ! urxvt*font: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
 ! urxvt*boldFont: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
@@ -37,8 +37,8 @@ URxvt*perl-ext-common:                          default,clipboard,url-select,key
 ! urxvt*font: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
 ! urxvt*boldFont: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
 
-urxvt*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
-urxvt*boldFont: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+! urxvt*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+! urxvt*boldFont: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
 
 URxvt.underlineURLs:                            true
@@ -46,13 +46,13 @@ URxvt.url-select.launcher:                      /usr/bin/firefox
 URxvt.url-select.underline:                     true
 
 URxvt*background:        #282828
-!URxvt.background: rgba:0000/0000/0000/9999
 URxvt.foreground:        #F2F1F0
+! URxvt.background: rgba:0000/0000/0000/9999
 ! URxvt.cursorColor:       #F07746
 
-!*background: #2c2c2c
-*background: #222222
-*foreground: #f0f0f0
+! *background: #2c2c2c
+! *background: #222222
+! *foreground: #f0f0f0
 
 ! --- standard colors ---
 !black
@@ -83,29 +83,29 @@ URxvt.color15: #F2F1F0
 ! --- General colors ---
 
 !black
-*color0: #222222
-*color8: #666666
+!*color0: #222222
+!*color8: #666666
 !red
-*color1: #E84F4F
-*color9: #D23D3D
+!*color1: #E84F4F
+!*color9: #D23D3D
 !green
-*color2: #B7CE42
-*color10: #BDE077
+!*color2: #B7CE42
+!*color10: #BDE077
 !yellow
-*color3: #F07746
-*color11: #F07746
+!*color3: #F07746
+!*color11: #F07746
 !blue
-*color4: #66AABB
-*color12: #AACCBB
+!*color4: #66AABB
+!*color12: #AACCBB
 !magenta
-*color5: #B7416E
-*color13: #E16A98
+!*color5: #B7416E
+!*color13: #E16A98
 !cyan
-*color6: #6D878D
-*color14: #42717B
+!*color6: #6D878D
+!*color14: #42717B
 !white
-*color7: #F2F1F0
-*color15: #F2F1F0
+!*color7: #F2F1F0
+!*color15: #F2F1F0
 
 !------------------------------------------------------------------------------
 ! Man pages colors
@@ -116,16 +116,9 @@ URxvt.color15: #F2F1F0
 *VT100.colorUL:                                 magenta
 *VT100.veryBoldColors:                          6
 
-<<<<<<< HEAD
-=======
 
->>>>>>> dccf43cdd643264df1ec6539fbc941d11890ba8b
 !------------------------------------------------------------------------------
 ! dzen2 bar
 dzen2*font: -*-berry-*-*-*-*-10-*-*-*-*-*-*-*
 dzen2*foreground: #9E8C7A
 dzen2*background: #111111
-<<<<<<< HEAD
-
-=======
->>>>>>> dccf43cdd643264df1ec6539fbc941d11890ba8b
