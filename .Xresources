@@ -7,7 +7,6 @@ Xft.rgba:                                       rgb
 Xft.hinting:                                    true
 Xft.hintstyle:                                  hintslight
 
-
 !------------------------------------------------------------------------------
 ! URXVT - Settings
 
@@ -19,37 +18,31 @@ URxvt*cursorBlink:                              true
 URxvt*cursorUnderline:                          true
 URxvt*cursorColor:                              #ffffff
 URxvt*scrollColor:                              #151515
+URxvt.clipboard.autocopy:                       true
+URxvt.keysym.Control-c:                         \003
 URxvt*perl-ext-common:                          default,clipboard,url-select,keyboard-select,vtwheel
 ! URxvt*font:                                     xft:Ohsnap:hinting=true:pixelsize=10:antialias=false
 ! URxvt*boldFont:                                 xft:Ohsnap:style=bold:hinting=true:pixelsize=10:antialias=false
 ! URxvt*italicFont:                               xft:Ohsnap:style=italic:hinting=true:pixelsize=10:antialias=false
 ! URxvt*boldItalicFont:                           xft:Ohsnap:style=bolditalic:hinting=true:pixelsize=10:antialias=false
-
 ! urxvt*font: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
 ! urxvt*boldFont: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
-
-urxvt*font: xft:envypn:pixelsize=12,style=regular
-urxvt*boldFont: xft:envypn:pixelsize=12,style=regular
-
 ! urxvt*font: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
 ! urxvt*boldFont: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
-
 ! urxvt*font: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
 ! urxvt*boldFont: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
-
 ! urxvt*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 ! urxvt*boldFont: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
 
-
+URxvt*font: xft:envypn:pixelsize=12,style=regular
+URxvt*boldFont: xft:envypn:pixelsize=12,style=regular
 URxvt.underlineURLs:                            true
 URxvt.url-select.launcher:                      /usr/bin/firefox
 URxvt.url-select.underline:                     true
-
 URxvt*background:        #282828
 URxvt.foreground:        #F2F1F0
 ! URxvt.background: rgba:0000/0000/0000/9999
 ! URxvt.cursorColor:       #F07746
-
 ! *background: #2c2c2c
 ! *background: #222222
 ! *foreground: #f0f0f0
