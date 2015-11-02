@@ -1,6 +1,9 @@
 #!/bin/bash
 #
 # Start csgo server and spit logs
+# Requires linux game servers, google it. ALSO get the csgo version(╯°□°）╯
+#
+
 user=csgo
 csgoserver=`find / -name "csgoserver" -type f 2>/dev/null`
 log1='/opt/csgo/log/script/csgo-server-script.log'
