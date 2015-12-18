@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Start csgo server and spit logs
-# Requires linux game servers, google it. ALSO get the csgo version(╯°□°）╯
+# Requires linux game servers, google it. ALSO get the csgo version （/＞□＜）/亠亠
 #
 
 user=csgo
@@ -15,6 +15,8 @@ if [ $USER != $user ]; then
 fi
 
 $csgoserver start
+
+echo -e "Time to rage! （/＞□＜）/亠亠"
 
 while true; do
 	for i in log1 log2; do

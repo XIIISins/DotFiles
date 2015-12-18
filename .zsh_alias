@@ -55,6 +55,10 @@ alias ssh-frigg="ssh -t xiii@xiiisins.zsh.jp 'ssh frigg'"
 # Broken
 #alias cat='pygmentize'
 
+# Translation stuff
+# From english to indonesian
+alias transind="trans -b :id"
+
 # The 'ls' family (this assumes you use the GNU ls)
 alias la='ls -Al'               # show hidden files
 alias ls='ls --group-directories-first -hF --color'    # add colors for filetype recognition
