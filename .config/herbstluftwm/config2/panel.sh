@@ -10,9 +10,9 @@ monitor=${1:-0}
 herbstclient pad $monitor 16
 
 # settings
-RES="1920+1920x16"
+#RES="1920+1920x16"
 #RES="1080+1920"
-#RES="x16"
+RES="x16"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
 FONT2="-*-cure.se-medium-r-*-*-11-*-*-*-*-*-*-*"
 # FONT3="IPAGothic-8"
