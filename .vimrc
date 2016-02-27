@@ -28,7 +28,7 @@ runtime! archlinux.vim
     Bundle 'flazz/vim-colorschemes'
 
 " Nerdtree
-    autocmd vimenter * NERDTree
+"    autocmd vimenter * NERDTree
     autocmd StdinReadPre * let s:std_in=1
     autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
     map <F3> :NERDTreeToggle<CR>
@@ -71,15 +71,9 @@ runtime! archlinux.vim
     
 " Appearance Settings {{{
     set laststatus=2               " Show statusline even when no window split 
-<<<<<<< HEAD
-"    set background=dark
-    set background=light
-    colorscheme jellybeans
-=======
     set background=dark
 "   colorscheme jellybeans
     colorscheme Tomorrow-Night
->>>>>>> dccf43cdd643264df1ec6539fbc941d11890ba8b
     set gfn=inconsolata
     set number                     " Line numbers
     set cursorline                 " Highlights cursor line

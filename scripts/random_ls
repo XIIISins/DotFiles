@@ -3,10 +3,10 @@
 #set -x
 
 random_ls ()  {
-    for i in $(find . -maxdepth 1 -name "*pdb*"  | shuf -n4); do 
-                echo -e "\n\n$i\n"
-                        ls -ahl $i | tail -4
-                        done
+  for i in $(find . -maxdepth 1 -name "*pdb*"  | shuf -n4); do
+    echo -e "\n\n$i\n"
+    ls -ahl $i | tail -4
+  done
 }
-random_ls
 
+random_ls
