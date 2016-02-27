@@ -1,69 +1,8 @@
 function ll()
 { ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total "; }
 
-_cvs ()
-{
-    local cur prev
-    COMPREPLY=()
-    cur=${COMP_WORDS[COMP_CWORD]}
-    prev=${COMP_WORDS[COMP_CWORD-1]}
-
-    if [ $COMP_CWORD -eq 1 ] || [ "${prev:0:1}" = "-" ]; then
-        COMPREPLY=( $( compgen -W 'add admin checkout commit diff \
-        export history import log rdiff release remove rtag status \
-        tag update' $cur ))
-    else
-        COMPREPLY=( $( compgen -f $cur ))
-    fi
-    return 0
-}
-#complete -F _cvs cvs
-
-_killall ()
-{
-    local cur prev
-    COMPREPLY=()
-    cur=${COMP_WORDS[COMP_CWORD]}
-
-    # get a list of processes (the first sed evaluation
-    # takes care of swapped out processes, the second
-    # takes care of getting the basename of the process)
-    COMPREPLY=( $( /bin/ps -u $USER -o comm  | \
-        sed -e '1,1d' -e 's#[]\[]##g' -e 's#^.*/##'| \
-        awk '{if ($0 ~ /^'$cur'/) print $0}' ))
-
-    return 0
-}
-#complete -F _killall killall killps
-
-
 # Pacman Functions
 alias pacman="sudo pacman"
-sys_update () {
-  LOGDATE=$(date +"%Y-%m-%d")
-  LOGTIMESTAMP=$(date +"%Y-%m-%d_%T")
-  LOGDIR='/data/HDD/'
-  LOGFILE="$LOGDIR/arch_update.log"
-  LOGROT=$(date +"%Y%m%d_%H%M%S")
-  if [ -e $LOGFILE ]; then
-    mv $LOGFILE $LOGFILE.$LOGROT
-    echo "Cycling logfiles" >> $LOGFILE
-    echo "Cycling logfiles"
-#    sudo pacman -Syu --verbose --noconfirm --logfile $LOGFILE
-    yaourt -Syua --noconfirm > $LOGFILE ; tail -f $LOGFILE
-  else
-    echo -e "\t =-=Creating logfile=-="
-    touch $LOGFILE
-    echo "[$LOGTIMESTAMP]=-=Creating logfile=-=" >> $LOGFILE
-    yaourt -Syua --noconfirm > $LOGFILE
-  fi
-}
-
-aur_update() {
-    for i in $(packer --quickcheck); do
-    packer -S $i
-    done
-}
 
 pskill()
 {
@@ -100,7 +39,7 @@ function aa_mod_parameters ()
 }
 
 transpa () {
-transset-df -m 0.9 -p
+transset-df -m 0.8 -p
 }
 
 ydl() {
@@ -162,3 +101,38 @@ else
     trans -b :id "$trans_sent"
 fi
 }
+
+function swap() {
+    # Swap 2 filenames around, if they exist (from Uzi's bashrc).
+    local TMPFILE=tmp.$$
+
+    [ $# -ne 2 ] && echo "swap: 2 arguments needed" && return 1
+    [ ! -e $1 ] && echo "swap: $1 does not exist" && return 1
+    [ ! -e $2 ] && echo "swap: $2 does not exist" && return 1
+
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
+}
+
+function dfbar()        # Pretty-print of 'df' output.
+{                       # Inspired by 'dfc' utility.
+    for fs ; do
+
+        if [ ! -d $fs ]
+        then
+          echo -e $fs" :No such file or directory" ; continue
+        fi
+
+        local info=( $(command df -P $fs | awk 'END{ print $2,$3,$5 }') )
+        local free=( $(command df -Pkh $fs | awk 'END{ print $4 }') )
+        local nbstars=$(( 20 * ${info[1]} / ${info[0]} ))
+        local out="["
+        for ((j=0;j<20;j++)); do
+            [ ${j} -lt ${nbstars} ] && out=$out"#" || out=$out"-"
+        done
+        out=${info[2]}" "$out"] ("$free" free on "$fs")"
+        echo -e $out
+    done
+}
+

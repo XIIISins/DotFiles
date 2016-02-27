@@ -10,8 +10,9 @@ monitor=${1:-0}
 herbstclient pad $monitor 16
 
 # settings
-# RES="x16+1280x"
-RES="x16"
+RES="1920+1920x16"
+#RES="1080+1920"
+#RES="x16"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
 FONT2="-*-cure.se-medium-r-*-*-11-*-*-*-*-*-*-*"
 # FONT3="IPAGothic-8"
@@ -33,24 +34,26 @@ sd="%{F$VLT}  %{F-}"
 
 # functions
 set -f
-	
+
 function uniq_linebuffered() {
     awk -W interactive '$0 != l { print ; l=$0 ; fflush(); }' "$@"
 }
 
 # events
-{   
+{
     # now playing
     mpc idleloop player | cat &
     mpc_pid=$!
 
     # volume
     while true ; do
-        echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
+        # echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')" # ALSA volume
+				# echo "vol $(pacmd list-sinks | sed -ne '/Corsair_Vengeance_2100/,$p' | awk '/volume/ {print $5; exit}')" # Alsa for Output Device Corsair Vengeance 2100 Analog Stereo
+        echo "vol $(pactl list sinks | sed -ne '/Name:\ combined/,$p' | awk -F'/' '/Volume/ {print $2}' | head -n1)" # Alsa for Output Device Combined Sink
 	sleep 1 || break
     done > >(uniq_linebuffered) &
     vol_pid=$!
-    
+
     # date
     while true ; do
         date +'date_min %b %d %A '%{F$RED}%{F-}' %H:%M'
@@ -62,7 +65,7 @@ function uniq_linebuffered() {
     herbstclient --idle
 
     # exiting; kill stray event-emitting processes
-    kill $mpc_pid $vol_pid $date_pid    
+    kill $mpc_pid $vol_pid $date_pid
 } 2> /dev/null | {
     TAGS=( $(herbstclient tag_status $monitor) )
     unset TAGS[${#TAGS[@]}]
@@ -78,9 +81,15 @@ function uniq_linebuffered() {
                 '#') # current tag
                     echo -n "%{U$RED}%{+u}"
                     ;;
-                '+') # active on other monitor
+				'%') # current tag, focused on different monitor
+		            echo -n "%{U$RED}%{+u}"
+		            ;;
+                '-') # active on other monitor not focused
                     echo -n "%{U$YLW}%{+u}"
                     ;;
+				'+') # active on other monitor not focused
+		            echo -n "%{U$YLW}%{+u}"
+		            ;;
                 ':')
                     echo -n "%{-u}"
                     ;;
@@ -93,10 +102,10 @@ function uniq_linebuffered() {
             esac
             echo -n " ${i:1} "
         done
-	
+
 	# center window title
-	echo -n "%{c}$st%{F$GRA}${windowtitle//^/^^} %{F-}"
-	
+	echo -n "%{-u}%{c}$st%{F$GRA}${windowtitle//^/^^} %{F-}"
+
         # align right
         echo -n "%{r}"
         echo -n "$sm"
@@ -106,10 +115,10 @@ function uniq_linebuffered() {
         echo -n "$sd"
         echo -n "$date "
         echo ""
-	
+
         # wait for next event
         read line || break
-        cmd=( $line ) 
+        cmd=( $line )
         # find out event origin
         case "${cmd[0]}" in
             tag*)

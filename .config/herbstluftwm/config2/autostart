@@ -15,8 +15,8 @@ Mod=Mod1    # Use alt as the main modifier
 #herbstclient load ${TAG_NAMES[0]} '(clients max:0)'
 
 # tags
-TAG_NAMES=("一" "二" "三" "四" "五" "六")
-TAG_KEYS=( {1..6} 0 )
+TAG_NAMES=("一" "二" "三" "四" "五" "六" "七" "八" "九" )
+TAG_KEYS=( {1..9} 0 )
 
 hc rename default "${TAG_NAMES[0]}" || true
 for i in ${!TAG_NAMES[@]} ; do
@@ -53,25 +53,25 @@ hc attr theme.active.inner_color '#383838'
 hc attr theme.active.outer_color '#282828'
 hc attr theme.background_color '#ffffff'
 
-# mouse bindings    
+# mouse bindings
 hc mousebind $Mod-Button1 move
 hc mousebind $Mod-Button2 zoom
 hc mousebind $Mod-Button3 resize
 
 # layouts
-hc load 一 '
-(split horizontal:0.500000:0 
-      (clients vertical:0 0x1800005)
-      (clients vertical:0))'
-     
-hc load 二 '
-(split horizontal:0.500000:1
-   (split vertical:0.500000:1
-      (clients vertical:0) 
-      (clients vertical:0)) 
-   (split vertical:0.500000:0
-      (clients vertical:0 0x1a00003)
-      (clients vertical:0)))'
+# hc load 一 '
+# (split horizontal:0.500000:0
+#       (clients vertical:0 0x1800005)
+#       (clients vertical:0))'
+#
+# hc load 二 '
+# (split horizontal:0.500000:1
+#    (split vertical:0.500000:1
+#       (clients vertical:0)
+#       (clients vertical:0))
+#    (split vertical:0.500000:0
+#       (clients vertical:0 0x1a00003)
+#       (clients vertical:0)))'
 
 # rules
 hc unrule -F

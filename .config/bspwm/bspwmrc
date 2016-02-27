@@ -1,9 +1,12 @@
 #!/bin/sh
 
 # config options
-bspc config border_width            1
-bspc config top_padding             0
-bspc config window_gap              0
+bspc config border_width            3
+bspc config window_gap              30
+bspc config top_padding             38
+bspc config left_padding            38
+bspc config right_padding           38
+bspc config bottom_padding          38
 bspc config split_ratio             0.60
 bspc config borderless_monocle      true
 bspc config gapless_monocle         true
@@ -43,36 +46,11 @@ bspc desktop ^2 -t floating=on
 bspc desktop ^5 -t floating=on
 #bspc desktop 2/1 -t floating=on
 
-# Rules
-<<<<<<< HEAD
-bspc rule -a Thunderbird desktop=^2
-bspc rule -a Chromium desktop=^2
-bspc rule -a Deluge desktop=^2
-bspc rule -a Gw2.exe floating=on desktop=^4
-bspc rule -a Wine desktop=^4
-bspc rule -a Python2.7 desktop=^4
-bspc rule -a Battle.net.exe desktop=^4 floating=on
-bspc rule -a Hearthstone.exe desktop=^4 floating=on
-bspc rule -a Diablo\ III.exe desktop=^4 floating=on
-bspc rule -a SC2.exe desktop=^4 floating=on
-bspc rule -a Steam desktop=^5 floating=on
-bspc rule -a hl2_linux desktop=^5
-bspc rule -a csgo_linux desktop=^5
-bspc rule -a Skype desktop=^6 floating=on
-bspc rule -a MPlayer desktop=^3 floating=on
-bspc rule -a Vlc desktop=^3 floating=on
-bspc rule -a Pcmanfm floating=on
-
-# Desktop modes
-
-bspc desktop ^3 -t floating=on
-bspc desktop ^5 -t floating=on
-
 # Autostart applications
-xscreensaver -no-splash &
-dropbox &
-(cd ~/.config/bspwm/panel && ./panel dzen2) &
-=======
+#xscreensaver -no-splash &
+#dropbox &
+#(cd ~/.config/bspwm/panel && ./panel dzen2) &
+
 # bspc rule -a Firefox desktop=^2
 # bspc rule -a Gimp-2.8 desktop=^4 floating=on
 # bspc rule -a Gimp desktop=^4 floating=on
@@ -91,22 +69,3 @@ bspc config normal_locked_border_color "#6C6C6C"
 bspc config active_locked_border_color "#6C6C6C"
 bspc config urgent_border_color "#CB4B16"
 bspc config presel_border_color "#ee6666"
-
-# Set fonts
-xset +fp /usr/share/fonts/local
-xset +fp /usr/share/fonts/misc
-xset +fp /usr/share/fonts/envypn
-xset fp rehash
-
-# Autostart apps
-# urxvt &
-#compton &
-numlockx &
-#(sleep 10 && setroot --on 2 --blur 5 ~/Dropbox/Public/wp_mix/sky_lanterns_by_wlop-d7b5nfg.jpg --on 1 --blur 5 ~/Dropbox/Public/wp_mix/here__at_the_end_of_all_the_things__by_darrengeers-d73dy37.jpg --on 0 --blur 5 ~/Dropbox/Public/wp_mix/wallhaven-2018.jpg) &
-xsetroot -cursor_name left_ptr &
-#(sleep 10 && bspwm_panel.sh) &
-#nitrogen --restore &
-#if [ $(ps -cx | grep panel | wc -l) -lt 3 ]; then
-#    (cd $HOME/scripts && sleep 5 && restart_panel.sh) &
-#fi
->>>>>>> 8368b1bb9c3603403172b5e434dc9159179f9d26
