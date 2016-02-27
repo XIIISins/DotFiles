@@ -16,8 +16,13 @@ Mod=Mod1    # Use alt as the main modifier
 
 # tags
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 TAG_NAMES=("一" "二" "三" "四" "五" "六" "七" "八" "九" )
 TAG_KEYS=( {1..9} 0 )
+=======
+TAG_NAMES=("一" "二" "三" "四" "五" "六" "七" "八")
+TAG_KEYS=( {1..8} 0 )
+>>>>>>> Stashed changes
 =======
 TAG_NAMES=("一" "二" "三" "四" "五" "六" "七" "八")
 TAG_KEYS=( {1..8} 0 )

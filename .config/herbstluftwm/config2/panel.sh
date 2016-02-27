@@ -11,9 +11,14 @@ herbstclient pad 1 16
 
 # settings
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #RES="1920+1920x16"
 #RES="1080+1920"
 RES="x16"
+=======
+# RES="x16+1280x"
+RES="1920x16"
+>>>>>>> Stashed changes
 =======
 # RES="x16+1280x"
 RES="1920x16"
@@ -53,9 +58,14 @@ function uniq_linebuffered() {
     # volume
     while true ; do
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
         # echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')" # ALSA volume
 				# echo "vol $(pacmd list-sinks | sed -ne '/Corsair_Vengeance_2100/,$p' | awk '/volume/ {print $5; exit}')" # Alsa for Output Device Corsair Vengeance 2100 Analog Stereo
         echo "vol $(pactl list sinks | sed -ne '/Name:\ combined/,$p' | awk -F'/' '/Volume/ {print $2}' | head -n1)" # Alsa for Output Device Combined Sink
+=======
+#        echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
+         echo "vol $(pactl list sinks | sed -ne '/combined/,$p' | awk '/^\tVolume/ {print $5}')"
+>>>>>>> Stashed changes
 =======
 #        echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
          echo "vol $(pactl list sinks | sed -ne '/combined/,$p' | awk '/^\tVolume/ {print $5}')"
@@ -92,11 +102,14 @@ function uniq_linebuffered() {
                     echo -n "%{U$RED}%{+u}"
                     ;;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 				'%') # current tag, focused on different monitor
 		            echo -n "%{U$RED}%{+u}"
 		            ;;
                 '-') # active on other monitor not focused
 =======
+=======
+>>>>>>> Stashed changes
                 '%') # current tag
                     echo -n "%{U$RED}%{+u}"
                     ;;
@@ -126,8 +139,11 @@ function uniq_linebuffered() {
 	# center window title
 	echo -n "%{-u}%{c}$st%{F$GRA}${windowtitle//^/^^} %{F-}"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 =======
+=======
+>>>>>>> Stashed changes
 	
 >>>>>>> Stashed changes
         # align right

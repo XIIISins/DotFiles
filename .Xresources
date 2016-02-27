@@ -14,6 +14,8 @@ URxvt.depth: 32
 
 URxvt.depth: 32
 
+URxvt.depth: 32
+
 URxvt*geometry:                                 80x25
 URxvt*foreground:                               white
 URxvt*borderLess:                               false
@@ -45,7 +47,11 @@ URxvt.underlineURLs:                            true
 URxvt.url-select.launcher:                      /usr/bin/firefox
 URxvt.url-select.underline:                     true
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 URxvt*background:       [80]#282828
+=======
+URxvt*background:        [80]#282828
+>>>>>>> Stashed changes
 =======
 URxvt*background:        [80]#282828
 >>>>>>> Stashed changes
