@@ -4,25 +4,15 @@
 # you need to use 'siji' font for icons.
 
 # main monitor
-monitor=${1:-1}
+monitor=${1:-0}
 
 # padding
-herbstclient pad 1 16
+herbstclient pad $monitor 16
 
 # settings
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-#RES="1920+1920x16"
+RES="1920+1920x16"
 #RES="1080+1920"
-RES="x16"
-=======
-# RES="x16+1280x"
-RES="1920x16"
->>>>>>> Stashed changes
-=======
-# RES="x16+1280x"
-RES="1920x16"
->>>>>>> Stashed changes
+#RES="x16"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
 FONT2="-*-cure.se-medium-r-*-*-11-*-*-*-*-*-*-*"
 # FONT3="IPAGothic-8"
@@ -57,19 +47,9 @@ function uniq_linebuffered() {
 
     # volume
     while true ; do
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
         # echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')" # ALSA volume
 				# echo "vol $(pacmd list-sinks | sed -ne '/Corsair_Vengeance_2100/,$p' | awk '/volume/ {print $5; exit}')" # Alsa for Output Device Corsair Vengeance 2100 Analog Stereo
         echo "vol $(pactl list sinks | sed -ne '/Name:\ combined/,$p' | awk -F'/' '/Volume/ {print $2}' | head -n1)" # Alsa for Output Device Combined Sink
-=======
-#        echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
-         echo "vol $(pactl list sinks | sed -ne '/combined/,$p' | awk '/^\tVolume/ {print $5}')"
->>>>>>> Stashed changes
-=======
-#        echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')"
-         echo "vol $(pactl list sinks | sed -ne '/combined/,$p' | awk '/^\tVolume/ {print $5}')"
->>>>>>> Stashed changes
 	sleep 1 || break
     done > >(uniq_linebuffered) &
     vol_pid=$!
@@ -101,23 +81,10 @@ function uniq_linebuffered() {
                 '#') # current tag
                     echo -n "%{U$RED}%{+u}"
                     ;;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 				'%') # current tag, focused on different monitor
 		            echo -n "%{U$RED}%{+u}"
 		            ;;
                 '-') # active on other monitor not focused
-=======
-=======
->>>>>>> Stashed changes
-                '%') # current tag
-                    echo -n "%{U$RED}%{+u}"
-                    ;;
-                '-') # active on other monitor
-                    echo -n "%{U$YLW}%{+u}"
-                    ;;
-                '+') # active on other monitor
->>>>>>> Stashed changes
                     echo -n "%{U$YLW}%{+u}"
                     ;;
 				'+') # active on other monitor not focused
@@ -138,14 +105,6 @@ function uniq_linebuffered() {
 
 	# center window title
 	echo -n "%{-u}%{c}$st%{F$GRA}${windowtitle//^/^^} %{F-}"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-=======
-=======
->>>>>>> Stashed changes
-	
->>>>>>> Stashed changes
         # align right
         echo -n "%{r}"
         echo -n "$sm"

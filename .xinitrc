@@ -15,7 +15,6 @@ else
 fi
 }
 
-<<<<<<< Updated upstream
 autokill() {
    killall unclutter
    killall xcmenu
@@ -32,7 +31,8 @@ autostart() {
    unclutter -grab -root &
    xcmenu -d
 #   sxhkd &
-   stalonetray &
+#   stalonetray &
+   $HOME/bin/tray &
    dropbox &
    nm-applet &
    numlockx on
@@ -41,25 +41,17 @@ autostart() {
 }
 
 homescreen() {
-xrandr --output VGA-1 --mode 1440x900 --primary
+xrandr --output VGA-1 --mode 1920x1080 --primary
 xrandr --output LVDS-1 --off
 }
 
 # General Setup
 
 # Home screen
-homescreen
+#homescreen
 
 # Start pulseaudio and load module-loopback
 (pulseaudio -D && pactl load-module module-loopback) &
-=======
-#Display setup
-ExtDisp=`xrandr | awk '/^VGA-1/ {print $2}' | wc -l`
-
-if [ $ExtDisp == "1" ]; then
-  xrandr --output VGA-1 --left-of VGA-0
-fi
->>>>>>> Stashed changes
 
 # Load resources.
 xrdb -load ~/.Xresources
@@ -68,10 +60,10 @@ xrdb -load ~/.Xresources
 xsetroot -cursor_name left_ptr &
 
 # Shiny stuff
-compton &
+#compton &
 
 # URxvt Daemon
-urxvtd -q &
+#urxvtd -q &
 
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd
@@ -125,6 +117,7 @@ do
    sleep 0.5
 done
 }
+
 ########
 # 2BWM #
 ########
@@ -147,7 +140,6 @@ exec urxvt
 ################
 # Herbstluftwm #
 ################
-<<<<<<< Updated upstream
 start_hlwm(){
 # autostart
 autostart &
@@ -166,46 +158,6 @@ start_bspwm() {
     sxhkd -c $HOME/.config/sxhkd/sxhkdrc.bspwm &
     exec bspwm
     autokill; sleep 1
-=======
-
-
-xset s off
-xset -dpms
-xset r rate 350 45
-xset +fp /usr/share/fonts/TTF
-xset +fp /usr/share/fonts/local
-xset +fp /usr/share/fonts/artwiz-fonts
-setxkbmap -option terminate:ctrl_alt_bksp
-
-#xrandr --output VGA-0 --mode 1920x1080 --primary
-#xrandr --output VGA-0 --mode 1440x900 --primary
-#xrandr --output VGA-1 --mode 1440x900 --right-of VGA-0
-
-#Determine WP
-setwp() {
-#TIME=`date +"%H%M"`
-#if [ $TIME -gt "1800" ]; then
-#  echo "HOME WP Loaded" > $HOME/log/wp.log
-#  nitrogen --restore
-#else
-##  xsetroot -solid grey20
-#feh --bg-scale ~/WP/wallhaven-73894.png
-#  echo "SFW WP Loaded" > $HOME/log/wp.log
-#fi
-
-nitrogen --restore
-
-}
-
-# autostart
-autostart() {
-   setwp
-   unclutter -grab -root &
-#   xmodmap .xmodmap
-   xcmenu -d
-   sxhkd &
-   redshift -l 64:25 -b 0.8:0.8 &> /dev/null &
->>>>>>> Stashed changes
 }
 
 ################
