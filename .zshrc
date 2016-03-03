@@ -1,59 +1,42 @@
+#==============================================================
 #
-# .zshrc
+# C O N F I G U R A T I O N  F O R  Z S H
 #
 
-# theme
-ZSH_THEME="daveverwer"
+#=-=-=-=-=-=-=
+# load stuffs
+#=-=-=-=-=-=-=
 
-# exports
-export PAGER=/usr/bin/less
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
+autoload -U colors && colors
+autoload -U compinit && compinit
+autoload -U vcs_info && vcs_info
 
-export ZDOTDIR=$HOME
-export ZSH=$HOME/.oh-my-zsh
-export PATH=$HOME/bin:$HOME/scripts:$HOME/.config/herbstluftwm:/home/xiii/.gem/ruby/2.1.0/bin:$PATH
+zmodload zsh/complist
+zmodload zsh/terminfo
 
-# OpenGL
-export __GL_SYNC_TO_VBLANK=1
-export __GL_SYNC_DISPLAY_DEVICE=DFP-0
-export __GL_THREADED_OPTIMIZATIONS=0
+# setopt
+setopt \
+  autocd \
+  ksh_glob \
+  extendedglob \
+  prompt_subst \
+  inc_append_history
 
- # sources
-source $ZSH/oh-my-zsh.sh
-source $ZDOTDIR/.zshfunctions/functions
+bindkey -v
 
-# use case-sensitive completion
-CASE_SENSITIVE="true"
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Import seperate config files
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-# enable colors for ls
-DISABLE_LS_COLORS="false"
+source $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.sentiarc
 
-# which plugins would you like to load?
-plugins=(git)
+for r in $HOME/.zsh/*.zsh; do
+  if [[ $DEBUG > 0 ]]; then
+    echo "zsh: sourcing $r"
+  fi
+  source $r
+done
 
-# preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
-else
-   export EDITOR='vim'
-fi
-
-# Source external files
-
-if [ -e ${HOME}/.zsh_function ]; then
-    source ${HOME}/.zsh_function
-fi
-
-if [ -e ${HOME}/.zsh_alias ]; then
-    source ${HOME}/.zsh_alias
-fi
-
-if [ -e ${HOME}/.yenlorc ]; then
-    source ${HOME}/.yenlorc
-fi
-
-# Welcome
-WELCOME=`find /home/xiii/bin/scripts/ -name "color*" | shuf -n1`
-$WELCOME
-puname
+eval $( dircolors -b $HOME/.dircolors)
+export LS_COLORS
