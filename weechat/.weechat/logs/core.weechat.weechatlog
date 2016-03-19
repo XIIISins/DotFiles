@@ -1,0 +1,11 @@
+2016-03-19 19:53:09	 !!! 	Warning: /home/xiii/.weechat/irc.conf, line 83: unknown option for section "network": alternate_nick = on
+2016-03-19 19:53:09		URL server listening on ('10.0.2.15', 34307)
+2016-03-19 19:53:09		python scripts loaded: shell, text_item, urlserver
+2016-03-19 19:53:09		perl scripts loaded: buddylist, buffers, highmon, iset
+2016-03-19 19:53:09	 !!! 	Warning: /home/xiii/.weechat/script.conf, line 46: unknown option for section "scripts": dir = "%h/script"
+2016-03-19 19:53:09		script: 299 scripts for WeeChat 1.4
+2016-03-19 19:53:09		Plugins loaded: alias, aspell, charset, exec, fifo, guile, irc, logger, perl, python, relay, ruby, script, trigger, xfer
+2016-03-19 19:53:13		All servers:
+2016-03-19 19:53:13		   freenode
+2016-03-19 19:53:13		   twitch
+2016-03-19 19:54:41	 !!! 	Error with command "/server freenode" (help on command: /help server)

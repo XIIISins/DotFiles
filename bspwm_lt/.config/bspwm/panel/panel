@@ -1,0 +1,37 @@
+#! /bin/sh
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
+flavor=${1:-bar}
+
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
+
+[ -e "$PANEL_FIFO_SECOND" ] && rm "$PANEL_FIFO_SECOND"
+mkfifo "$PANEL_FIFO_SECOND"
+
+bspc config top_padding $PANEL_HEIGHT
+
+bspc control --subscribe > "$PANEL_FIFO" &
+~/.config/bspwm/panel/statusbar > "$PANEL_FIFO_SECOND" &
+
+case "$flavor" in
+    bar)
+        cat "$PANEL_FIFO" | ./panel_bar | bar &
+        ;;
+    dzen2)
+       . ~/.config/bspwm/panel/panel_colors
+       FONT_FAMILY='-misc-terminusmod,icons-medium-r-normal--12-120-72-72-c-60-*-*'
+       FONT_SIZE=12
+       cat "$PANEL_FIFO" | ./panel_dzen2 -f "$FONT_FAMILY" -s "$FONT_SIZE" | dzen2 -h $PANEL_HEIGHT -w 230 -dock -ta l -title-name panel -fn "${FONT_FAMILY}:pixelsize=${FONT_SIZE}" -fg "$COLOR_FOREGROUND" -bg "$COLOR_BACKGROUND" -e 'button2=;' &
+       cat "$PANEL_FIFO_SECOND" | ./panel_dzen2_right -f "$FONT_FAMILY" -s "$FONT_SIZE" | dzen2 -h $PANEL_HEIGHT -w 1540 -x 380 -dock -ta r -title-name panel -fn "${FONT_FAMILY}:pixelsize=${FONT_SIZE}" -fg "$COLOR_FOREGROUND" -bg "$COLOR_BACKGROUND" -e 'button2=;' &
+	   tint2 -c /home/xiii/.config/tint2/tint2rc-bspwm &
+       ;;
+esac
+
+wait

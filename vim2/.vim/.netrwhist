@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/xiii/Documents/todo'
+let g:netrw_dirhist_2='/home/xiii/.config'
+let g:netrw_dirhist_3='/home/xiii/Build'
+let g:netrw_dirhist_4='/home/xiii/gitrepo/neeasade/dotfiles_orig/home/tmux'
