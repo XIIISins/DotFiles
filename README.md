@@ -4,7 +4,7 @@ Archlinux dotfiles
 setup: 
 
 current:
-![Alt text] (/screenshot/20160309_desktop.png)
+![Alt text] (/screenshot/20160319_desktop.png)
 
 previous
 ![Alt text] (/screenshot/20150707_desktop.png)
