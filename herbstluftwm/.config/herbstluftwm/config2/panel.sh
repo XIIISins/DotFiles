@@ -3,14 +3,18 @@
 # Just a dirty script for lemonbar,
 # you need to use 'siji' font for icons.
 
-# main monitor
-monitor=${1:-0}
-
-# padding
-herbstclient pad $monitor 16
+# If home, then 1 else 0
+HOME_SET=`xrandr | grep 'DP' | grep -v 'disconnected' | wc -l`
 
 # settings
-RES="1920+1920x16"
+if [ $HOME_SET -eq 0 ]; then
+    monitor=${1:-0} # main monitor
+    RES="x16"; 
+else 
+    monitor=${1:-2} # main monitor
+    RES="1920+1920x16"; 
+fi
+#RES="1920+1920x16"
 #RES="1080+1920"
 #RES="x16"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
@@ -31,6 +35,9 @@ st="%{F$YLW}  %{F-}"
 sm="%{F$RED}  %{F-}"
 sv="%{F$BLU}  %{F-}"
 sd="%{F$VLT}  %{F-}"
+
+# padding
+herbstclient pad $monitor 16
 
 # functions
 set -f

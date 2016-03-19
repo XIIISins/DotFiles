@@ -1,0 +1,113 @@
+!------------------------------------------------------------------------------
+! XFT Settings
+
+Xft.dpi:                                        72
+Xft.antialias:                                  true
+Xft.rgba:                                       rgb
+Xft.hinting:                                    true
+Xft.hintstyle:                                  hintslight
+
+!------------------------------------------------------------------------------
+! URXVT - Settings
+!
+URxvt.depth: 32
+
+URxvt*geometry:                                 80x25
+URxvt*foreground:                               white
+URxvt*borderLess:                               false
+URxvt.internalBorder:                           15
+URxvt*scrollBar:                                false
+URxvt*cursorBlink:                              true
+URxvt*cursorUnderline:                          true
+URxvt*cursorColor:                              #ffffff
+URxvt*scrollColor:                              #151515
+URxvt.clipboard.autocopy:                       true
+URxvt.keysym.Control-c:                         \003
+URxvt*perl-ext-common:                          default,clipboard,url-select,keyboard-select,vtwheel
+! URxvt*font:                                     xft:Ohsnap:hinting=true:pixelsize=10:antialias=false
+! URxvt*boldFont:                                 xft:Ohsnap:style=bold:hinting=true:pixelsize=10:antialias=false
+! URxvt*italicFont:                               xft:Ohsnap:style=italic:hinting=true:pixelsize=10:antialias=false
+! URxvt*boldItalicFont:                           xft:Ohsnap:style=bolditalic:hinting=true:pixelsize=10:antialias=false
+! urxvt*font: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
+! urxvt*boldFont: xft:Dejavu Sans Mono for Powerline:pixelsize=12,style=regular
+! urxvt*font: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
+! urxvt*boldFont: -*-pixelcarnage monospace-*-*-*-*-14-*-*-*-*-*-*-*
+! urxvt*font: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
+! urxvt*boldFont: -*-proggyclean-*-*-*-*-13-*-*-*-*-*-*-*
+! urxvt*font: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+! urxvt*boldFont: -*-terminus-*-*-*-*-*-*-*-*-*-*-*-*
+
+URxvt*font: xft:envypn:pixelsize=12,style=regular
+xterm*faceName: envypn
+xterm*faceSize: 13
+URxvt*boldFont: xft:envypn:pixelsize=12,style=regular
+*boldFont: xft:envypn:pixelsize=13,style=regular
+URxvt.underlineURLs:                            true
+URxvt.url-select.launcher:                      /usr/bin/firefox
+URxvt.url-select.underline:                     true
+URxvt*background:       [80]#282828
+*background:       #282828
+URxvt.foreground:        #F2F1F0
+*foreground:        #F2F1F0
+! URxvt.background: rgba:0000/0000/0000/9999
+! URxvt.cursorColor:       #F07746
+! *background: #2c2c2c
+! *background: #222222
+! *foreground: #f0f0f0
+
+! --- include theme colors ---
+!
+#include "/home/xiii/.config/termcolors/theme"
+!
+!------------------------------------------------------------------------------
+
+! --- Regular colors ---
+! black
+!URxvt*color0:           #121212
+!URxvt*color8:           #272727
+
+! red
+!URxvt*color1:           #8d2036
+!URxvt*color9:           #ce0a31
+
+! green
+!URxvt*color2:           #30362f
+!URxvt*color10:          #67735e
+
+! yellow
+!URxvt*color3:           #776e53
+!URxvt*color11:          #b7a876
+
+! blue
+!URxvt*color4:           #364150
+!URxvt*color12:          #515a69
+
+! magenta
+!URxvt*color5:           #443337
+!URxvt*color13:          #613e46
+!
+! cyan
+!URxvt*color6:           #525c5d
+!URxvt*color14:          #8f9293
+
+! white
+!URxvt*color7:           #3f3f3f
+!URxvt*color15:          #cacaca
+
+
+!------------------------------------------------------------------------------
+! Man pages colors
+
+*VT100.colorBDMode:                             true
+*VT100.colorBD:                                 red
+*VT100.colorULMode:                             true
+*VT100.colorUL:                                 magenta
+*VT100.veryBoldColors:                          6
+
+
+!------------------------------------------------------------------------------
+! dzen2 bar
+dzen2*font: -*-berry-*-*-*-*-10-*-*-*-*-*-*-*
+dzen2*foreground: #9E8C7A
+! dzen2*background: #111111
+dzen2*background: #282828
