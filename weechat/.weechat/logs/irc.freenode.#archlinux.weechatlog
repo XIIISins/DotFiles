@@ -1,0 +1,1078 @@
+2016-03-19 19:56:44	 > 	xiiisins has joined #archlinux
+2016-03-19 19:56:44	 - 	Topic for #archlinux is "Welcome to Arch Linux World Domination, Inc. <+> Channel stats may be found at <https://theos.kyriasis.com/~kyrias/stats/archlinux.html>. Contact demize to opt out. <+> Be kind to the people who are helping you. Be kind to the people you are trying to help. <+> Virtualbox module discussion http://thread.gmane.org/gmane.linux.arch.devel/22412"
+2016-03-19 19:56:44	 - 	Topic set by evilgrawity (grawity@wolke.nullroute.eu.org) on Mon, 07 Mar 2016 12:17:50
+2016-03-19 19:56:44	 - 	Channel #archlinux: 1681 nicks (3 ops, 0 voices, 1678 normals)
+2016-03-19 19:56:46	 - 	Channel created on Sun, 15 Feb 2004 06:08:31
+2016-03-19 19:57:00	ThatTreeOverTher	freeki: 1600 people, ready to take your question
+2016-03-19 19:57:04	Aelius	shovel_boss: if you're having trouble with the very first step (preparing installation media), are you certain archlinux is for you?
+2016-03-19 19:57:08	shovel_boss	Aelius: there is no bsd guide there :)
+2016-03-19 19:57:12	Dandels	shovel_boss, you're not supposed to use the partition number for dd, but because freebsd apparently uses a different format for block devices I don't know if you wrote it to the bsd equivalent of "sda" or "sda1"
+2016-03-19 19:57:16	mongy	where is this wipefs you speak of
+2016-03-19 19:57:16	 < 	bghost has quit (Read error: Connection reset by peer)
+2016-03-19 19:57:24	Dandels	This could very well explain that it doesn't boot
+2016-03-19 19:57:41	rgb-one	shovel_boss's problem was that his device is unusable after using dd to burn an image to it. What I recommended earlier was to zero out the entire disk but all he had to do was zero out the first 512 bytes then format it
+2016-03-19 19:57:50	 < 	DevBox has quit (Quit: DevBox)
+2016-03-19 19:57:53	 > 	s4ndm4n has joined #archlinux
+2016-03-19 19:57:53	 > 	SonicJam_ has joined #archlinux
+2016-03-19 19:57:54	ThatTreeOverTher	mongy: util-linux puts it in /usr/bin/wipefs
+2016-03-19 19:57:57	Aelius	unless it was gpt, rgb-one 
+2016-03-19 19:57:58	rgb-one	i forgot the count=1
+2016-03-19 19:58:01	freeki	hey guys how to configure fonts properly? should i use standart fontconfig or get infinality?
+2016-03-19 19:58:03	Cirrus_Minor	so many problems
+2016-03-19 19:58:06	rgb-one	it was ntfs
+2016-03-19 19:58:08	shovel_boss	is zeroing out the disk fast?
+2016-03-19 19:58:12	Aelius	rgb-one.....
+2016-03-19 19:58:18	Aelius	look up gpt
+2016-03-19 19:58:24	ThatTreeOverTher	the fastest way to clean up an fs is wipefs, shovel_boss 
+2016-03-19 19:58:27	@grawity	rgb-one: a disk can be both gpt *and* ntfs at the same time
+2016-03-19 19:58:28	 < 	Icedman has quit (Ping timeout: 244 seconds)
+2016-03-19 19:58:34	@grawity	rgb-one: because ntfs is a filesystem type and gpt is a partition table
+2016-03-19 19:58:39	shovel_boss	im already zeroing it
+2016-03-19 19:58:41	rgb-one	ah,
+2016-03-19 19:58:42	@grawity	like mbr except it *doesn't* live in the first 512 bytes
+2016-03-19 19:58:43	shovel_boss	and its slow
+2016-03-19 19:58:47	@grawity	it lives elsewhere
+2016-03-19 19:58:51	Batch	somebody can help me out with this piece of crap please? http://www.tp-link.com/en/download/Archer-T1U.html#Driver
+2016-03-19 19:58:52	phrik	Title: Download for Archer T1U V1 - Welcome to TP-LINK (at www.tp-link.com)
+2016-03-19 19:58:52	@grawity	in two places
+2016-03-19 19:59:08	ThatTreeOverTher	shovel_boss: no kidding. you can always stop it, remember (but the bytes never come back!)
+2016-03-19 19:59:08	rgb-one	shovel_boss was the disk mbr or gpt?
+2016-03-19 19:59:17	 > 	datamoshr has joined #archlinux
+2016-03-19 19:59:27	shovel_boss	ThatTreeOverTher: what do you mean
+2016-03-19 19:59:29	Dandels	shovel_boss, I suggest asking on #freebsd how to write the disk tbh.
+2016-03-19 19:59:29	rgb-one	you dont have to stop it
+2016-03-19 19:59:32	rgb-one	it will still work
+2016-03-19 19:59:33	Dandels	Nobody here seems to have a fucking clue
+2016-03-19 19:59:38	rgb-one	it will just take a longer while
+2016-03-19 19:59:46	shovel_boss	Dandels: freebsd could give one less shit about me trying to get arch
+2016-03-19 19:59:47	Aelius	I used freebsd a while back
+2016-03-19 19:59:47	 > 	linfan has joined #archlinux
+2016-03-19 19:59:52	linfan	evening
+2016-03-19 19:59:54	ThatTreeOverTher	Dandels: what are you talking about
+2016-03-19 20:00:00	Aelius	I don't think the output of ls /dev was too different.... 
+2016-03-19 20:00:06	Aelius	for disks
+2016-03-19 20:00:09	Cirrus_Minor	Batch: seems that needs only old 2.6 kernel 
+2016-03-19 20:00:10	evening	linfan: yes?
+2016-03-19 20:00:13	shovel_boss	so ill stop the zeroing
+2016-03-19 20:00:20	ThatTreeOverTher	shovel_boss: are you trying to write archlinux.iso to the drive?
+2016-03-19 20:00:21	 - 	evening is now known as afternuun
+2016-03-19 20:00:22	linfan	Can netct wireless be setup in the same way wicd-gtk works?
+2016-03-19 20:00:31	shovel_boss	ThatTreeOverTher: im trying to make it into exfat or fat32
+2016-03-19 20:00:34	 > 	Seylerius has joined #archlinux
+2016-03-19 20:00:37	linfan	netctl*
+2016-03-19 20:00:42	Dandels	xyproblem. ThatTreeOverTher yes he is
+2016-03-19 20:00:43	shovel_boss	but it happens to be that i need to zero it first
+2016-03-19 20:00:43	Batch	Cirrus_Minor i have no clue actually, if you can tell me
+2016-03-19 20:00:47	rgb-one	ThatTreeOverTher: he already did and the disk is unresponsive
+2016-03-19 20:00:50	Aelius	linfan: what is "the same way"?
+2016-03-19 20:01:03	rgb-one	I have done this alot in the past
+2016-03-19 20:01:17	 < 	dr-lambda has quit (Read error: Connection reset by peer)
+2016-03-19 20:01:21	 > 	bghost has joined #archlinux
+2016-03-19 20:01:21	 < 	bghost has quit (Client Quit)
+2016-03-19 20:01:26	ThatTreeOverTher	freeki: either one works, no? some say infinality looks nicer
+2016-03-19 20:01:33	shovel_boss	rgb-one: ill stop the zeroing?
+2016-03-19 20:01:35	Aelius	shovel_boss: you said you wanted to write archlinux iso to something, are you taking that back?
+2016-03-19 20:01:44	rgb-one	shovel_boss: you dont have to
+2016-03-19 20:01:46	shovel_boss	Aelius: am i in a debate with you
+2016-03-19 20:01:47	linfan	that i start the gui and set up the password from the scan list and save it and then everytime i am at that network it automatically connects even before starting x
+2016-03-19 20:01:57	 > 	bghost has joined #archlinux
+2016-03-19 20:02:02	rgb-one	shovel_boss: how large is the usb disk?
+2016-03-19 20:02:07	shovel_boss	16gb
+2016-03-19 20:02:08	 < 	therue has quit (Quit: WeeChat 1.4)
+2016-03-19 20:02:09	Aelius	shovel_boss: we can't help you if you don't know what you want to do
+2016-03-19 20:02:11	rgb-one	lol
+2016-03-19 20:02:14	rgb-one	alright stop it
+2016-03-19 20:02:21	rgb-one	it will take a long while
+2016-03-19 20:02:24	 < 	nando293921 has quit (Ping timeout: 246 seconds)
+2016-03-19 20:02:24	ThatTreeOverTher	shovel_boss: what are you trying to store on the disk
+2016-03-19 20:02:32	ThatTreeOverTher	first things first
+2016-03-19 20:02:33	shovel_boss	im trying to burn the archlinux.iso
+2016-03-19 20:02:35	ThatTreeOverTher	okay
+2016-03-19 20:02:37	 < 	bghost has quit (Client Quit)
+2016-03-19 20:02:37	Cirrus_Minor	Batch: try this https://aur.archlinux.org/packages/mt7610u_wifi_sta/
+2016-03-19 20:02:38	ThatTreeOverTher	that makes life a lot easier
+2016-03-19 20:02:38	phrik	Title: AUR (en) - mt7610u_wifi_sta (at aur.archlinux.org)
+2016-03-19 20:02:43	 > 	claas has joined #archlinux
+2016-03-19 20:02:50	shovel_boss	how do i make it into fat or exfat whatever arch is using on installation media
+2016-03-19 20:03:01	Aelius	shovel_boss: burn to a CD, or you want the iso on the usb drive?
+2016-03-19 20:03:03	@grawity	you do that *by* "burning" the .iso
+2016-03-19 20:03:07	shovel_boss	usbdrive
+2016-03-19 20:03:09	@grawity	it comes with its own filesystem
+2016-03-19 20:03:10	linfan	i mean, do i always need to go and make a profile in /etc/netctl when I go to a new place and have gotten the password to wpa?
+2016-03-19 20:03:14	ThatTreeOverTher	shovel_boss: take this https://wiki.archlinux.org/index.php/USB_flash_installation_media#In_GNU.2FLinux
+2016-03-19 20:03:16	phrik	Title: USB flash installation media - ArchWiki (at wiki.archlinux.org)
+2016-03-19 20:03:19	ThatTreeOverTher	use that command
+2016-03-19 20:03:22	Namarrgon	linfan: you can use wifi-menu
+2016-03-19 20:03:28	 > 	bghost has joined #archlinux
+2016-03-19 20:03:28	 < 	bghost has quit (Client Quit)
+2016-03-19 20:03:32	Aelius	linfan: sudo wifi-menu
+2016-03-19 20:03:34	Namarrgon	linfan: but netctl doesn't have 'gui'
+2016-03-19 20:03:42	shovel_boss	thank you mate but that really didnt help at all
+2016-03-19 20:03:43	 > 	bghost has joined #archlinux
+2016-03-19 20:03:53	freeki	ThatTreeOverTher: i just cant get into modifing stuff. i mean it's not working out of the box. i'm pretty happy with my terminus as main font fot urxvt and gtk... but webpages in firefox look ugly
+2016-03-19 20:03:56	rgb-one	so shovel_boss, if you don't want to wait a long while you can stop it.
+2016-03-19 20:04:02	 < 	Repentinus has quit (Ping timeout: 248 seconds)
+2016-03-19 20:04:08	 > 	dr-lambda has joined #archlinux
+2016-03-19 20:04:09	shovel_boss	i stopped it 
+2016-03-19 20:04:10	linfan	i use wicd-gtk but on raspberry it is not fully functional yet with a lot of error msgs
+2016-03-19 20:04:12	ThatTreeOverTher	freeki: then you’ll have to live with ugly webpages, sorry!
+2016-03-19 20:04:13	rgb-one	the command I gave earlier was missing one thing, count=1
+2016-03-19 20:04:16	@grawity	linfan: then use Networkmanager
+2016-03-19 20:04:21	 > 	Repentinus has joined #archlinux
+2016-03-19 20:04:27	ThatTreeOverTher	shovel_boss: how do you mean “didn’t help at all"
+2016-03-19 20:04:33	 < 	leothrix has quit (Quit: ZNC 1.6.3 - http://znc.in)
+2016-03-19 20:04:34	 > 	_mirko_ has joined #archlinux
+2016-03-19 20:04:40	Batch	wow nice Cirrus_Minor i didn't know there really was a package in aur for it
+2016-03-19 20:04:42	Batch	appriciate it
+2016-03-19 20:04:45	dr-lambda	what happened?
+2016-03-19 20:04:46	ThatTreeOverTher	if you want to write archlinux.iso to the flash drive, that is the one command you have to run shovel_boss 
+2016-03-19 20:04:49	freeki	ThatTreeOverTher: problem solved :^)
+2016-03-19 20:04:54	 > 	kingx has joined #archlinux
+2016-03-19 20:04:55	ThatTreeOverTher	freeki: nice one!
+2016-03-19 20:04:56	linfan	do i need to start a network manger service as well?
+2016-03-19 20:04:56	shovel_boss	rgb-one: can you send it again
+2016-03-19 20:04:57	ThatTreeOverTher	!next
+2016-03-19 20:04:58	phrik	Another satisfied customer! NEXT!
+2016-03-19 20:05:05	@grawity	linfan: yes
+2016-03-19 20:05:11	@grawity	linfan: well if you use networkmanager, then yes
+2016-03-19 20:05:15	Cirrus_Minor	Batch: idk if it will work seems its for T2U but it might
+2016-03-19 20:05:22	rgb-one	shovel_boss: I will fix up the command this time to ensure it work well
+2016-03-19 20:05:31	linfan	ok, will check how rpi3 reacts to that app
+2016-03-19 20:05:34	Batch	aawh shit i can't install Cirrus_Minor 
+2016-03-19 20:05:42	 < 	a-109-107 has quit (Ping timeout: 244 seconds)
+2016-03-19 20:05:52	rgb-one	shovel_boss: what is the name of the usb drive?
+2016-03-19 20:05:55	Cirrus_Minor	you dont wanna install that
+2016-03-19 20:05:57	Aelius	rgb-one: shovel_boss has no idea what he is trying to do and you're not really helping him with this wiping nonsense
+2016-03-19 20:06:22	shovel_boss	da0
+2016-03-19 20:06:23	 < 	dr-lambda has quit (Remote host closed the connection)
+2016-03-19 20:07:05	 < 	mtadg has quit (Quit: Leaving)
+2016-03-19 20:07:05	Batch	lol Cirrus_Minor indeed
+2016-03-19 20:07:07	Aelius	shovel_boss: you're on freebsd? go to #freebsd and tell them you want to make a bootable USB drive from an iso. Or better yet use FreeBSD's wonderful handbook
+2016-03-19 20:07:22	Dandels	^Been saying this for a while
+2016-03-19 20:07:33	ThatTreeOverTher	… he’s on freeBSD
+2016-03-19 20:07:35	ThatTreeOverTher	that would explain
+2016-03-19 20:07:39	Dandels	Yes, I've said this maybe three times
+2016-03-19 20:07:39	d_garbage	Aelius, how dare you come here and talk sense! }:]
+2016-03-19 20:07:39	 > 	alad has joined #archlinux
+2016-03-19 20:07:44	 > 	j605 has joined #archlinux
+2016-03-19 20:07:49	Aelius	yeah Dandels... probably wasted effort by now
+2016-03-19 20:07:54	Aelius	:/
+2016-03-19 20:07:54	rgb-one	shovel_boss: Aelius, advice makes sense, check #freebsd
+2016-03-19 20:08:08	d_garbage	heh
+2016-03-19 20:08:10	 > 	dr-lambda has joined #archlinux
+2016-03-19 20:08:10	alad	freebsd seems to be the now hot topic in this channel
+2016-03-19 20:08:12	Aelius	d_garbage: it'll never happen again I promise
+2016-03-19 20:08:14	alad	at least whenever I join, people talk about it
+2016-03-19 20:08:22	ThatTreeOverTher	although to tell you the truth, it’s the same command… you just have to use the right block device
+2016-03-19 20:08:22	alad	*the new
+2016-03-19 20:08:29	d_garbage	Aelius, i hope it does, as often as possible ;)
+2016-03-19 20:08:31	ThatTreeOverTher	dd that shit up
+2016-03-19 20:08:41	 > 	Kirito has joined #archlinux
+2016-03-19 20:08:44	 > 	leothrix has joined #archlinux
+2016-03-19 20:09:00	 < 	bghost has quit (Quit: Lost terminal)
+2016-03-19 20:10:02	d_garbage	!dd
+2016-03-19 20:10:03	phrik	disk decimator
+2016-03-19 20:10:19	ThatTreeOverTher	rofl
+2016-03-19 20:10:20	rgb-one	wow ,"decimator"
+2016-03-19 20:10:22	 < 	poleprogger has quit (Ping timeout: 240 seconds)
+2016-03-19 20:10:23	 > 	python476 has joined #archlinux
+2016-03-19 20:10:24	d_garbage	!dd
+2016-03-19 20:10:26	phrik	disk derp
+2016-03-19 20:10:29	python476	hi peeps
+2016-03-19 20:10:35	ThatTreeOverTher	python476: hello
+2016-03-19 20:10:35	 > 	Goatman has joined #archlinux
+2016-03-19 20:10:37	freeki	another stupid question - tweaking should be done in shell configuration file? e.g .zshrc? or this should be somehow connected with X, like .xinitrc/X11? wiki says only about using a DE (im on i3-gaps)
+2016-03-19 20:10:38	 < 	Goatman has quit (Max SendQ exceeded)
+2016-03-19 20:10:48	alad	freeki: tweaking wat
+2016-03-19 20:10:54	python476	I'm seeking infos on how to add files to cdrw 
+2016-03-19 20:10:55	d_garbage	freeki, why ask stupid questions?
+2016-03-19 20:10:56	Cirrus_Minor	lol
+2016-03-19 20:10:56	 < 	Kirito has quit (Remote host closed the connection)
+2016-03-19 20:11:04	Cirrus_Minor	thats a good un
+2016-03-19 20:11:09	Aelius	to make the rest of us feel smart
+2016-03-19 20:11:10	freeki	cus i don't get it :(
+2016-03-19 20:11:12	d_garbage	freeki, and if it's not a stupid question why say it is?
+2016-03-19 20:11:17	python476	a quick googling .. made me come here
+2016-03-19 20:11:35	ThatTreeOverTher	python476: are you on Arch?
+2016-03-19 20:11:40	python476	on a machine with arch, cdrecord, no DE/WM
+2016-03-19 20:11:44	d_garbage	in fact why must we keep mentioning 'stupid' and 'dumb' every second sentence these days?
+2016-03-19 20:11:47	 > 	alfberdi has joined #archlinux
+2016-03-19 20:11:47	 < 	alfberdi has quit (Client Quit)
+2016-03-19 20:11:53	Cirrus_Minor	freeki: depens what your `tweaking`
+2016-03-19 20:11:55	 < 	kotto has quit (Ping timeout: 244 seconds)
+2016-03-19 20:12:02	 < 	inflames has quit (Ping timeout: 248 seconds)
+2016-03-19 20:12:31	Aelius	freeki: So when asking for help, tell us what you want to /do/, don't ask us about a specific substep of the ultimate goal
+2016-03-19 20:12:38	alad	Cirrus_Minor: obviously the rear spoiler of my new toyota
+2016-03-19 20:12:42	UukGoblin	hm, this time I didn't even get a login prompt :-O
+2016-03-19 20:12:48	freeki	/etc/X11/xinit/xinitrc.d/*** - ok, i'll do it here and just load scripts
+2016-03-19 20:12:51	 < 	karmahacker has quit (Remote host closed the connection)
+2016-03-19 20:12:54	Cirrus_Minor	alad: right
+2016-03-19 20:12:54	freeki	i mean font configuration
+2016-03-19 20:13:01	alad	freeki: /etc/fonts/conf.d
+2016-03-19 20:13:02	 > 	donguston has joined #archlinux
+2016-03-19 20:13:02	freeki	as tweaking
+2016-03-19 20:13:08	UukGoblin	I see a lot of "usb 6-1: device descriptor read/64, error -32", "device not accepting address" and "unable to enumerate USB device"
+2016-03-19 20:13:08	 < 	vasuvi has quit (Quit: Leaving)
+2016-03-19 20:13:11	alad	freeki: create a few symlinks, basically
+2016-03-19 20:13:20	 < 	robotroll has quit (Read error: Connection reset by peer)
+2016-03-19 20:13:40	UukGoblin	now "/dev/disk/by-label/ARCH_201603 device did not show up after 30 seconds" and I'm in some early initrd prompt
+2016-03-19 20:13:40	 < 	Jeena has left #archlinux ("Textual IRC Client: www.textualapp.com")
+2016-03-19 20:13:46	ThatTreeOverTher	python476: have you read the man pages for it
+2016-03-19 20:13:46	alad	 for i in 10-sub-pixel-rgb 11-lcdfilter-default 70-no-bitmaps; do
+2016-03-19 20:13:49	alad	    ln -s /etc/fonts/conf.avail/"$i".conf "$pkgdir"/etc/fonts/conf.d/
+2016-03-19 20:13:50	python476	GUI spoiled me, it seems I'll have to learn about multisessions
+2016-03-19 20:13:51	alad	  done
+2016-03-19 20:13:54	alad	freeki: ^
+2016-03-19 20:13:55	UukGoblin	weird, cause the USB stick and keyboard worked fine in the BIOS and bootloader
+2016-03-19 20:14:10	 > 	lpapp has joined #archlinux
+2016-03-19 20:14:11	alad	freeki: well, you wouldn't use pkgdir in this case
+2016-03-19 20:14:11	 - 	jottr_ is now known as jottr
+2016-03-19 20:14:15	ThatTreeOverTher	python476: you can always use multiple ttys or use ctrl-z + bg/fg
+2016-03-19 20:14:16	UukGoblin	and it's (now) plugged straight into the mobo's USB port
+2016-03-19 20:14:16	python476	ThatTreeOverTher: I thought there was a 'oneliner' and couldn't find -add|-extend
+2016-03-19 20:14:21	lpapp	hi, is there a cool minimal window manager like ratpoison?
+2016-03-19 20:14:31	ThatTreeOverTher	lpapp: probably
+2016-03-19 20:14:37	alad	ThatTreeOverTher: /thread
+2016-03-19 20:14:39	alad	!next
+2016-03-19 20:14:40	freeki	alad: ok i got it. ill give it a shot. thanks
+2016-03-19 20:14:41	phrik	Another satisfied customer! NEXT!
+2016-03-19 20:14:45	shovel_boss	what blocksize do i set on dd
+2016-03-19 20:14:46	xev10	d_garbage: because lpapp: i3 is minimal
+2016-03-19 20:14:49	shovel_boss	bs=1M?
+2016-03-19 20:14:51	xev10	woops.
+2016-03-19 20:14:53	shovel_boss	i been told thats too much
+2016-03-19 20:14:54	alad	xev10: lol
+2016-03-19 20:14:54	rgb-one	512
+2016-03-19 20:15:03	shovel_boss	rgb-one: 512 what?
+2016-03-19 20:15:05	Dandels	I don't even know if you need to set it
+2016-03-19 20:15:06	ThatTreeOverTher	shovel_boss: if you’re writing a file, make it large
+2016-03-19 20:15:12	@grawity	yes, bs=1M
+2016-03-19 20:15:18	rgb-one	shovel_boss: `dd if=/dev/zero of=/dev/sdx bs=512 count=1 && sync` works on linux.
+2016-03-19 20:15:20	shovel_boss	im wrtiting archlinux.iso
+2016-03-19 20:15:20	d_garbage	xev10, ;)
+2016-03-19 20:15:32	@grawity	no, either bs=1M, or at least count=8 or so
+2016-03-19 20:15:33	lpapp	I heard about i3 some years ago, yes.
+2016-03-19 20:15:33	shovel_boss	none of that zeroing
+2016-03-19 20:15:37	ThatTreeOverTher	rgb-one: it also works on BSD (where he was)
+2016-03-19 20:15:43	@grawity	though it's redundant either way
+2016-03-19 20:15:52	lpapp	it is a shame that ratpoison went unmaintained.
+2016-03-19 20:15:54	@grawity	since ... dd'ing the archiso just writes right over the same MBR anyway
+2016-03-19 20:16:01	rgb-one	I don't know much about bsd
+2016-03-19 20:16:03	 > 	metnel has joined #archlinux
+2016-03-19 20:16:03	@grawity	and over the same GPT, and over any partitions/filesystems it might have had
+2016-03-19 20:16:19	xev10	lpapp: check i3. if you're looking for minimalist and floating, check the wiki list of windows managers.
+2016-03-19 20:16:23	shovel_boss	dd if=/root/Downloads/archlinux-2016.03.01-dual.iso of=/dev/da0 conv=sync
+2016-03-19 20:16:24	rgb-one	shovel_boss: after that you can write the partition table
+2016-03-19 20:16:26	shovel_boss	bs=?
+2016-03-19 20:16:26	 < 	pwcjr has quit (Read error: Connection reset by peer)
+2016-03-19 20:16:26	ThatTreeOverTher	xev10: or dwm!
+2016-03-19 20:16:29	rgb-one	and then format the disk
+2016-03-19 20:16:34	@grawity	rgb-one: but why would you do that
+2016-03-19 20:16:36	rgb-one	bs stands for block size
+2016-03-19 20:16:36	shovel_boss	i started zeroing then stopped it
+2016-03-19 20:16:43	@grawity	rgb-one: the .iso already has its own partition table and its own "formatting"
+2016-03-19 20:16:45	ThatTreeOverTher	shovel_boss: bs=1m put it in there somewhere
+2016-03-19 20:16:51	lpapp	xev10: I would prefer someting like ratpoison, but maintained. It does not have to be floating for me.
+2016-03-19 20:16:53	xev10	ThatTreeOverTher: that one too. haven't used it but looks useful.
+2016-03-19 20:16:55	 > 	m000gle has joined #archlinux
+2016-03-19 20:16:55	ThatTreeOverTher	rgb-one: stop talking about zeros
+2016-03-19 20:16:56	 < 	m000gle has quit (Max SendQ exceeded)
+2016-03-19 20:16:58	Cirrus_Minor	dwm with gaps is schweet
+2016-03-19 20:17:03	ThatTreeOverTher	xev10: it is delicious
+2016-03-19 20:17:08	shovel_boss	grawity: you seem to know what to do
+2016-03-19 20:17:12	shovel_boss	what blocksize do i use
+2016-03-19 20:17:12	@grawity	rgb-one: seriously, you're giving kinda useless advice
+2016-03-19 20:17:16	xev10	lpapp: check dwm, like other pointed out.
+2016-03-19 20:17:16	metnel	Hey, I add my public key to another machine running arch, when I'm prompted for the key passphrase it just says that the password is wrong. I verified that the password is correct.
+2016-03-19 20:17:20	 > 	pwcjr has joined #archlinux
+2016-03-19 20:17:26	 < 	newke has quit (Quit: WeeChat 1.4)
+2016-03-19 20:17:33	 > 	m000gle has joined #archlinux
+2016-03-19 20:17:40	lpapp	what is the difference between i3 and dwm?
+2016-03-19 20:17:47	@grawity	shovel_boss: doesn't matter much, something like 4M .. 16M should be good
+2016-03-19 20:17:50	@grawity	shovel_boss: it only affects speed
+2016-03-19 20:17:51	Cirrus_Minor	lpapp: nice thong bout dwm is it requires no configgin, defaults r sane
+2016-03-19 20:17:52	rgb-one	the guys drive is not functional, to get it functional again what I suggested would work
+2016-03-19 20:18:02	ThatTreeOverTher	rgb-one: untrue and no
+2016-03-19 20:18:06	rgb-one	if he wants to burn arch again then thats another matter
+2016-03-19 20:18:08	Dandels	rgb-one, as far as we know there's nothing wrong with his drive
+2016-03-19 20:18:12	shovel_boss	ill use 16M and come back shortly if it fails
+2016-03-19 20:18:13	freeki	and another one - while building from aur i sometimes get "validation error" for files that are downloaded. how can i skip this validation process?
+2016-03-19 20:18:22	ThatTreeOverTher	lpapp: i3 has a scripting language… dwm is configurable by header file
+2016-03-19 20:18:23	Dandels	A non-booting drive isn't the same as a broken drive
+2016-03-19 20:18:31	rgb-one	Dandels: he said it was not functional after the first write
+2016-03-19 20:18:36	Dandels	He said it doesn't boot
+2016-03-19 20:18:36	@grawity	freeki: you shouldn't skip it, really
+2016-03-19 20:18:38	ThatTreeOverTher	freeki: don’t skip it
+2016-03-19 20:18:38	@grawity	!give freeki nokeys
+2016-03-19 20:18:39	Dandels	Or meant
+2016-03-19 20:18:39	phrik	freeki: Add 'keyserver-options auto-key-retrieve' to ~/.gnupg/gpg.conf, to let makepkg download missing keys automatically.
+2016-03-19 20:18:42	xev10	ThatTreeOverTher: shhh. don't tempt me. I'm trying to not jump into Arch too quickly and I've already wasted too many days fucking around. ;) gotta take a break and settle down.
+2016-03-19 20:18:48	Aelius	Cirrus_Minor: I think you may be using dwm wrong :P
+2016-03-19 20:18:52	alad	grawity: should be in dirmngr.conf now
+2016-03-19 20:18:53	Cirrus_Minor	freeki sudo pacman-key --populate archlinux
+2016-03-19 20:18:53	Dandels	I've been following every thing this guy has done since he first came here and asked for help
+2016-03-19 20:18:55	Cirrus_Minor	sudo pacman-key --refresh-keys
+2016-03-19 20:18:56	@grawity	alad: no
+2016-03-19 20:18:57	xev10	ThatTreeOverTher: dwm is def on my to-do list
+2016-03-19 20:18:58	 > 	a-109-107 has joined #archlinux
+2016-03-19 20:19:15	 < 	shovel_boss has quit (Remote host closed the connection)
+2016-03-19 20:19:18	@grawity	alad: that particular option is a gpg option
+2016-03-19 20:19:26	@grawity	alad: because dirmngr is only called if gpg decides to retrieve a key
+2016-03-19 20:19:34	Cirrus_Minor	Aelius: not at all i compile my own but the vanilla pkg from aur requires no configgin
+2016-03-19 20:19:39	 < 	Miner_48er has quit (Ping timeout: 244 seconds)
+2016-03-19 20:19:42	ThatTreeOverTher	xev10: it works fairly nice out of the box… although I actually don’t like using pacman with it, you may want to just compile and use it in your own folder
+2016-03-19 20:19:48	freeki	grawity: well, i trust devs... and hope nobody intercepts these packages
+2016-03-19 20:19:58	@grawity	freeki: it's not about trusting devs
+2016-03-19 20:20:01	Aelius	Cirrus_Minor: the vanilla pkg is in community or extra. somewhere official
+2016-03-19 20:20:08	 > 	vervet has joined #archlinux
+2016-03-19 20:20:13	@grawity	freeki: the signatures you verify are made by devs, anyway
+2016-03-19 20:20:20	ThatTreeOverTher	freeki: you really don’t want to ignore the keys
+2016-03-19 20:20:29	@grawity	freeki: it's about everyone *between* you and devs
+2016-03-19 20:20:40	 < 	lpapp has left #archlinux
+2016-03-19 20:20:44	freeki	you are talking about checksums? files can be damaged i guess?
+2016-03-19 20:20:45	 > 	CaptainCoward has joined #archlinux
+2016-03-19 20:20:45	@grawity	freeki: so if you want to skip the checks, fine, that's in --help
+2016-03-19 20:20:46	 > 	lpapp has joined #archlinux
+2016-03-19 20:20:46	Cirrus_Minor	Aelius: ok that one or dwm-git (aur) same same,  works ootb
+2016-03-19 20:20:51	@grawity	freeki: no, I'm talking about pgp signatures
+2016-03-19 20:20:57	freeki	uh okay
+2016-03-19 20:21:12	xev10	ThatTreeOverTher: what's your fave package manager? I haven't tried so far and just recently read about pacaur. Still haven't understood it all so I'm trying to take it slow.
+2016-03-19 20:21:14	@grawity	freeki: because 95% of the time, when people here complain about "AUR verification stuff", it's the pgp signatures that they complain about
+2016-03-19 20:21:16	 > 	torak has joined #archlinux
+2016-03-19 20:21:27	 < 	lpapp has left #archlinux
+2016-03-19 20:21:32	Cirrus_Minor	Aelius: this is nice  https://github.com/KieranQuinn/dwm
+2016-03-19 20:21:33	phrik	Title: GitHub - KieranQuinn/dwm: my dwm build (at github.com)
+2016-03-19 20:21:35	@grawity	freeki: and the problem is usually that gpg isn't configured to get the needed keys
+2016-03-19 20:21:41	 > 	j12t has joined #archlinux
+2016-03-19 20:21:43	 < 	gamma has quit (Quit: WeeChat 1.4)
+2016-03-19 20:21:53	alad	grawity: I thought something changed with https://bugs.gnupg.org/gnupg/issue2147%20gpg%20bug
+2016-03-19 20:21:54	phrik	Title: Issue 2147: auto-key-retrieve does not work if keyserver is set in dirmngr.conf instead of gpg.conf - GnuPG's BTS (at bugs.gnupg.org)
+2016-03-19 20:21:55	@grawity	freeki: now, if you really have problems with *hash* (checksum) verification,
+2016-03-19 20:21:55	 < 	bug2000 has quit (Read error: Connection reset by peer)
+2016-03-19 20:22:03	ThatTreeOverTher	xev10: I either build manually or use yaourt for AUR pkgs… but use pacman if you don’t need to use AUR stuff
+2016-03-19 20:22:08	@grawity	freeki: then I *really really* don't recommend skipping that
+2016-03-19 20:22:22	ThatTreeOverTher	xev10: and make sure that you understand how AUR works before using yaourt or anything like it
+2016-03-19 20:22:33	Aelius	Cirrus_Minor: strange to advertise a tiling wm with a picture of a floating window
+2016-03-19 20:22:35	 > 	coolsa has joined #archlinux
+2016-03-19 20:22:45	 > 	gregbert has joined #archlinux
+2016-03-19 20:22:47	linfan	will continue with wicd, networkmanger seems hopelessly complicated and disabled by users
+2016-03-19 20:22:50	ThatTreeOverTher	Aelius: not all tiling wms can float a window easily
+2016-03-19 20:22:52	 > 	al2o3-cr1 has joined #archlinux
+2016-03-19 20:22:56	 > 	shellkr has joined #archlinux
+2016-03-19 20:22:56	Cirrus_Minor	Aelius: good point
+2016-03-19 20:22:57	 > 	tumbler has joined #archlinux
+2016-03-19 20:22:59	@grawity	freeki: because it doesn't involve any keys etc., and the only reasons it can fail are a) the file *is* really corrupted, or b) the AUR packager got the wrong file
+2016-03-19 20:23:07	 < 	al2o3-cr has quit (Read error: Connection reset by peer)
+2016-03-19 20:23:16	 - 	al2o3-cr1 is now known as al2o3-cr
+2016-03-19 20:23:19	@grawity	alad: that's a completely different option
+2016-03-19 20:23:22	xev10	ThatTreeOverTher: was gonna give yaourt a try. hmm. good point. will def read before switching. what advantage do you find in building manually other than it's fun? :)
+2016-03-19 20:23:31	freeki	grawity: i will consider this, thanks
+2016-03-19 20:23:40	@grawity	alad: the information about keyservers themselves is in dirmngr.conf
+2016-03-19 20:23:45	 < 	metnel has quit (Quit: leaving)
+2016-03-19 20:23:54	Cirrus_Minor	Aelius: sorry that was wrong one, this is the daddy https://github.com/TaylanTatli/dwm
+2016-03-19 20:23:54	@grawity	alad: but auto-key-retrieve is in gpg.conf, because it's gpg which makes the decision whether to use keyservers at all
+2016-03-19 20:23:55	phrik	Title: GitHub - TaylanTatli/dwm: DWM 6.1 with patches (at github.com)
+2016-03-19 20:23:57	Aelius	xev10: you should build from the aur manually for like, a month at least
+2016-03-19 20:23:59	 < 	zrj has quit (Quit: leaving)
+2016-03-19 20:23:59	ThatTreeOverTher	xev10: it is a rite of passage and helps you understand what yaourt is doing underneath
+2016-03-19 20:24:04	Aelius	before adopting yaourt
+2016-03-19 20:24:06	 > 	gamma has joined #archlinux
+2016-03-19 20:24:12	@grawity	alad: gpg does not use dirmngr for keys it already has; it reads the pubring.kbx directly
+2016-03-19 20:24:22	TaylanTatli	grawity, I'm the daddy! :D
+2016-03-19 20:24:32	Cirrus_Minor	TaylanTatli: ++
+2016-03-19 20:24:41	Boohbah	xev10: when you write your own PKGBUILDs or edit others then makepkg is required
+2016-03-19 20:24:42	 < 	vervet has quit (Client Quit)
+2016-03-19 20:24:58	 > 	rquid has joined #archlinux
+2016-03-19 20:25:02	 < 	xelxebar has quit (Ping timeout: 260 seconds)
+2016-03-19 20:25:08	sudokode	!farnsworth
+2016-03-19 20:25:09	phrik	good news everyone! we're using the aur today!
+2016-03-19 20:25:16	ThatTreeOverTher	xev10: and writing your own pkgbuilds is the greatest thing
+2016-03-19 20:25:17	Aelius	Cirrus_Minor: I like the icon approach for tags
+2016-03-19 20:25:18	 > 	metnel has joined #archlinux
+2016-03-19 20:25:23	sudokode	!farnsworth
+2016-03-19 20:25:23	xev10	Aelius: first time I've heard this. interesting. I've slowly been trying to clone/install from git 'cause I wanted to learn how in case of emergency or whatever, but still haven't understood "how" it's done under the hood.
+2016-03-19 20:25:24	phrik	good news everyone! we're doing backups today!
+2016-03-19 20:25:27	sudokode	bah
+2016-03-19 20:25:29	sudokode	!farnsworth
+2016-03-19 20:25:31	phrik	good news everyone! we're delivering an ice cube to earth from haley's comet today!
+2016-03-19 20:25:35	Dandels	dafuq
+2016-03-19 20:25:36	ThatTreeOverTher	^
+2016-03-19 20:25:39	Dandels	Sounds ambitious
+2016-03-19 20:25:43	 > 	kotto has joined #archlinux
+2016-03-19 20:25:51	 < 	j12t has quit (Ping timeout: 244 seconds)
+2016-03-19 20:25:53	Cirrus_Minor	Aelius: tell TaylanTatli, packager is here :P
+2016-03-19 20:25:56	 > 	hiptobecubic has joined #archlinux
+2016-03-19 20:26:09	Aelius	TaylanTatli: : I like the icon approach for tags
+2016-03-19 20:26:11	Cirrus_Minor	Aelius: i agree
+2016-03-19 20:26:11	Aelius	:)
+2016-03-19 20:26:20	TaylanTatli	Aelius, thanks
+2016-03-19 20:26:26	alad	grawity: got it, thanks
+2016-03-19 20:26:38	 < 	akolar has quit (Ping timeout: 268 seconds)
+2016-03-19 20:26:40	 < 	Klox has quit (Read error: Connection reset by peer)
+2016-03-19 20:26:49	Cirrus_Minor	TaylanTatli: i been usin your build for a while, its tremendous bro, good job
+2016-03-19 20:26:58	Cirrus_Minor	!give TaylanTatli badge
+2016-03-19 20:26:59	phrik	TaylanTatli: You earned a badge ! http://postimg.org/image/607waujrz/
+2016-03-19 20:27:00	 < 	ra1nb0w has quit (Ping timeout: 264 seconds)
+2016-03-19 20:27:03	 > 	Jens1112 has joined #archlinux
+2016-03-19 20:27:05	 > 	Klox has joined #archlinux
+2016-03-19 20:27:11	 < 	linfan has quit (Quit: Leaving)
+2016-03-19 20:27:13	TaylanTatli	:D
+2016-03-19 20:27:13	alad	xev10: use anything but yaourt
+2016-03-19 20:27:20	TaylanTatli	thanks :)
+2016-03-19 20:27:25	Aelius	I used to patch my dwm a lot, but I forced myself to stop (maintaining patches and following dwm releases is ass)
+2016-03-19 20:27:28	freeki	alad: why so?
+2016-03-19 20:27:32	 < 	cden has quit (Quit: Leaving)
+2016-03-19 20:27:39	alad	freeki: because https://wiki.archlinux.org/index.php/AUR_helpers#Comparison_table
+2016-03-19 20:27:40	phrik	Title: AUR helpers - ArchWiki (at wiki.archlinux.org)
+2016-03-19 20:27:50	alad	freeki: see the yaourt entry at the bottom
+2016-03-19 20:27:56	Aelius	now I only have my config and a few different layout patches (which I reworked into layout.c so the diff can't fail to apply)
+2016-03-19 20:27:57	 > 	joephelius_ has joined #archlinux
+2016-03-19 20:28:02	 < 	joephelius has quit (Ping timeout: 248 seconds)
+2016-03-19 20:28:04	 > 	bghost has joined #archlinux
+2016-03-19 20:28:06	 < 	bghost has quit (Client Quit)
+2016-03-19 20:28:10	 > 	shovel_boss has joined #archlinux
+2016-03-19 20:28:12	xev10	ThatTreeOverTher: sure sounds like the greatest thing lol. have you had to write your own pkgbuild to fix something another person did or just because you wrote your own software? I know very little about coding so I haven't faced a situation where I've had to write my own code for anything, but I am interested.
+2016-03-19 20:28:12	freeki	alad: makes sence
+2016-03-19 20:28:14	shovel_boss	goddamnit
+2016-03-19 20:28:14	TaylanTatli	actually I stopped using dwm 
+2016-03-19 20:28:20	Cirrus_Minor	aw
+2016-03-19 20:28:26	shovel_boss	it still doesnt find the usb
+2016-03-19 20:28:28	ThatTreeOverTher	xev10: I packaged other people’s software to work nicely on my own computer
+2016-03-19 20:28:34	Aelius	https://github.com/Link-Satonaka/abs/tree/master/dwm-personalized my dwm, nothingspecial, probably incoherent without the rest of my setup
+2016-03-19 20:28:35	phrik	Title: abs/dwm-personalized at master · Link-Satonaka/abs · GitHub (at github.com)
+2016-03-19 20:28:41	xev10	alad: lol. I'm getting mixed reviews here about yaourt. I'll stick with pacman for now until I completely understand how things work.
+2016-03-19 20:28:47	ThatTreeOverTher	shovel_boss: are you trying to get BSD to automount?
+2016-03-19 20:28:48	alad	xev10: good idea
+2016-03-19 20:28:54	xev10	ThatTreeOverTher: ooh. makes sense! 
+2016-03-19 20:29:01	 > 	bghost has joined #archlinux
+2016-03-19 20:29:04	alad	xev10: don't look at "reviews", look at the code and how it works in practice
+2016-03-19 20:29:07	 < 	bghost has quit (Client Quit)
+2016-03-19 20:29:08	ThatTreeOverTher	xev10: yaourt et al. aren’t replacements for pacman
+2016-03-19 20:29:09	Cirrus_Minor	how so TaylanTatli ? bored with it ?
+2016-03-19 20:29:18	alad	xev10: the wiki table gives you the right pointers on that regard
+2016-03-19 20:29:21	 > 	bghost has joined #archlinux
+2016-03-19 20:29:29	 < 	utack has quit (Remote host closed the connection)
+2016-03-19 20:29:30	 < 	bghost has quit (Client Quit)
+2016-03-19 20:29:34	 < 	andyrtr has quit (Ping timeout: 240 seconds)
+2016-03-19 20:29:35	xev10	alad: will look that up now. thanks! :)
+2016-03-19 20:29:54	Cirrus_Minor	TaylanTatli: well thats  a pity, ill need to find a new dude to piggyback when 6.2 drops
+2016-03-19 20:29:55	alad	see link I posted ^
+2016-03-19 20:29:58	 > 	william-s has joined #archlinux
+2016-03-19 20:30:00	 < 	ediT has left #archlinux ("WeeChat 1.3")
+2016-03-19 20:30:00	TaylanTatli	Cirrus_Minor, i don't remember why but there was some problems and i don't like layouts 
+2016-03-19 20:30:13	 > 	bghost has joined #archlinux
+2016-03-19 20:30:16	 < 	bghost has quit (Client Quit)
+2016-03-19 20:30:24	 > 	vervet has joined #archlinux
+2016-03-19 20:30:28	TaylanTatli	Cirrus_Minor, when 6.2 released, i will try it :D
+2016-03-19 20:30:29	 > 	ksardas has joined #archlinux
+2016-03-19 20:30:39	 > 	dunp has joined #archlinux
+2016-03-19 20:30:40	Boohbah	TaylanTatli: someone should patch dwm to read from a config file
+2016-03-19 20:30:43	 < 	Klox has quit (Read error: Connection reset by peer)
+2016-03-19 20:30:49	ThatTreeOverTher	Boohbah: why would you do that
+2016-03-19 20:30:52	Cirrus_Minor	TaylanTatli: i cant decide on dwm or i3 but i find myself booting to dwm more often
+2016-03-19 20:30:57	alad	Boohbah: someone did, it's called awesome .___.
+2016-03-19 20:30:57	 > 	ybotspawn has joined #archlinux
+2016-03-19 20:31:00	Cirrus_Minor	your dwm* :P
+2016-03-19 20:31:07	Boohbah	ThatTreeOverTher: because it's a useful feature
+2016-03-19 20:31:17	Boohbah	alad: i thought awesome had a lua interpreter
+2016-03-19 20:31:37	alad	Boohbah: pretty much
+2016-03-19 20:31:37	ThatTreeOverTher	Boohbah: recompilation is fast and painless and doesn’t require learning a new language
+2016-03-19 20:31:39	sudokode	you're a lua interpreter
+2016-03-19 20:31:50	ThatTreeOverTher	^ that too
+2016-03-19 20:31:55	 < 	nonasuomy has quit (Ping timeout: 252 seconds)
+2016-03-19 20:31:58	Boohbah	nope i don't know lua
+2016-03-19 20:31:59	TaylanTatli	Cirrus_Minor, i don't like i3, dwm is better at least
+2016-03-19 20:32:04	 < 	jottr has quit (Ping timeout: 244 seconds)
+2016-03-19 20:32:13	sudokode	Boohbah: well you know what they say... fuck it
+2016-03-19 20:32:21	Aelius	TaylanTatli: What do you use now?
+2016-03-19 20:32:26	 > 	ra1nb0w has joined #archlinux
+2016-03-19 20:32:29	ThatTreeOverTher	I like how interactive and versatile dwm is. I <3 not having layouts
+2016-03-19 20:32:35	Cirrus_Minor	TaylanTatli: well ill be sure to visit your github if and when 6.2 drops, i might find a present :)
+2016-03-19 20:32:40	 > 	acid_ has joined #archlinux
+2016-03-19 20:33:02	sudokode	ThatTreeOverTher: so wait, you have to recompile it to change the config?
+2016-03-19 20:33:07	sudokode	can you do that in-place?
+2016-03-19 20:33:10	 < 	darklink has quit (Ping timeout: 240 seconds)
+2016-03-19 20:33:12	TaylanTatli	Aelius, bspwm right now but still trying 2bwm and cwm. couldn't decided yet. When hlwm support floating i will use it full time :D
+2016-03-19 20:33:21	ThatTreeOverTher	sudokode: yeah, you have to recompile, no you can’t do it inplace afaik
+2016-03-19 20:33:30	sudokode	well that seems rather silly
+2016-03-19 20:33:36	Boohbah	it is rather silly
+2016-03-19 20:33:36	 < 	frostschutz has quit (Ping timeout: 240 seconds)
+2016-03-19 20:33:37	sudokode	should've written it in erlang
+2016-03-19 20:33:42	ThatTreeOverTher	rofl
+2016-03-19 20:33:47	Boohbah	erlangwm
+2016-03-19 20:33:51	ThatTreeOverTher	it’s honestly painless in practice
+2016-03-19 20:33:59	Aelius	define in-place, sudokode ThatTreeOverTher 
+2016-03-19 20:34:03	 < 	vervet has quit (Client Quit)
+2016-03-19 20:34:09	 > 	poljar1 has joined #archlinux
+2016-03-19 20:34:19	ThatTreeOverTher	Aelius: run a command and your settings are made effective, without shutting it down
+2016-03-19 20:34:24	 > 	frostschutz has joined #archlinux
+2016-03-19 20:34:25	 > 	inflames has joined #archlinux
+2016-03-19 20:34:34	sudokode	well, with i3, I can reload the config with i3 running and if there's an error, it will just keep the old config and tell me
+2016-03-19 20:34:36	 < 	poljar has quit (Ping timeout: 244 seconds)
+2016-03-19 20:34:54	sudokode	and I can restart i3 in-place, which means restart it without interrupting my windows at all
+2016-03-19 20:34:57	ThatTreeOverTher	I just get compilation errors when my config is wrong
+2016-03-19 20:35:00	Aelius	because makepkg -fic && pkill dwm (where .xinitrc has: while true, do dwm done) works fine, sudokode ThatTreeOverTher 
+2016-03-19 20:35:01	 > 	bghost has joined #archlinux
+2016-03-19 20:35:06	Boohbah	!war the relative merits of tiling window managers
+2016-03-19 20:35:06	phrik	are we talking about the relative merits of tiling window managers again?
+2016-03-19 20:35:09	 > 	cdown has joined #archlinux
+2016-03-19 20:35:14	 > 	matjaz has joined #archlinux
+2016-03-19 20:35:15	ThatTreeOverTher	and I test my new dwm inside Xephyr so no windows are lost
+2016-03-19 20:35:24	sudokode	I see
+2016-03-19 20:35:32	Aelius	No windows are lost in the way I just described
+2016-03-19 20:35:45	freeki	dmenu or rofi?
+2016-03-19 20:35:46	ThatTreeOverTher	Aelius: that is a good way and I will remember it
+2016-03-19 20:35:53	Aelius	sudokode: ThatTreeOverTher https://wiki.archlinux.org/index.php/Dwm#Restart_dwm_without_logging_out_or_closing_programs
+2016-03-19 20:35:55	phrik	Title: dwm - ArchWiki (at wiki.archlinux.org)
+2016-03-19 20:36:06	Boohbah	freeki: rofi obviously because it has pretty colors
+2016-03-19 20:36:18	alad	bemenu
+2016-03-19 20:36:23	 < 	Sucks has quit (Read error: Connection reset by peer)
+2016-03-19 20:36:29	Cirrus_Minor	+1 for rofi
+2016-03-19 20:36:30	oats	I've heard rofi is very nice
+2016-03-19 20:36:43	freeki	dmenu is classic
+2016-03-19 20:36:46	Aelius	So yes, you can update the config in-place with dwm
+2016-03-19 20:36:49	Cirrus_Minor	has some nice scrips too
+2016-03-19 20:36:53	TaylanTatli	rofi is cool
+2016-03-19 20:37:07	ThatTreeOverTher	Aelius: that is really neat and makes me love dwm even more
+2016-03-19 20:37:08	 > 	Kirito has joined #archlinux
+2016-03-19 20:37:11	 > 	kzbhop has joined #archlinux
+2016-03-19 20:37:35	MrElendig	by the time you have applied enough patches to make dwm usable you have reinvented awesomewm
+2016-03-19 20:37:35	alad	Aelius: that's wrong on so many levels
+2016-03-19 20:37:46	sudokode	lol
+2016-03-19 20:37:52	sudokode	whatever works, I guess
+2016-03-19 20:38:01	alad	!itjustworks
+2016-03-19 20:38:01	 < 	LBV_User has quit (Quit: Konversation terminated!)
+2016-03-19 20:38:02	phrik	http://i.imgur.com/cG9Te.jpg
+2016-03-19 20:38:10	MrElendig	awesomewm ofcourse started out as a set of patches for dwm to make it usable :p
+2016-03-19 20:38:18	sudokode	I mean I don't update my i3 config much, so it's not like it'd be a huge service interruption
+2016-03-19 20:38:27	 > 	poljar has joined #archlinux
+2016-03-19 20:38:35	Aelius	MrElendig: I used to apply patches, but dwm is easily fine without any patches.
+2016-03-19 20:38:35	sudokode	starting out might be a little awkward
+2016-03-19 20:38:48	Cirrus_Minor	dint know that MrElendig
+2016-03-19 20:39:07	 < 	sklv has quit (Quit: WeeChat 1.1.1)
+2016-03-19 20:39:15	 > 	Wabuo has joined #archlinux
+2016-03-19 20:39:18	 > 	sklv has joined #archlinux
+2016-03-19 20:39:19	Aelius	Now I only tweak the config.h and I have a few layouts patched in that I actually never use
+2016-03-19 20:39:31	*	Aelius shrugs
+2016-03-19 20:39:35	 < 	poljar1 has quit (Ping timeout: 268 seconds)
+2016-03-19 20:39:53	 < 	sklv has quit (Client Quit)
+2016-03-19 20:40:23	freeki	is it really okay to "missing firmware for modules" warning to popout during mkinitcpio? well i guess that's why i cant use mu bluetooth and cardreader
+2016-03-19 20:40:51	sudokode	when I think of config.h, I think of really low-level application settings that really never need to be tweaked except by packagers
+2016-03-19 20:40:57	Cirrus_Minor	freeki: its ok if only shows when building fallbacks intramfs
+2016-03-19 20:41:02	 > 	MrDoctor_ has joined #archlinux
+2016-03-19 20:41:10	sudokode	or developers
+2016-03-19 20:41:16	 > 	sklv has joined #archlinux
+2016-03-19 20:41:21	 < 	jonkristian has quit (Ping timeout: 244 seconds)
+2016-03-19 20:41:21	sudokode	but I guess use it for everything
+2016-03-19 20:41:23	 > 	tim9182 has joined #archlinux
+2016-03-19 20:41:26	Aelius	When I think of config.h, I think of suckless software and suckless inspired software
+2016-03-19 20:41:32	alad	lol "suckless inspired"
+2016-03-19 20:41:56	 < 	MrDoctor has quit (Ping timeout: 246 seconds)
+2016-03-19 20:42:03	sudokode	Aelius: I don't know why. config.h is not a suckless invention
+2016-03-19 20:42:05	Aelius	suckless imitators? idk
+2016-03-19 20:42:06	alad	Aelius: going after the crap on their website, that would be "inspired to spread FUD on other software"
+2016-03-19 20:42:29	sudokode	though I can see why using it for high level config might force that association
+2016-03-19 20:42:32	 < 	anonymous has quit (Ping timeout: 248 seconds)
+2016-03-19 20:42:34	Aelius	sudokode: I thought that might be the case, but I never see it outside of suckless or friends of suckless
+2016-03-19 20:42:38	alad	their systemd rant is pretty epic
+2016-03-19 20:42:49	alad	epicly stupid, but still, epic
+2016-03-19 20:42:54	oats	!suckless3
+2016-03-19 20:42:55	phrik	http://i.imgur.com/HlVOvFj.png
+2016-03-19 20:42:56	oats	!suckless4
+2016-03-19 20:42:57	sudokode	!wtf config.h
+2016-03-19 20:42:57	phrik	featureless
+2016-03-19 20:42:58	phrik	sudokode: core/gcc core/grub core/linux-firmware core/linux-lts-headers core/pciutils core/perl extra/allegro4 extra/bitlbee extra/brltty extra/clang extra/clang35 extra/cln extra/crypto++ extra/dovecot extra/ecl extra/exiv2 extra/hwloc extra/hydrogen extra/jsoncpp extra/libgit2 extra/libkscreen extra/libkscreen4 extra/libreoffice-fresh-sdk extra/libreoffice-still-sdk extra/libsrtp (4 more messages)
+2016-03-19 20:43:01	sudokode	:)
+2016-03-19 20:43:02	Cirrus_Minor	link alad ? i could do w/ a chuckle
+2016-03-19 20:43:15	alad	Cirrus_Minor: http://suckless.org/sucks/systemd
+2016-03-19 20:43:16	phrik	Title: sucks - systemd | suckless.org software that sucks less (at suckless.org)
+2016-03-19 20:43:18	Aelius	alad: no doubt the suckless devs are assholes and their ideology doesn't universally apply like they think it does
+2016-03-19 20:43:19	Cirrus_Minor	ta
+2016-03-19 20:43:24	Aelius	but they make good stuff
+2016-03-19 20:43:25	oats	suck^W^W^W^Wfeatureless
+2016-03-19 20:43:36	alad	oats: ^H ? ^W is a word :P
+2016-03-19 20:43:37	Aelius	just... don't go to their irc server asking for help
+2016-03-19 20:43:42	oats	oh
+2016-03-19 20:43:47	alad	Aelius: "Hai suckless! I use Arch Linux!"
+2016-03-19 20:43:52	oats	suck^H^H^H^Hfeatureless
+2016-03-19 20:43:54	 < 	bipul has quit (Ping timeout: 244 seconds)
+2016-03-19 20:44:01	@grawity	so ... "suck-ful"?
+2016-03-19 20:44:06	alad	lol
+2016-03-19 20:44:19	freeki	"systemd" - lol
+2016-03-19 20:44:25	 > 	dis_ has joined #archlinux
+2016-03-19 20:44:34	Boohbah	freeki: where did that come from?
+2016-03-19 20:44:35	 < 	rgb-one has left #archlinux ("Konversation terminated!")
+2016-03-19 20:44:44	 < 	TheLemonMan has quit (Quit: "It's now safe to turn off your computer.")
+2016-03-19 20:44:45	gregbert	for some reason can't run nautilus - gives me (nautilus:5515): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+2016-03-19 20:44:48	Boohbah	#voidlinux is that way ->
+2016-03-19 20:45:02	gregbert	just moved installation to a new computer (running off usb3)
+2016-03-19 20:45:08	 < 	xev10 has quit (Ping timeout: 268 seconds)
+2016-03-19 20:45:11	 > 	ebal has joined #archlinux
+2016-03-19 20:45:16	@grawity	alad: surprised they don't call it "SystemD"
+2016-03-19 20:45:25	@grawity	alad: most pseudo-pedants seem to do that
+2016-03-19 20:45:27	alad	grawity: lol
+2016-03-19 20:45:33	sudokode	:(
+2016-03-19 20:45:38	 > 	ediT has joined #archlinux
+2016-03-19 20:45:51	 < 	Cerpin has quit (Read error: Connection reset by peer)
+2016-03-19 20:46:02	 > 	xev10 has joined #archlinux
+2016-03-19 20:46:08	gregbert	Thunar works though...
+2016-03-19 20:46:14	freeki	Boohbah: second-tabing it
+2016-03-19 20:46:16	Kirito	I have a custom kernel (linux-ck). I have it compiled with CONFIG_MEMSTICK_REALTEK_PCI as a module, but my card reader does not seem to work. It doesn't seem like there is an official drive for this in the kernel or available on the AUR, but maybe I'm missing something? It's a RTS5227. A brief Google returns https://bbs.archlinux.org/viewtopic.php?id=206380
+2016-03-19 20:47:24	 > 	bug2000 has joined #archlinux
+2016-03-19 20:47:24	 < 	bghost has quit (Read error: Connection reset by peer)
+2016-03-19 20:47:32	Wabuo	Hey Ho; I'm running arch on my vServer and wanted to use Munin but pacman now wants to install a howl graphic stack, is there a way to install munin without installing a full graphical environment?
+2016-03-19 20:47:37	Boohbah	Kirito: does it work with the stock kernel?
+2016-03-19 20:47:42	 > 	JoshDreamland has joined #archlinux
+2016-03-19 20:47:54	 < 	crunchiebones has quit (Quit: WeeChat 1.4)
+2016-03-19 20:48:08	@grawity	Wabuo: well those are different things
+2016-03-19 20:48:11	Boohbah	Kirito: did you install linux-ck-headers?
+2016-03-19 20:48:24	@grawity	Wabuo: just because it brings in cairo and libx11, doesn't mean your server will suddenly boot into GNOME
+2016-03-19 20:48:35	 < 	disharmonic has quit (Ping timeout: 260 seconds)
+2016-03-19 20:48:49	Boohbah	Kirito: the post you link shows compiling an out-of-tree module
+2016-03-19 20:48:50	Kirito	Boohbah, Not sure, haven't tried it with the stock kernel, and headers are installed
+2016-03-19 20:48:50	 > 	bghost has joined #archlinux
+2016-03-19 20:49:02	Boohbah	try with stock kernel first
+2016-03-19 20:49:06	 < 	Tea has quit (Quit: Quit messages are a thing?)
+2016-03-19 20:49:07	 > 	Cerpin has joined #archlinux
+2016-03-19 20:49:21	Boohbah	Kirito: it may be that mainline linux does not support your hardware
+2016-03-19 20:49:22	 < 	krabador has quit (Quit: Take The Time)
+2016-03-19 20:49:38	 < 	gmas has quit (Ping timeout: 244 seconds)
+2016-03-19 20:50:00	 > 	nonasuomy has joined #archlinux
+2016-03-19 20:50:11	freeki	will bleeding-edge-rolling-distros affect my server experience? should i consider picking stable ones or stick with good ol' arch?
+2016-03-19 20:50:28	freeki	guess it's the wrong room to ask this kind of question
+2016-03-19 20:50:32	Dandels	freeki, don't run a production server with Arch, that's for sure
+2016-03-19 20:50:37	Dandels	I use Arch for my home server and no complaints
+2016-03-19 20:50:42	 > 	anonymous has joined #archlinux
+2016-03-19 20:50:44	 > 	gmas has joined #archlinux
+2016-03-19 20:50:49	 > 	tau has joined #archlinux
+2016-03-19 20:50:49	Boohbah	freeki: it depends on how much time you want to sped maintaining it, and how many servers you have
+2016-03-19 20:50:54	Boohbah	spend*
+2016-03-19 20:50:55	 < 	mohabaks has quit (Ping timeout: 260 seconds)
+2016-03-19 20:50:55	anonymous	Hello humans, robots, and other... things...
+2016-03-19 20:51:06	 < 	clynamen has quit (Read error: Connection reset by peer)
+2016-03-19 20:51:08	 < 	xtrm0 has quit (Quit: Connection closed for inactivity)
+2016-03-19 20:51:13	 > 	crunchiebones has joined #archlinux
+2016-03-19 20:51:17	Boohbah	anonymous: lurkers, idlers, vampires, fungi
+2016-03-19 20:51:27	alad	anonymous: is that your catch phrase? :p
+2016-03-19 20:51:43	 > 	mehdip2007 has joined #archlinux
+2016-03-19 20:51:46	Boohbah	!grab anonymous 
+2016-03-19 20:51:46	phrik	Boohbah: Tada!
+2016-03-19 20:51:47	Dandels	I feel included. Am a thing.
+2016-03-19 20:51:54	Boohbah	alad: yes, he has said it before
+2016-03-19 20:52:03	anonymous	Boohbah: No love for fungi!
+2016-03-19 20:52:05	anonymous	alad: Yep lol
+2016-03-19 20:52:06	mehdip2007	hi fellas anyone here uses cinnamon?
+2016-03-19 20:52:06	 < 	deko-pyon has quit (Quit: fix urxvt's config)
+2016-03-19 20:52:08	anonymous	Boohbah: <___<
+2016-03-19 20:52:08	alad	freeki: 1. arch is not bleeding edge, because you don't have 2000 packages from git 2. "stable" distros have issues of their own, just check the debian security pages
+2016-03-19 20:52:08	Wabuo	grawity: I know but I think installing mesa and wayland is a bit much only for some graphs...
+2016-03-19 20:52:15	@grawity	ah
+2016-03-19 20:52:23	freeki	just a casual mail/file server, nothing special. probably to host mumble as well for a few friends
+2016-03-19 20:52:25	@grawity	well rebuild cairo or whatever to not have X11/Wayland backends
+2016-03-19 20:52:37	 > 	Tea has joined #archlinux
+2016-03-19 20:52:39	Boohbah	anonymous: stylometry can be correlated
+2016-03-19 20:52:46	*	Boohbah mines big data
+2016-03-19 20:52:52	 > 	deko-pyon has joined #archlinux
+2016-03-19 20:53:08	 > 	dis__ has joined #archlinux
+2016-03-19 20:53:24	 < 	bug2000 has quit (Remote host closed the connection)
+2016-03-19 20:53:30	 > 	k3asd` has joined #archlinux
+2016-03-19 20:53:30	 > 	k3asd`_ has joined #archlinux
+2016-03-19 20:53:58	freeki	me mines btc in 2011
+2016-03-19 20:54:06	Boohbah	freeki: if you don't mind spending time fixing regressions then go for it
+2016-03-19 20:54:06	*	freeki mines*
+2016-03-19 20:54:06	 < 	dis_ has quit (Ping timeout: 240 seconds)
+2016-03-19 20:54:31	 > 	bug2000 has joined #archlinux
+2016-03-19 20:54:45	Cirrus_Minor	41 % of Donald Trump supporters that were polled said they were in favour of bombing Agrabah (which is a fictional country from the movie Aladin)
+2016-03-19 20:54:51	Cirrus_Minor	sorry alad
+2016-03-19 20:54:55	Boohbah	freeki: you have ASIC miner modules hooked to your server?
+2016-03-19 20:55:24	 > 	voria has joined #archlinux
+2016-03-19 20:55:33	 < 	Wabuo has quit (Quit: Verlassend)
+2016-03-19 20:55:41	 > 	clynamen has joined #archlinux
+2016-03-19 20:55:48	freeki	Boohbah: of course not, a friend of mine used to tinker with this kind of stuff
+2016-03-19 20:55:57	freeki	waste of money and time imo
+2016-03-19 20:56:02	Boohbah	yes, it is
+2016-03-19 20:56:08	 < 	voria has quit (Client Quit)
+2016-03-19 20:56:23	 < 	egrain has quit (Remote host closed the connection)
+2016-03-19 20:57:33	sudokode	tim@bender ~ $ checkupdates | wc -l
+2016-03-19 20:57:33	sudokode	224
+2016-03-19 20:57:36	sudokode	;(
+2016-03-19 20:57:44	freeki	gotta catch some zzzs, enough configuring
+2016-03-19 20:57:50	Dandels	Cirrus_Minor, I heard that number before and only thought that it needs context (other GOP candidates and Hillary + Sanders) or it's a pretty much useless statistic
+2016-03-19 20:57:52	kadiro	not good
+2016-03-19 20:57:55	 < 	cdown has quit (Remote host closed the connection)
+2016-03-19 20:57:57	 < 	freeki has quit (Quit: leaving)
+2016-03-19 20:58:15	 < 	JoshDreamland has quit (Quit: Leaving.)
+2016-03-19 20:58:17	 < 	aajjbb has quit (Ping timeout: 260 seconds)
+2016-03-19 20:58:23	 < 	finisboy has quit (Ping timeout: 250 seconds)
+2016-03-19 20:58:23	ThatTreeOverTher	people in general are not intelligent
+2016-03-19 20:58:41	 < 	dave0x40 has quit (Quit: WeeChat 1.4)
+2016-03-19 20:58:45	Boohbah	!ot
+2016-03-19 20:58:46	phrik	ops are on it's ok
+2016-03-19 20:58:48	 < 	ninedotnine has quit (Ping timeout: 264 seconds)
+2016-03-19 20:58:58	Boohbah	:(
+2016-03-19 20:59:01	Dandels	ThatTreeOverTher, people are of average intelligence.
+2016-03-19 20:59:02	kadiro	Ignorance is bliss
+2016-03-19 20:59:08	sudokode	!farnsworth
+2016-03-19 20:59:09	phrik	good news everyone! we're installing arch today!
+2016-03-19 20:59:14	Boohbah	!zoidberg
+2016-03-19 20:59:15	phrik	Why not Zoidberg? (\/)_(o„„o)_(\/)
+2016-03-19 20:59:18	sudokode	!farnsworth
+2016-03-19 20:59:19	phrik	good news everyone! we're delivering pillows to stumbles 4 today!
+2016-03-19 20:59:23	ThatTreeOverTher	Dandels: that is exactly it
+2016-03-19 20:59:34	Dandels	Average intelligence is stupid, though :p
+2016-03-19 20:59:47	Boohbah	!bender
+2016-03-19 20:59:48	phrik	bite my shiny metal ass!
+2016-03-19 20:59:56	 < 	Crashlog has quit (Ping timeout: 268 seconds)
+2016-03-19 21:00:03	 > 	ArchElf has joined #archlinux
+2016-03-19 21:00:18	Dandels	Sometimes terrifyingly so
+2016-03-19 21:00:35	 < 	rquid has quit (Quit: Leaving.)
+2016-03-19 21:01:51	 < 	bmoriarty has left #archlinux
+2016-03-19 21:01:59	 < 	jakesyl_mobile has quit (Quit: Connection closed for inactivity)
+2016-03-19 21:02:22	 < 	sleepy_dog1 has quit (Ping timeout: 260 seconds)
+2016-03-19 21:02:30	 < 	MarioWaza has quit (Ping timeout: 244 seconds)
+2016-03-19 21:03:00	 < 	flipper-maniac has quit (Ping timeout: 264 seconds)
+2016-03-19 21:03:01	UukGoblin	are older installers (i.e. from 2012) really not hosted anywhere? :-O
+2016-03-19 21:03:11	sudokode	no
+2016-03-19 21:03:19	sudokode	why would you want that?
+2016-03-19 21:03:45	UukGoblin	oh, found them on the archive
+2016-03-19 21:03:59	Dandels	UukGoblin, why you'd want it is a legitimate question. Am curious
+2016-03-19 21:04:03	UukGoblin	sudokode, I have reasons to believe (i.e. some forum threads) USB was broken some time ago
+2016-03-19 21:04:08	 < 	metnel has quit (Quit: leaving)
+2016-03-19 21:04:11	 > 	mohabaks has joined #archlinux
+2016-03-19 21:04:26	 < 	mehdip2007 has quit (Remote host closed the connection)
+2016-03-19 21:04:31	UukGoblin	like I said, after booting the current installer, my USB keyboard stops working, which makes installation rather awkward
+2016-03-19 21:04:54	Dandels	No other keyboard?
+2016-03-19 21:04:54	ItzExor	UukGoblin, may not be related at all, but try toggling IOMMU settings in the bios/firmware settings
+2016-03-19 21:05:14	sudokode	UukGoblin: that would be a kernel problem
+2016-03-19 21:05:15	 > 	Ryp has joined #archlinux
+2016-03-19 21:05:16	ItzExor	i had issues with USB and ethernet not working out of UEFI when IOMMU was disabled
+2016-03-19 21:05:20	UukGoblin	Dandels, I don't have a PS/2 one, no
+2016-03-19 21:05:22	 > 	ToZ has joined #archlinux
+2016-03-19 21:05:23	sudokode	and if it's been around since 2012, then wtf
+2016-03-19 21:05:27	UukGoblin	keyboard works fine in UEFI and GRUB
+2016-03-19 21:05:31	Boohbah	UukGoblin: did anyone report the bug?
+2016-03-19 21:05:43	sudokode	:: Running post-transaction hooks...
+2016-03-19 21:05:43	sudokode	(1/1) Install DKMS modules
+2016-03-19 21:05:47	UukGoblin	sudokode, it probably is, happens on latest debian image too
+2016-03-19 21:05:47	sudokode	cute
+2016-03-19 21:05:57	sudokode	latest debian is about 2012 arch
+2016-03-19 21:05:59	 > 	kelpo has joined #archlinux
+2016-03-19 21:06:06	UukGoblin	Boohbah, there are some threads about it, but mostly by people upgrading via pacman
+2016-03-19 21:06:11	UukGoblin	I haven't seen one about the installer
+2016-03-19 21:06:11	Dandels	UukGoblin, to my knowledge that issue only affects certain USB keyboards. 
+2016-03-19 21:06:33	Dandels	Not entirely sure, but I wouldn't exclude it working with another USB keyboard
+2016-03-19 21:06:38	Boohbah	a thread is not a bug report
+2016-03-19 21:06:40	 < 	floki has quit (Read error: Connection reset by peer)
+2016-03-19 21:06:45	 < 	somis has quit (Read error: Connection reset by peer)
+2016-03-19 21:07:12	 < 	bghost has quit (Ping timeout: 244 seconds)
+2016-03-19 21:07:20	UukGoblin	Dandels, oh, ok, I can try another USB one
+2016-03-19 21:07:37	ItzExor	which keyboard is it?
+2016-03-19 21:07:45	UukGoblin	(although I've used this one with many other linux distros, on other hardware)
+2016-03-19 21:08:04	ItzExor	is it a corsair k70 by chance
+2016-03-19 21:08:07	 < 	meth has quit (Quit: WeeChat 1.4)
+2016-03-19 21:08:07	UukGoblin	it's a freshly-built box so there may be some USB problems with it
+2016-03-19 21:08:39	UukGoblin	ItzExor, it's a regular office'ish Dell L100, but currently connected via an ATEN KVM
+2016-03-19 21:08:45	ItzExor	ah
+2016-03-19 21:09:03	 > 	lpapp has joined #archlinux
+2016-03-19 21:09:08	lpapp	haha, how can I get a terminal in i3?
+2016-03-19 21:09:11	lpapp	did not read the wiki page enough before changing exec ratpoison to exec i3 in my Xinitrc :)
+2016-03-19 21:09:14	lpapp	now from VT
+2016-03-19 21:09:18	Dandels	lpapp, mod enter
+2016-03-19 21:09:21	 < 	kelpo has quit (Client Quit)
+2016-03-19 21:09:21	UukGoblin	(but neither should be an issue. I suspect BIOS/mobo/USB ports or something) - but again, it works fine in UEFI/GRUB, which makes me think it's not a hardware issue
+2016-03-19 21:09:35	ItzExor	check IOMMU
+2016-03-19 21:09:37	 > 	jomg has joined #archlinux
+2016-03-19 21:09:37	 > 	akolar has joined #archlinux
+2016-03-19 21:09:44	lpapp	Dandels: many thanks
+2016-03-19 21:09:46	 > 	poljar1 has joined #archlinux
+2016-03-19 21:09:49	UukGoblin	ItzExor, will do, thanks
+2016-03-19 21:09:54	UukGoblin	(although I'd like to have it, really)
+2016-03-19 21:09:54	 < 	lpapp has quit (Client Quit)
+2016-03-19 21:10:03	ItzExor	for me it didn't work when iommu was disabled
+2016-03-19 21:10:08	ItzExor	i had to turn it on
+2016-03-19 21:10:14	ItzExor	disabled by default
+2016-03-19 21:10:15	UukGoblin	oh, ENable, ok, I'll check that
+2016-03-19 21:10:16	 < 	zshfu has quit (Ping timeout: 248 seconds)
+2016-03-19 21:10:21	 > 	petterk has joined #archlinux
+2016-03-19 21:10:27	 < 	Lunatix has quit (Read error: Connection reset by peer)
+2016-03-19 21:10:38	 > 	meth has joined #archlinux
+2016-03-19 21:11:06	 < 	matjaz has quit (Ping timeout: 240 seconds)
+2016-03-19 21:11:20	 < 	datamoshr has quit (Ping timeout: 260 seconds)
+2016-03-19 21:11:20	 > 	trewe has joined #archlinux
+2016-03-19 21:11:27	 > 	xorond_ has joined #archlinux
+2016-03-19 21:11:29	 > 	freethy has joined #archlinux
+2016-03-19 21:12:32	 > 	magarcia_ has joined #archlinux
+2016-03-19 21:12:36	 > 	beardedeagle has joined #archlinux
+2016-03-19 21:12:36	 < 	poljar has quit (Ping timeout: 240 seconds)
+2016-03-19 21:12:45	 > 	poleprogger has joined #archlinux
+2016-03-19 21:12:48	 > 	ninedotnine has joined #archlinux
+2016-03-19 21:12:49	 < 	Kirito has quit (Remote host closed the connection)
+2016-03-19 21:13:46	 > 	Borkr has joined #archlinux
+2016-03-19 21:14:25	 < 	tpalmerstudios has quit (Ping timeout: 250 seconds)
+2016-03-19 21:14:33	 > 	Lunatix has joined #archlinux
+2016-03-19 21:14:50	 < 	castlelore has quit (Ping timeout: 260 seconds)
+2016-03-19 21:15:30	gregbert	the xf86-video-intel-git in the aur is 2.99.917+560+gd167280-1, but the one i get through pacman is xf86-video-intel-1:2.99.917+579+g74cd4d0-1 - should i conclude the one in the aur is old?
+2016-03-19 21:15:41	UukGoblin	(arch from 2012 had the same issue; this pendrive is so slow...)
+2016-03-19 21:16:10	Namarrgon	gregbert: it's a git package, the version will be updated as soon as you makepkg it
+2016-03-19 21:16:26	 < 	freethy has quit (Quit: WeeChat 1.4)
+2016-03-19 21:16:33	 < 	mohabaks has quit (Quit: WeeChat 1.4)
+2016-03-19 21:16:40	gregbert	checking what version that gives me..
+2016-03-19 21:16:40	 > 	lpapp_ has joined #archlinux
+2016-03-19 21:16:53	lpapp_	is there a way to use an alt-tab system in i3?
+2016-03-19 21:17:01	lpapp_	i.e. not tree, but stacked windows.
+2016-03-19 21:17:08	Namarrgon	gregbert: the aur interface will only show the version that was current at the time the maintainer updated it
+2016-03-19 21:17:10	gregbert	Namarrgon: yip.. gives me the exact same version number
+2016-03-19 21:17:17	gregbert	Namarrgon: makes sense.. thanks
+2016-03-19 21:17:25	UukGoblin	ItzExor, switching IOMMU on helped indeed... many thanks
+2016-03-19 21:17:36	 < 	petterk has quit (Ping timeout: 240 seconds)
+2016-03-19 21:17:54	Dandels	lpapp_, mod + w and mod + e change between tabs and no tabs
+2016-03-19 21:17:55	gregbert	Namarrgon: trying to figure out why i cant ctrl-alt-f2,f3 anymore.. just gives a blank screen. but i can log on even if i cant see my text in console
+2016-03-19 21:18:03	 < 	Dandels has quit (Read error: Connection reset by peer)
+2016-03-19 21:18:11	gregbert	Namarrgon: forgot to state i am in gnome..
+2016-03-19 21:18:17	Namarrgon	gregbert: it could be a kernel issue as well
+2016-03-19 21:18:35	 > 	Dandels has joined #archlinux
+2016-03-19 21:18:51	UukGoblin	it does log a few "AMD-Vi: Event logged [IO_PAGE_FAULT "-like messages after exiting GRUB and loading the kernel, but before initrd
+2016-03-19 21:18:57	 < 	sudokode has quit (Quit: peace)
+2016-03-19 21:18:58	Dandels	holy snap I'm brilliant, I bount mod shift e to instantly kill i3 and then tested if that keybind does anything because mod + e does
+2016-03-19 21:19:05	UukGoblin	it hangs with them on the screen for a few seconds, then proceeds with initrd and works fine from then on
+2016-03-19 21:19:10	gregbert	Namarrgon: any ideas on what i could try?
+2016-03-19 21:19:30	Namarrgon	gregbert: try the -lts kernel
+2016-03-19 21:19:31	ItzExor	UukGoblin, a long time ago i had to do some parameter like iommu=pt to get it to not spam that
+2016-03-19 21:19:34	 < 	aaro has quit (Ping timeout: 240 seconds)
+2016-03-19 21:19:38	ItzExor	but it was spamming like 10 per second constantly
+2016-03-19 21:19:41	gregbert	Namarrgon: ok.
+2016-03-19 21:20:04	Namarrgon	gregbert: perhaps switch from early- to late-kms
+2016-03-19 21:20:20	ItzExor	you probably don't need any additional parameters tho as long as it's working and not continuously spamming the page faults
+2016-03-19 21:20:22	Namarrgon	or the other way around
+2016-03-19 21:20:39	 > 	bloodwire has joined #archlinux
+2016-03-19 21:20:39	gregbert	Namarrgon: now i've got to go educate myself as i've never done anything with kms
+2016-03-19 21:20:56	UukGoblin	ItzExor, in dmesg, it logged 550 of these messages around uptime-second 2.9, but stopped from then on
+2016-03-19 21:21:05	ItzExor	weird
+2016-03-19 21:21:20	ItzExor	might be a newer IOMMU revision that's not fully supported yet or something, idk
+2016-03-19 21:21:23	 > 	Shinryuu has joined #archlinux
+2016-03-19 21:21:25	 > 	slester_ has joined #archlinux
+2016-03-19 21:21:31	UukGoblin	the first message after that was "firewire_ohci 0000:04:06.2: added OHCI v1.0 device as card 0, 4 IR + 8 IT contexts, quirks 0x2"
+2016-03-19 21:21:37	Namarrgon	!give gregbert aw intel
+2016-03-19 21:21:38	phrik	gregbert: https://wiki.archlinux.org/index.php/intel_graphics
+2016-03-19 21:21:44	bloodwire	um um how can I increase root partition space and take it from home... I tried gpart with usb, but cant access device partition.
+2016-03-19 21:22:01	d_garbage	UukGoblin, use a pastebin, it's so much easier and more efficient
+2016-03-19 21:22:05	d_garbage	!paste
+2016-03-19 21:22:06	phrik	Some good, sane pastebins are: https://ptpb.pw/f (https://ptpb.pw) https://gist.github.com. Also see !ptpb for an easy way to paste from a pipe.
+2016-03-19 21:22:21	Namarrgon	bloodwire: gparted 
+2016-03-19 21:22:24	UukGoblin	d_garbage, yeah, once I get this box up and running I will, currently just retyping from one screen to the other ;-)
+2016-03-19 21:22:29	Namarrgon	bloodwire: otherwise you have to do it manually
+2016-03-19 21:22:29	d_garbage	ahh
+2016-03-19 21:22:30	 < 	william-s has quit (Quit: WeeChat 1.4)
+2016-03-19 21:22:39	bloodwire	I tried that but.. since my drives encrypted gpart shows nothing.
+2016-03-19 21:22:47	Namarrgon	gpart or gparted?
+2016-03-19 21:22:58	UukGoblin	this is a new box, mobo is a Gigabyte GA-970A-DS3P, CPU is AMD X8 FX-8350
+2016-03-19 21:22:59	d_garbage	UukGoblin, you can transfer files with a usb memory card or similar but yeah pita
+2016-03-19 21:23:05	ackt1c	!ptpb
+2016-03-19 21:23:06	phrik	“<command> | curl -F c=@- https://ptpb.pw” OR “curl -F c=@path/to/a/file https://ptpb.pw” OR install community/pbpst
+2016-03-19 21:23:11	bloodwire	I think its gparted.. got it from the website and into a USB.
+2016-03-19 21:23:14	Namarrgon	bloodwire: then you have to do it manually
+2016-03-19 21:23:22	d_garbage	yeah, kinda requires internet though to work :P
+2016-03-19 21:23:38	Namarrgon	bloodwire: if you used lvm then it is rather simple
+2016-03-19 21:23:42	 > 	sudokode has joined #archlinux
+2016-03-19 21:23:52	bloodwire	Yes I used lvm
+2016-03-19 21:23:53	UukGoblin	ha, neat, I'll keep that in mind, thanks ;-)
+2016-03-19 21:24:14	bloodwire	how to do it with lvm?
+2016-03-19 21:24:33	 > 	bghost has joined #archlinux
+2016-03-19 21:24:36	Namarrgon	bloodwire: shrink the /home FS, shrink its lv, grow /'s lv and grow /'s FS
+2016-03-19 21:24:43	UukGoblin	so, hm, should I file this as a bug?
+2016-03-19 21:25:04	UukGoblin	I guess enabling IOMMU should count as a workaround, not a proper solution
+2016-03-19 21:25:09	 > 	j12t has joined #archlinux
+2016-03-19 21:25:12	 < 	Jesin has quit (Quit: Leaving)
+2016-03-19 21:25:24	 < 	tim9182 has quit (Quit: Leaving.)
+2016-03-19 21:25:28	UukGoblin	seeing some people might not want IOMMU on
+2016-03-19 21:25:39	ItzExor	it has been like this for years
+2016-03-19 21:25:44	ItzExor	i have hte same chipset
+2016-03-19 21:25:48	ItzExor	different mobo though
+2016-03-19 21:25:58	 < 	slester_ has quit (Ping timeout: 240 seconds)
+2016-03-19 21:26:17	bloodwire	on terminal?
+2016-03-19 21:26:48	Namarrgon	bloodwire: yes, there is no gui
+2016-03-19 21:26:52	ItzExor	i'm guessing it has to do with how the kernel talks to the hardware with or without IOMMU though, because windows doesn't use the IOMMU at all and it USB/NIC work fine with or without it on
+2016-03-19 21:27:07	 > 	l4m8d4 has joined #archlinux
+2016-03-19 21:27:27	 > 	Xiti has joined #archlinux
+2016-03-19 21:27:27	UukGoblin	ItzExor, I guess even if it can't be fixed, a kernel message of "plz enable IOMMU" would be much more helpful than "unable to enumerate USB device"
+2016-03-19 21:27:59	 > 	CofiJ has joined #archlinux
+2016-03-19 21:28:00	 < 	CofiJ has quit (Max SendQ exceeded)
+2016-03-19 21:28:00	ItzExor	true, i don't know whether something like that would be possible or not. i don't really know anything about it
+2016-03-19 21:28:09	 < 	ninedotnine has quit (Ping timeout: 246 seconds)
+2016-03-19 21:28:24	 > 	CofiJ has joined #archlinux
+2016-03-19 21:28:25	 < 	CofiJ has quit (Max SendQ exceeded)
+2016-03-19 21:28:27	 < 	xorond_ has quit (Quit: Leaving)
+2016-03-19 21:28:34	UukGoblin	me neither :-)
+2016-03-19 21:28:43	gregbert	Namarrgon: no effect (other than resolution switching earlier in boot) to early kms. oh well
+2016-03-19 21:28:47	UukGoblin	well, thanks for your help, my keyboard works like a charm now :-)
+2016-03-19 21:28:48	Namarrgon	bloodwire: when you shrink the /home FS, shrink it by 10% more than you shrink the lv, just in case.
+2016-03-19 21:28:51	 > 	CofiJ has joined #archlinux
+2016-03-19 21:28:55	 < 	acksys has quit (Ping timeout: 268 seconds)
+2016-03-19 21:28:57	 > 	PlasmaPower has joined #archlinux
+2016-03-19 21:29:04	ItzExor	i'm guessing they've gotten bug reports about it (just assuming) and would have implemented something like that if it was easy to detect that situation
+2016-03-19 21:29:16	Namarrgon	bloodwire: and watch the units that all the tools use e.g. GiB vs GB
+2016-03-19 21:29:31	Namarrgon	gregbert: you tried lts too?
+2016-03-19 21:29:35	 < 	sr has quit (Quit: sr)
+2016-03-19 21:29:39	gregbert	Namarrgon: no, not yet
+2016-03-19 21:29:55	 < 	inflames has quit (Ping timeout: 244 seconds)
+2016-03-19 21:30:06	gregbert	frankly, i am having all kinds of weird issues after switching to this new computer and trying to run my old installation off of USB3 drive
+2016-03-19 21:30:24	 < 	dark8 has quit (Ping timeout: 244 seconds)
+2016-03-19 21:30:31	 < 	|PuLi| has quit (Quit: Leaving)
+2016-03-19 21:30:33	gregbert	Nautilus acting weird/not start, this desktop switching thing, etc etc... this is a newer lenovo computer
+2016-03-19 21:30:49	Namarrgon	skylake cpu?
+2016-03-19 21:31:25	PlasmaPower	if it's prebuit then I'd expect not
+2016-03-19 21:31:27	gregbert	Intel(R) Core(TM) i5-5300U CPU @ 2.30GHz
+2016-03-19 21:31:32	 > 	MarioWaza has joined #archlinux
+2016-03-19 21:32:06	 < 	stormysea has quit (Ping timeout: 240 seconds)
+2016-03-19 21:32:08	Namarrgon	new?
+2016-03-19 21:32:18	gregbert	new to me... work gave it to me
+2016-03-19 21:32:21	Namarrgon	ah
+2016-03-19 21:32:26	 < 	Xiti has quit (Quit: Xiti)
+2016-03-19 21:32:35	gregbert	has a touch screen... miraculously that works without any config.
+2016-03-19 21:32:36	reqq456	how can i add 2 dns server to my /etc/resolvconf.conf file? atm the file looks like this: http://sprunge.us/UUZJ but how do i add a second dns? man page and google dosen't help
+2016-03-19 21:32:40	 > 	raa has joined #archlinux
+2016-03-19 21:32:48	PlasmaPower	gregbert: touchscreens should work in general
+2016-03-19 21:33:00	gregbert	PlasmaPower: well, it does so :-)
+2016-03-19 21:33:06	PlasmaPower	reqq456: try adding another name_server line
+2016-03-19 21:33:18	raa	!ge
+2016-03-19 21:33:20	phrik	Good evening to all from raa!
+2016-03-19 21:33:20	PlasmaPower	gregbert: anything in the terminal when you run nautilus and it doesn't start?
+2016-03-19 21:33:25	PlasmaPower	hello raa!
+2016-03-19 21:33:33	reqq456	PlasmaPower: becuase there is written 'name_servers' 
+2016-03-19 21:33:37	raa	hi PlasmaPower! how are you?
+2016-03-19 21:33:39	gregbert	for some reason can't run nautilus - gives me (nautilus:5515): GLib-GIO-CRITICAL **: g_dbus_interface_skeleton_unexport: assertion 'interface_->priv->connections != NULL' failed
+2016-03-19 21:33:46	PlasmaPower	raa: great!
+2016-03-19 21:33:55	PlasmaPower	reqq456: yeah hmm, I'll look into it
+2016-03-19 21:34:03	PlasmaPower	reqq456: you might try comma seperated or space seperate
+2016-03-19 21:34:12	raa	PlasmaPower: that great to hear! actually i had a question about fluxbox.
+2016-03-19 21:34:19	 > 	sr has joined #archlinux
+2016-03-19 21:34:27	PlasmaPower	raa: can't help there, never used fluxbox. Maybe someone else can though
+2016-03-19 21:34:29	 < 	vlatkoB_ has quit (Remote host closed the connection)
+2016-03-19 21:34:31	PlasmaPower	well probably can't
+2016-03-19 21:34:42	plasma	:)
+2016-03-19 21:34:44	raa	PlasmaPower: that's fine, anyone can help
+2016-03-19 21:34:46	 < 	lpapp_ has quit (Remote host closed the connection)
+2016-03-19 21:35:23	PlasmaPower	reqq456: looks like it's space seperated, try that
+2016-03-19 21:35:28	 > 	Black_Prince has joined #archlinux
+2016-03-19 21:35:44	d_garbage	raa, ask the question?
+2016-03-19 21:36:03	raa	https://ptpb.pw/VJ0w.png :: so in my fluxbox setup my toolbar is configured to be set to the center. the problem is with auto-hide enabled the toolbar attaches itself to the bottom left. in the picture, there is a very thin line at the bottom left of the picture
+2016-03-19 21:36:23	 > 	usaf has joined #archlinux
+2016-03-19 21:36:26	 > 	zshfu has joined #archlinux
+2016-03-19 21:36:32	PlasmaPower	gregbert: first check if it's a user config issue
+2016-03-19 21:36:39	raa	is this normal? how can i make the toolbar autohide in the center
+2016-03-19 21:36:39	PlasmaPower	gregbert: try sudo DISPLAY=:0 nautilus
+2016-03-19 21:36:40	gregbert	PlasmaPower: always suspect..
+2016-03-19 21:36:53	 > 	Vtec234 has joined #archlinux
+2016-03-19 21:36:55	gregbert	it just came back and said desktop was not responsive. i said force quit
+2016-03-19 21:37:00	gregbert	and then launched nautlius, and it worked
+2016-03-19 21:37:09	gregbert	so ill have to wait to reboot i guess
+2016-03-19 21:37:13	d_garbage	raa, when it un-hides is it in the centre?
+2016-03-19 21:37:13	 < 	SonicJam_ has quit (Remote host closed the connection)
+2016-03-19 21:37:13	PlasmaPower	gregbert: hmm, yeah that does seem unstable
+2016-03-19 21:37:22	 < 	l4m8d4 has quit (Ping timeout: 260 seconds)
+2016-03-19 21:37:32	raa	d_garbage: yes, bottom-center
+2016-03-19 21:38:09	 > 	liothe has joined #archlinux
+2016-03-19 21:38:33	PlasmaPower	gregbert: which desktop environment do you use?
+2016-03-19 21:38:34	raa	as so :: https://ptpb.pw/P5ai.png
+2016-03-19 21:38:38	 > 	Xilov has joined #archlinux
+2016-03-19 21:38:39	 < 	grztnt has quit (Quit: Verlassend)
+2016-03-19 21:38:39	gregbert	PlasmaPower: gnome
+2016-03-19 21:38:41	d_garbage	raa, and does the un-hide only work where the blue line is?
+2016-03-19 21:38:58	gregbert	PlasmaPower: everything was fine on my old lenovo laptop.. now this switch is causing issues...
+2016-03-19 21:39:00	Lrouge	is there some piece of software that would be like tmux but lightweight? Would be nice to have a remote session with any given terminal...
+2016-03-19 21:39:02	PlasmaPower	gregbert: have you had problems with non-gtk applications?
+2016-03-19 21:39:03	 < 	xev10 has quit (Quit: KVIrc 4.2.0 Equilibrium http://www.kvirc.net/)
+2016-03-19 21:39:12	d_garbage	raa, ie this is not just cosmetic?
+2016-03-19 21:39:26	gregbert	no other app issues as of yet
+2016-03-19 21:39:43	raa	d_garbage: i suppose it is. very minor issue, but would like to know if it's possible. and sorry, a blue line?
+2016-03-19 21:39:47	 < 	Gathis has quit (Remote host closed the connection)
+2016-03-19 21:39:53	 > 	AlexRussia has joined #archlinux
+2016-03-19 21:40:09	PlasmaPower	gregbert: it's possible a library is corrupted, but unlikely
+2016-03-19 21:40:09	d_garbage	"here is a very thin line at the bottom left of the picture"
+2016-03-19 21:40:12	 < 	Xilov has quit (Client Quit)
+2016-03-19 21:40:35	d_garbage	in Plasma that line is the 'hit box' for the un-hide
+2016-03-19 21:40:36	 < 	MrFahrenheit has quit (Quit: That's all)
+2016-03-19 21:40:48	d_garbage	if you hit the edge anywhere else it doesn't fire
+2016-03-19 21:40:59	gregbert	PlasmaPower: hmmm...
+2016-03-19 21:41:06	 > 	MrFahrenheit has joined #archlinux
+2016-03-19 21:41:08	PlasmaPower	gregbert: try "pacman -Qkk" and see if that outputs anything
+2016-03-19 21:41:15	PlasmaPower	gregbert: that will list all corrupted or modified files
+2016-03-19 21:41:15	 < 	ToZ has quit (Ping timeout: 244 seconds)
+2016-03-19 21:41:25	d_garbage	raa, in other words the line indicates the presence of the hidden panel
+2016-03-19 21:41:31	PlasmaPower	gregbert: oh and you might want to run that as root
+2016-03-19 21:41:50	 > 	ninedotnine has joined #archlinux
+2016-03-19 21:42:01	gregbert	getting some weird occasional display flickering when i move my mouse back and forth across my dual monitors...
+2016-03-19 21:42:07	raa	d_garbage: ah okay that sounds good
+2016-03-19 21:42:18	PlasmaPower	gregbert: odd, it still could be a lot of things
+2016-03-19 21:42:24	raa	thought i disabled that though
+2016-03-19 21:42:33	PlasmaPower	gregbert: I'd recommend first checking if all the packages are not corrupted though with that command
+2016-03-19 21:42:57	 < 	ediT has left #archlinux ("WeeChat 1.3")
+2016-03-19 21:43:05	gregbert	its running.. piping to sprunge.. will give you link shortly
+2016-03-19 21:43:07	 < 	zxhello has quit (Quit: Leaving)
+2016-03-19 21:43:09	d_garbage	raa, oh i turn it off too, it's quite annoying
+2016-03-19 21:43:20	 > 	zxhello has joined #archlinux
+2016-03-19 21:43:24	 > 	semeion has joined #archlinux
+2016-03-19 21:43:30	d_garbage	raa, i damn well know where it put the panel, i don't need reminding :P
+2016-03-19 21:43:35	 < 	zxhello has quit (Client Quit)
+2016-03-19 21:43:39	 < 	ShapeShifter499 has quit (Quit: Leaving)
+2016-03-19 21:43:47	 < 	aau_ has quit (Read error: Connection reset by peer)
+2016-03-19 21:43:50	 > 	zxhello has joined #archlinux
+2016-03-19 21:43:55	 > 	baconicsynergy has joined #archlinux
+2016-03-19 21:43:55	 < 	baconicsynergy has quit (Client Quit)
+2016-03-19 21:44:01	gregbert	http://sprunge.us/IMNi
+2016-03-19 21:44:02	d_garbage	raa, but given that plasma is not flux it may not be relevant
+2016-03-19 21:44:05	gregbert	PlasmaPower: http://sprunge.us/IMNi
+2016-03-19 21:44:12	 < 	shovel_boss has quit (Remote host closed the connection)
+2016-03-19 21:44:15	 > 	unknwn has joined #archlinux
+2016-03-19 21:44:32	d_garbage	raa, just thought i'd mention it
+2016-03-19 21:44:52	raa	d_garbage: heh, i never used it either. wouldn't say annoying, but i never used it before
+2016-03-19 21:44:56	 < 	BlueRavenGT has quit (Ping timeout: 248 seconds)
+2016-03-19 21:45:04	raa	d_garbage: it's cool; all help is appreciated
+2016-03-19 21:45:16	 > 	saopen has joined #archlinux
+2016-03-19 21:45:24	gregbert	PlasmaPower: looks good to me
+2016-03-19 21:45:27	PlasmaPower	gregbert: that looks good, nothing seems off
+2016-03-19 21:45:39	PlasmaPower	gregbert: and gtk and all gnome packages are all fine
+2016-03-19 21:45:49	 > 	ortseam has joined #archlinux
+2016-03-19 21:45:52	Namarrgon	gregbert: why is mythtv-git installed into your ~?
+2016-03-19 21:46:06	TheRealBoat	hey all, I'm still having issues loading kernel modules. sudo /usr/lib/systemd/systemd-modules-load returns failed to insert vboxguest: No such device, and Failed to insert vboxsf: No such device. Anyone have any other ideas?
+2016-03-19 21:46:13	 > 	andyrtr has joined #archlinux
+2016-03-19 21:46:21	 < 	riksteri has quit (Read error: Connection reset by peer)
+2016-03-19 21:46:27	PlasmaPower	gregbert: well, I guess it could be configs or a bug
+2016-03-19 21:46:32	Cirrus_Minor	TheRealBoat: maybe u missing a pkg ?
+2016-03-19 21:46:33	gregbert	Namarrgon: ? its just a git for compiling..
+2016-03-19 21:46:36	mladoux	meh, I've built this package 3 times, no errors, but it takes a long time to compile. Anyway, I keep getting distracted so I fail to sign it and have to re-do it all over again because I didn't see a way to *just* sign the package. I'm sure I could do it with just using the gnupg2 command, but I'm lazy. First world problems, right?
+2016-03-19 21:46:53	 < 	andyrtr has quit (Client Quit)
+2016-03-19 21:46:57	Namarrgon	gregbert: but why does it install files into a users ~?
+2016-03-19 21:47:01	 > 	siidney has joined #archlinux
+2016-03-19 21:47:04	 < 	akolar has quit (Ping timeout: 248 seconds)
+2016-03-19 21:47:13	 > 	skunkos has joined #archlinux
+2016-03-19 21:47:15	gregbert	Namarrgon: its not installed into my ~ - the git is just cloned into ~/Downloads/gits/ right?
+2016-03-19 21:47:20	 > 	Kirito has joined #archlinux
+2016-03-19 21:47:20	 < 	ortseam has quit (Quit: Lost terminal)
+2016-03-19 21:47:28	gregbert	Namarrgon: let me look
+2016-03-19 21:47:38	PlasmaPower	TheRealBoat: vboxguest should only load if arch is in a virtual machine, is that the case?
+2016-03-19 21:47:39	Namarrgon	gregbert: pacman -Ql mythtv-git | ŋrep /home
+2016-03-19 21:47:41	TheRealBoat	cirrus_minor, any guesses on what the pkg may be?
+2016-03-19 21:47:52	TheRealBoat	I reinstalled open-vm-tools as well
+2016-03-19 21:48:02	 < 	dis__ has quit (Ping timeout: 248 seconds)
+2016-03-19 21:48:07	TheRealBoat	plasmapower: yeah, it's in VMware
+2016-03-19 21:48:17	Cirrus_Minor	TheRealBoat: did u try load em manually ` modprobe vboxdrv
+2016-03-19 21:48:19	 < 	beardedeagle has quit (Remote host closed the connection)
+2016-03-19 21:48:43	d_garbage	Namarrgon, heh, what's a "ŋ" :)
+2016-03-19 21:48:51	Cirrus_Minor	TheRealBoat: one of these , virtualbox-host-dkms and virtualbox-guest-dkms 
+2016-03-19 21:48:55	gregbert	Namarrgon: i think that a bug. its some perl libraries.. should be installing globally and i think they got installed locally
+2016-03-19 21:49:05	PlasmaPower	TheRealBoat: try modprobe vboxguest
+2016-03-19 21:49:11	PlasmaPower	TheRealBoat: does that give the same error?
+2016-03-19 21:49:12	TheRealBoat	cirrus_minor: why vboxdrv? its vboxguest and vboxsf that it says are missing. modprobe says no such device for the last two
+2016-03-19 21:49:17	Namarrgon	gregbert: punch the maintainer
+2016-03-19 21:49:23	Namarrgon	d_garbage: a typo :P
+2016-03-19 21:49:35	Cirrus_Minor	TheRealBoat: was just a guide on how to load manually
+2016-03-19 21:49:35	TheRealBoat	plasmapower: yeah
+2016-03-19 21:49:46	gregbert	Namarrgon: unfortunately there are a ton of bugs in mythtv.. in particular the archlinux installation
+2016-03-19 21:49:51	 > 	zrj has joined #archlinux
+2016-03-19 21:50:00	gregbert	Namarrgon: i am not even sure how to recommend fixing some of them
+2016-03-19 21:50:28	Cirrus_Minor	TheRealBoat: so prolly this pkg  virtualbox-guest-dkms 
+2016-03-19 21:50:29	TheRealBoat	cirrus_minor: ok, just making sure. i have virtualbox-host and virtualbox-guest dkms 5.0.16-3
+2016-03-19 21:50:32	d_garbage	:)
+2016-03-19 21:51:00	Cirrus_Minor	TheRealBoat: and what happens when you try load manually ?
+2016-03-19 21:51:06	PlasmaPower	TheRealBoat: are you sure that guest modules are enabled in the host?

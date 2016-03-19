@@ -1,0 +1,66 @@
+# Window/panel index 1
+set -g base-index 1
+set -g pane-base-index 1
+
+# Mouse in copy mode
+setw -g mouse on
+
+# with mouse (click on pretty little boxes)
+set -g mouse-select-window on
+
+# resize panes with mouse (drag borders)
+set -g mouse-select-pane on
+set -g mouse-resize-pane on
+
+# Set lock command
+set-option -g lock-command vlock
+
+# Reload config file
+bind r source-file ~/.tmux.conf
+
+# Custom keybinds
+bind-key F11 lock-session
+bind-key F12 lock-server
+
+# Windows & Panes
+set -g pane-border-fg black
+set -g pane-active-border-fg red
+set -g display-panes-colour white
+set -g display-panes-active-colour red
+set -g display-panes-time 1000
+
+setw -g automatic-rename on
+setw -g monitor-activity on
+setw -g utf8 on
+
+# Misc Settings
+set -g set-titles on
+set -g set-titles-string '#T:#W'
+set -g repeat-time 100
+set -g default-terminal "screen-256color"
+setw -g clock-mode-colour red
+setw -g clock-mode-style 24
+setw -g alternate-screen on
+
+# Don't close on exit
+# set -g set-remain-on-exit on
+
+## Status line
+set-option -g status-position top
+set -g status-utf8 on
+set -g status-bg black
+set -g status-fg white
+set -g status-left-length 100
+#set -g status-left " #[fg=red]tmux: #[fg=white]#W#[fg=red] >> #[fg=white]#(cat /proc/loadavg | cut -c 1-14) #(/home/xiii/bin/memusage) #[fg=red]>> #[fg=red]%d/%m %H:%M    #[fg=red]Now Playing >> #(/home/xiii/bin/mpc_np) "
+set -g status-left " #[fg=red]tmux:#[fg=red] >> #[fg=white]#(cat /proc/loadavg | cut -c 1-14) #(/home/xiii/bin/memusage) #[fg=red]>> #W "
+set -g status-right-length 0
+set -g status-right ""
+set -g status-justify right
+setw -g window-status-format '#[fg=white]#I#[fg=white]#W'
+setw -g window-status-current-format '[#[fg=white]#I#[fg=red]#W]'
+set-window-option -g window-status-current-fg red
+
+## Messages
+set -g message-attr underscore
+set -g message-fg black
+set -g message-bg red

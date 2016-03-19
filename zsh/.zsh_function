@@ -1,0 +1,138 @@
+function ll()
+{ ls -l "$@"| egrep "^d" ; ls -lXB "$@" 2>&-| egrep -v "^d|total "; }
+
+# Pacman Functions
+alias pacman="sudo pacman"
+
+pskill()
+{
+        local pid
+
+        pid=$(ps -ax | grep $1 | grep -v grep | gawk '{ print $1 }')
+        echo -n "killing $1 (process $pid)..."
+        kill -9 $pid
+        echo "slaughtered."
+}
+
+
+function aa_mod_parameters () 
+{ 
+    N=/dev/null;
+    C=`tput op` O=$(echo -en "\n`tput setaf 2`>>> `tput op`");
+    for mod in $(cat /proc/modules|cut -d" " -f1);
+    do
+        md=/sys/module/$mod/parameters;
+        [[ ! -d $md ]] && continue;
+        m=$mod;
+        d=`modinfo -d $m 2>$N | tr "\n" "\t"`;
+        echo -en "$O$m$C";
+        [[ ${#d} -gt 0 ]] && echo -n " - $d";
+        echo;
+        for mc in $(cd $md; echo *);
+        do
+            de=`modinfo -p $mod 2>$N | grep ^$mc 2>$N|sed "s/^$mc=//" 2>$N`;
+            echo -en "\t$mc=`cat $md/$mc 2>$N`";
+            [[ ${#de} -gt 1 ]] && echo -en " - $de";
+            echo;
+        done;
+    done
+}
+
+transpa () {
+transset-df -m 0.8 -p
+}
+
+ydl() {
+if [ $# -eq 1 ]; then
+    youtube-dl -x --audio-format mp3 --audio-quality 0 $1  -o "%(title)s.%(ext)s" --restrict-filenames
+else
+    echo "No URL given"
+fi
+}
+
+function please() {
+    if [ $# -eq 0 ]; then
+        sudo $(fc -ln -1)
+    else
+        command="$@"
+        sudo $command
+    fi
+}
+
+
+function extract {
+ if [ -z "$1" ]; then
+    # display usage if no parameters given
+    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
+ else
+    if [ -f "$1" ] ; then
+        NAME=${1%.*}
+        #mkdir $NAME && cd $NAME
+        case "$1" in
+          *.tar.bz2)   tar xvjf ./"$1"    ;;
+          *.tar.gz)    tar xvzf ./"$1"    ;;
+          *.tar.xz)    tar xvJf ./"$1"    ;;
+          *.lzma)      unlzma ./"$1"      ;;
+          *.bz2)       bunzip2 ./"$1"     ;;
+          *.rar)       unrar x -ad ./"$1" ;;
+          *.gz)        gunzip ./"$1"      ;;
+          *.tar)       tar xvf ./"$1"     ;;
+          *.tbz2)      tar xvjf ./"$1"    ;;
+          *.tgz)       tar xvzf ./"$1"    ;;
+          *.zip)       unzip ./"$1"       ;;
+          *.Z)         uncompress ./"$1"  ;;
+          *.7z)        7z x ./"$1"        ;;
+          *.xz)        unxz ./"$1"        ;;
+          *.exe)       cabextract ./"$1"  ;;
+          *)           echo "extract: '$1' - unknown archive method" ;;
+        esac
+    else
+        echo "'$1' - file does not exist"
+    fi
+fi
+}
+
+function translate() {
+if [ -z "$?" ]; then
+    echo "Usage: translate how are you"
+    echo "Defaults to eng - indonesian"
+else
+    trans_sent="$@"
+    trans -b :id "$trans_sent"
+fi
+}
+
+function swap() {
+    # Swap 2 filenames around, if they exist (from Uzi's bashrc).
+    local TMPFILE=tmp.$$
+
+    [ $# -ne 2 ] && echo "swap: 2 arguments needed" && return 1
+    [ ! -e $1 ] && echo "swap: $1 does not exist" && return 1
+    [ ! -e $2 ] && echo "swap: $2 does not exist" && return 1
+
+    mv "$1" $TMPFILE
+    mv "$2" "$1"
+    mv $TMPFILE "$2"
+}
+
+function dfbar()        # Pretty-print of 'df' output.
+{                       # Inspired by 'dfc' utility.
+    for fs ; do
+
+        if [ ! -d $fs ]
+        then
+          echo -e $fs" :No such file or directory" ; continue
+        fi
+
+        local info=( $(command df -P $fs | awk 'END{ print $2,$3,$5 }') )
+        local free=( $(command df -Pkh $fs | awk 'END{ print $4 }') )
+        local nbstars=$(( 20 * ${info[1]} / ${info[0]} ))
+        local out="["
+        for ((j=0;j<20;j++)); do
+            [ ${j} -lt ${nbstars} ] && out=$out"#" || out=$out"-"
+        done
+        out=${info[2]}" "$out"] ("$free" free on "$fs")"
+        echo -e $out
+    done
+}
+

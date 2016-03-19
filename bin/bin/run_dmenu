@@ -1,0 +1,10 @@
+#! /bin/bash
+set -x
+
+pad=$(bspc config window_gap)
+monitor_width=$(xrandr | grep "primary" | awk -F'[ x+]' '{print $4}')
+#font="-benis-lemon-medium-r-normal--10-110-75-75-m-50-ISO8859-1"
+font="-*-erusfont-medium-*-*-*-11-*-*-*-*-*-*-*"
+
+#dmenu_run -s 0 -nf "#71c2af" -nb "#273941" -sb "#1d2a30" -sf "#c27171" -i -h 30 -w "${monitor_width}" -q -x 10 -y 10 -fn "${font}" -p ">" -l 3
+dmenu_run -s 0 -nf "#71c2af" -nb "#273941" -sb "#1d2a30" -sf "#c27171" -i -h 30 -w "$(($monitor_width-20))" -q -x 10 -y $(($pad+40)) -fn "${font}" -p ">" -l 3

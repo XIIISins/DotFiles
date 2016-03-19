@@ -1,7 +1,0 @@
-COLOR_FOREGROUND='#ffffff'
-COLOR_BACKGROUND='#202020'
-PANEL_ICON_DIR="/home/pawel/.config/bspwm/panel/icons"
-FONT_FAMILY='-misc-terminusmod,icons-medium-r-normal--12-120-72-72-c-60-*-*'
-FONT_SIZE=12
-PANEL_HEIGHT=14
-PROGRESSBAR_HEIGHT=4

@@ -1,0 +1,45 @@
+#!/bin/sh
+
+source $(dirname $0)/popup_colors
+
+PIPE=/tmp/pipe_info
+
+[ -e "$PIPE" ] && rm "$PIPE"
+mkfifo "$PIPE"
+
+LINES=7
+XPOS=1750
+YPOS=16
+WIDTH=220
+ACT='onstart=uncollapse;button1=exit;button3=exit'
+BG="$COLOR_BACKGROUND"
+FG="$COLOR_FOREGROUND"
+
+while true; do
+  DIR1=`df | grep '/dev/sda1' | awk '{print $6}'`
+  DIR2=`df | grep '/dev/sda2' | awk '{print $6}' | sed 's/\///'`
+  DIR3=`df | grep '/dev/sda3' | awk '{print $6}' | sed 's/\///'`
+  DIR4=`df | grep '/dev/sda4' | awk '{print $6}' | sed 's/\///'`
+  USED1=`df | grep '/dev/sda1' | awk '{print $5}' | sed 's/\%//'`
+  USED2=`df | grep '/dev/sda1' | awk '{print $5}' | sed 's/\%//'`
+  USED3=`df | grep '/dev/sda1' | awk '{print $5}' | sed 's/\%//'`
+  USED4=`df | grep '/dev/sda1' | awk '{print $5}' | sed 's/\%//'`
+  HOST=`uname -n`
+  KERNEL=`uname -r`
+  UPTIME=`uptime | sed 's/.* up //' | sed 's/[0-9]* us.*//' | sed 's/ day, /d /' | sed 's/ days, /d /' | sed 's/:/h /' | sed 's/ min//' | sed 's/,/m/' | sed 's/  / /'`
+  PACKAGES=`pacman -Q | wc -l`
+  UPDATED=`awk '/upgraded/ {line=$0;} END {$0=line; gsub(/[\[\]]/,"",$0); printf "%s %s",$1,$2;}' /var/log/pacman.log`
+  TIME=`date +%r`
+  DATE=`date +'%a %d %b %Y'`
+  echo "System Information"
+  echo "Time: $TIME"
+  echo "Date: $DATE"
+  echo "Host: $HOST"
+  echo "Kernel: $KERNEL"
+  echo "Uptime: $UPTIME"
+  echo "Pacman: $PACKAGES packages"
+  echo "Last updated on $UPDATED"
+  sleep 0.5
+done > "$PIPE" &
+
+cat "$PIPE" | dzen2 -u -p -bg $BG -fg $FG -fn "${FONT_FAMILY}:pixelsize=${FONT_SIZE}" -x $XPOS -y $YPOS -w $WIDTH -l $LINES -sa 'l' -ta 'c' -e "$ACT" -title-name 'popup_info'

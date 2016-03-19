@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source $(dirname $0)/panel_colors
+
+AMASTER=`amixer get Master | awk 'END{gsub(/\[|\]|%/,""); print $4}'`
+
+VOLBARUSED=`echo $AMASTER / 2 | bc -l | awk '{print int($1+0.5)}'`
+
+volbar() {
+	echo "^fg($PANEL_COLOR_BAR)^r(${VOLBARUSED}x${PROGRESSBAR_HEIGHT})^fg(darkgrey)^r($(( 50 - $VOLBARUSED))x${PROGRESSBAR_HEIGHT})"
+}
+
+if [ $AMASTER == 0 ] ; then
+	ICON="spkr_04.xbm"
+elif [ $AMASTER -le 50 ] ; then
+	ICON="spkr_02.xbm"
+elif [ $AMASTER -le 100 ] ; then
+	ICON="spkr_01.xbm"
+else
+	ICON="spkr_04.xbm"
+fi
+
+ICON="^i($PANEL_ICON_DIR/$ICON)"
+echo "^fg($PANEL_COLOR_ICON)$ICON ^fg($PANEL_COLOR_TEXT)^ca(5, amixer set Master 1-)^ca(4, amixer set Master 1+)$(volbar)^ca()^ca()"
