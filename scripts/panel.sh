@@ -1,1 +1,0 @@
-/home/xiii/.config/herbstluftwm/panel.sh
