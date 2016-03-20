@@ -8,3 +8,7 @@ xiii_git.pub
 *\~
 *.orig
 *.swp
+*.log
+mpdstate
+mpd.pid
+
