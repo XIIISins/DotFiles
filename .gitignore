@@ -11,4 +11,4 @@ xiii_git.pub
 *.log
 mpdstate
 mpd.pid
-
+nvim/.config/nvim/tmp/

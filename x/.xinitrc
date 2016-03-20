@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 #  ╻ ╻╻┏┓╻╻╺┳╸┏━┓┏━╸
 #  ┏╋┛┃┃┗┫┃ ┃ ┣┳┛┃
@@ -40,6 +41,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 # }}}
 
+# Set screen
+xrandr --output LVDS-1 --primary
+
 # Load fonts
 xset +fp ~/.fonts
 xset +fp /usr/share/fonts/local/
@@ -48,16 +52,13 @@ xset fp rehash
 # Map Caps to Ctrl
 #setxkbmap -option ctrl:nocaps
 # URxvt clipboard magic
-autocutsel -selection clipboard -fork &
-
-xrandr --output VGA-0 --primary
-xrandr --output VGA-1 --right-of VGA-0
+#autocutsel -selection clipboard -fork &
 
 #source ~/.scripts/screenlayout
 # It's unclutter-xfixes-git
 #unclutter -b
 mpd &
-notifyd &
+#notifyd &
 xsetroot -cursor_name left_ptr &
 #exec wm
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm &

@@ -1,9 +1,8 @@
 sw_volume: 40
 audio_device_state:1:MPD Pulse
 audio_device_state:1:vis_feed
-state: play
+state: stop
 current: 53
-time: 125.109000
 random: 1
 repeat: 1
 single: 0

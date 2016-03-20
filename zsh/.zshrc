@@ -29,7 +29,6 @@ bindkey -v
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 source $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.sentiarc
 
 for r in $HOME/.zsh/*.zsh; do
   if [[ $DEBUG > 0 ]]; then
@@ -38,5 +37,13 @@ for r in $HOME/.zsh/*.zsh; do
   source $r
 done
 
-eval $( dircolors -b $HOME/.dircolors)
-export LS_COLORS
+if [ -e $HOME/.dircolors ]; then
+  eval $( dircolors -b $HOME/.dircolors)
+  export LS_COLORS
+else
+  dircolors -p > ~/.dircolors
+  eval $( dircolors -b $HOME/.dircolors)
+  export LS_COLORS
+fi   
+
+colortest2

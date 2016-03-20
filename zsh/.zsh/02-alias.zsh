@@ -1,5 +1,5 @@
 # Alias
-alias vi="vim"
+alias vi="nvim"
 alias mc='mc / \~'
 alias cpr="cp -R"
 alias rm='rm -v'
