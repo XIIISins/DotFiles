@@ -20,3 +20,6 @@ export HISTFILE=$XDG_CONFIG_HOME/.zsh/history
 export SHELL='/usr/bin/zsh'
 export EDITOR='vim'
 export MANPAGER='vimpager'
+
+# VPN Settings
+source ~/.echovpn
