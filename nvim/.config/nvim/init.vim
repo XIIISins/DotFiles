@@ -129,6 +129,36 @@ filetype off                  " required
   set clipboard^=unnamed,unnamedplus
 " }}}
 
+" Neovim_Terminal {{{
+  tnoremap <F10> <C-\><C-n> 
+  set switchbuf+=useopen
+  function! TermEnter()
+    let bufcount = bufnr("$")
+    let currbufnr = 1
+    let nummatches = 0
+    let firstmatchingbufnr = 0
+    while currbufnr <= bufcount
+      if(bufexists(currbufnr))
+        let currbufname = bufname(currbufnr)
+        if(match(currbufname, "term://") > -1)
+          echo currbufnr . ": ". bufname(currbufnr)
+          let nummatches += 1
+          let firstmatchingbufnr = currbufnr
+          break
+        endif
+      endif
+      let currbufnr = currbufnr + 1
+    endwhile
+    if(nummatches >= 1)
+      execute ":sbuffer ". firstmatchingbufnr
+      startinsert
+    else
+      execute ":terminal"
+    endif
+  endfunction
+  map <F12> :call TermEnter()<CR>
+" }}}
+
 " Word wrapping {{{
   set wrap
   set linebreak

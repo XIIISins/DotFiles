@@ -14,3 +14,5 @@ mpd.pid
 mpd.log
 nvim/.config/nvim/tmp/
 *history*
+weechat/.weechat/logs/*
+mpd/.mpd/mpd.log

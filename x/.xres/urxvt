@@ -5,17 +5,26 @@ URxvt.scrollBar: false
 URxvt.letterSpace: 0
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
-URxvt.internalBorder: 20
+URxvt.internalBorder: 10
 URxvt.geometry: 100x30
 URxvt.depth: 32
 
 ! Clipboard copy/paste with C-Shift-c and C-Shift-p
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-URxvt.perl-ext-common: default,clipboard,matcher
+URxvt.perl-ext-common: default,clipboard,matcher,tabbed
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+! URxvt tab config
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 8
+URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.autohide:  yes
+URxvt.tabbed.new-button:  no
+URxvt.tabbed.title: no
 
 ! vim: set ft=xdefaults :

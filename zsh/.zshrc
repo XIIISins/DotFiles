@@ -29,6 +29,7 @@ bindkey -v
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 source $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.sentiarc
 
 for r in $HOME/.zsh/*.zsh; do
   if [[ $DEBUG > 0 ]]; then
@@ -44,6 +45,11 @@ else
   dircolors -p > ~/.dircolors
   eval $( dircolors -b $HOME/.dircolors)
   export LS_COLORS
-fi   
+fi
 
-colortest2
+shinymotd
+
+if [ -e $HOME/dead.letter ]; then
+  echo -e "\n\nNotice: dead letter found\n\n"
+  cat $HOME/dead.letter
+fi

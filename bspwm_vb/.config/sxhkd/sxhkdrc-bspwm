@@ -115,6 +115,10 @@ super + {_,shift + }{1-9,0}
 super + shift + s
   bspc node -g sticky
 
+# adjust window gap
+super + {F10,F9}
+    bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+
 ~button1
 	bspc pointer -g focus
 
@@ -131,11 +135,17 @@ super + @button{1-3}
 super + Return
 	urxvt
 
+super + F11
+  passmenu
+
 super + space
   ~/.scripts/run_dmenu
 
 Print
   ~/.scripts/screenie
+
+super + Pause
+  lock.sh
 
 # open a "scratchpad" terminal (quake-style, in this case, on a 1366x768 display)
 F12

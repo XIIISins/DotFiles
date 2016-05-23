@@ -27,6 +27,8 @@ d() { ($1 &) }
 zsh_stats() { history | awk '{print $2}' | sort | uniq -c | sort -rn | head }
 du1() { du -h --max-depth=1 "$@" | sort -k 1,1hr -k 2,2f; }
 epoch() { print $(( `echo $1 | cut -b 1-2` * 3600 + `echo $1 | cut -b 4-5` * 60 + `echo $1 | cut -b 7-8` )) }
+tfonts() { for i in ${TOILET_FONT_PATH:=/usr/share/figlet}/*.{t,f}lf; do j=${i##*/}; toilet -d "${i%/*}" -f "$j" "${j%.*}"; done }
+ydl() { [ -z "$1" ] || youtube-dl -x --audio-format mp3 --audio-quality 0 "$@" }
 # }}}
 
 # {{{ Most used Commands
@@ -50,4 +52,15 @@ mkgit() {
 	git remote add origin git@github.com:XIIISins/$1.git
 	git push origin master
 } # }}}
+
+# {{{ Message of the day
+shinymotd() {
+if [ $(($RANDOM/$RANDOM)) -gt 0 ]; then
+  colortest2
+  woodo
+else
+  echo $(hostname) | toilet -f chunky -F gay -F border
+  woodo
+fi
+}
 

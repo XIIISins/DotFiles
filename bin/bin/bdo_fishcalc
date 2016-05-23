@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# lazy tool
+#
+
+FISHCNT=$1
+MEAT="6"
+
+if [ -z $1 ]; then
+  echo "Dude.."
+  exit 1
+fi
+
+echo $(($MEAT*$FISHCNT))

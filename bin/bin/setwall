@@ -7,7 +7,7 @@ custom = os.environ.get('CUSTOM', 0)
 
 
 if time(8,00) <= now.time() <= time(16,00):
-    os.system('hsetroot -fill ~/wallpapers/wallhaven-16149.png')
+    os.system('feh --bg-fill ~/wallpapers/wallhaven-16149.png ~/wallpapers/wallhaven-16149.png ~/wallpapers/wallhaven-16149.png')
 elif custom:
     os.system('hsetroot -fill %s' % custom)
 else:

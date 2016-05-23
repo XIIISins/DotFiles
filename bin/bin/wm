@@ -1,6 +1,6 @@
 #! /bin/bash
 
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm
+#sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm
 while true; do
-  bspwm || break
+    bspwm || break
 done

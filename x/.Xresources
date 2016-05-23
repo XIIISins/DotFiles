@@ -6,6 +6,6 @@
 
 #include ".xres/xft"
 #include ".xres/rofi"
-#include ".xres/colors/base16-ocean"
+#include ".xres/colors/crshd"
 #include ".xres/urxvt"
 #include ".xres/st"
