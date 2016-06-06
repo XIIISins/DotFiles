@@ -2,6 +2,8 @@
 #
 #
 
+set -x
+
 # Functions
 setwp() {
 TIME=`date +"%H%M"`
@@ -34,7 +36,7 @@ autostart() {
 #   stalonetray &
    nm-applet &
    numlockx on
-   urxvt -e todo -s
+#  urxvt -e todo -s
 #   pulse.sh
 }
 
@@ -72,6 +74,17 @@ setscreen() {
 
 }
 
+SelectWM() {
+  WM=("2bwm" "hlwm" "dwm" "bspwm" "awesome" "kde")
+  echo ${WM[@]}
+  echo -e "Select your WM"
+  read wm
+  if [ -z $wm ]; then
+    wm=hlwm
+  fi
+  export wm
+}
+
 #################
 # General Setup #
 #################
@@ -93,7 +106,7 @@ xsetroot -cursor_name left_ptr &
 #compton &
 
 # URxvt Daemon
-#urxvtd -q &
+urxvtd -q &
 
 # MPD daemon start (if no other user instance exists)
 [ ! -s ~/.config/mpd/pid ] && mpd
@@ -102,7 +115,7 @@ xsetroot -cursor_name left_ptr &
 xset m 1 1
 
 # Start KVM Server (synergy)
-synergys -d ERROR -c $HOME/.quicksynergy/synergy.conf &
+#synergys -d ERROR -c $HOME/.quicksynergy/synergy.conf &
 
 xset s off
 xset -dpms
@@ -110,11 +123,11 @@ xset r rate 350 45
 xset +fp /usr/share/fonts/TTF
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/artwiz-fonts
-xset +fp $HOME/.local/share/fonts
-xset +fp $HOME/.local/share/fonts/jmk
-xset +fp $HOME/.local/share/fonts/misc
-xset +fp $HOME/.local/share/fonts/ohsnap
-xset +fp $HOME/.local/share/fonts/terminesspowerline
+#xset +fp $HOME/.local/share/fonts
+#xset +fp $HOME/.local/share/fonts/jmk
+#xset +fp $HOME/.local/share/fonts/misc
+#xset +fp $HOME/.local/share/fonts/ohsnap
+#xset +fp $HOME/.local/share/fonts/terminesspowerline
 setxkbmap -option terminate:ctrl_alt_bksp
 
 #######
@@ -153,7 +166,7 @@ done
 ########
 start_2bwm(){
 # Start window manager in the background. If it dies, X still lives.
-2bwm &
+2bwm > $HOME/var/xorg/x.out &
 
 # Panel
 #2bwm_panel | lemonbar -p -F "#FFB5B2AF" -B "#FF282522" -g "1920x20+0+0" -f "Tewi-9" &
@@ -208,7 +221,7 @@ start_kde() {
 }
 
 # Start dwm if argument is given
-case $1 in
+case $wm in
     hlwm)
         start_hlwm
         ;;

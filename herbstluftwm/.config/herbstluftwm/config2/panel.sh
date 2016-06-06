@@ -55,8 +55,8 @@ function uniq_linebuffered() {
     # volume
     while true ; do
         # echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')" # ALSA volume
-				# echo "vol $(pacmd list-sinks | sed -ne '/Corsair_Vengeance_2100/,$p' | awk '/volume/ {print $5; exit}')" # Alsa for Output Device Corsair Vengeance 2100 Analog Stereo
-        echo "vol $(pactl list sinks | sed -ne '/Name:\ combined/,$p' | awk -F'/' '/Volume/ {print $2}' | head -n1)" # Alsa for Output Device Combined Sink
+				 echo "vol $(pacmd list-sinks | sed -ne '/Corsair_Vengeance_2100/,$p' | awk '/volume/ {print $5; exit}')" # Alsa for Output Device Corsair Vengeance 2100 Analog Stereo
+#        echo "vol $(pactl list sinks | sed -ne '/Name:\ combined/,$p' | awk -F'/' '/Volume/ {print $2}' | head -n1)" # Alsa for Output Device Combined Sink
 	sleep 1 || break
     done > >(uniq_linebuffered) &
     vol_pid=$!
@@ -132,8 +132,10 @@ function uniq_linebuffered() {
                 unset TAGS[${#TAGS[@]}]
                 ;;
             mpd_player|player)
-                song="$(mpc -f %name% current)"
-		song2="$(mpc -f %title% current)"
+                #song="$(mpc -f %name% current)"
+                song="$(mpc current | awk -F'/' '{print $5}')"
+                song2="$(mpc current | awk -F'/' '{print $5}')"
+#		song2="$(mpc -f %title% current)"
                 ;;
             vol)
                 volume="${cmd[@]:1}"

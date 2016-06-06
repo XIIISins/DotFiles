@@ -46,6 +46,7 @@ fi
 xrandr --output DP-1 --left-of VGA-1
 xrandr --output VGA-1 --primary
 xrandr --output DP-3 --right-of VGA-1
+xrandr --output LVDS-1 --below VGA-1
 
 # Load fonts
 xset +fp ~/.fonts
@@ -65,7 +66,13 @@ redshift &
 #notifyd &
 xsetroot -cursor_name left_ptr &
 #exec wm
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm &
-exec wm
+#sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm &
+#exec wm
 #exec bspwm
 #source ~/.scripts/startwmutils
+#exec backflip
+
+#hlwm
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc_herbstluftwm
+exec herbstluftwm
+

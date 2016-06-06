@@ -1,9 +1,9 @@
-sw_volume: 26
+sw_volume: 35
 audio_device_state:1:MPD Pulse
 audio_device_state:1:vis_feed
-state: pause
-current: 60
-time: 20.298000
+state: play
+current: 65
+time: 120.151000
 random: 1
 repeat: 1
 single: 0
@@ -12,71 +12,77 @@ crossfade: 5
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:xkito_chill/【Chill】A R I Z O N A - People Crying Every Night-ecUL3qKsBTQ.mp3
-1:xkito_chill/【Chill】A R I Z O N A - Where I Wanna Be-kyOuPRGaofk.mp3
-2:xkito_chill/【Chill】aKu - Love Shine-5amlR2sLJio.mp3
-3:xkito_chill/【Chill】aKu - The Final Blow-IRD7WylAfkw.mp3
-4:xkito_chill/【Chill】Alo Lee - Electric Blue (Skye Chai Remix)-HqtXN7eEmRw.mp3
-5:xkito_chill/【Chill】Angelika - Better Than Ever-LSNHaguaOCE.mp3
-6:xkito_chill/【Chill】Ark Patrol - Tokyo (Subranger Remix)-quhvZ6KG02M.mp3
-7:xkito_chill/【Chill】BECOME x NoMBe - Miss Mirage-dyFuu_Uuyms.mp3
-8:xkito_chill/【Chill】Billy Who - Raise A Glass (Lucian Remix)-mDdSaeAz3v0.mp3
-9:xkito_chill/【Chill】Bosshafte Beats - Luxusmesse-4Mm-QN5Iuj4.mp3
-10:xkito_chill/【Chill】Dash Berlin & Jay Cosmic ft. Collin McLoughlin - Here Tonight (Acoustic Version)-wGQ2WcdW7J8.mp3
-11:xkito_chill/【Chill】Etham - Gone In The Morning-FQGgiw3WrAg.mp3
-12:xkito_chill/【Chill】Fatboy Slim - Praise You (Mokoa & Mitchell Southam Remix) [Free Download]-CkgVn6-NGSo.mp3
-13:xkito_chill/【Chill】Ferraz ft. Marti Ann - XTC [Free Download]-7BIxywU3oEw.mp3
-14:xkito_chill/【Chill】Harrison Brome - Midnight Island-UVTG7Ol5FJQ.mp3
-15:xkito_chill/【Chill】Kill Paris ft. Royal - Operate (Illenium Remix)-TcZ46vLGRws.mp3
-16:xkito_chill/【Chill】KRONO ft. Linying - Run-WmtZhPERNgs.mp3
-17:xkito_chill/【Chill】KYKO - Pull Me Up-sB0Am0v2pRo.mp3
-18:xkito_chill/【Chill】Lostboycrow - Love Won't Sleep-BmX6kDqjuyw.mp3
-19:xkito_chill/【Chill】Maribou State ft. Holly Walker - Midas-u2hV3ABHxBQ.mp3
-20:xkito_chill/【Chill】Michl - Kill Our Way To Heaven-Id-c0Hedu6g.mp3
-21:xkito_chill/【Chill】Mr FijiWiji ft. Danyka Nadeau - Yours Truly (Vacant Remix) [PREMIERE]-Nh0uMweFR10.mp3
-22:xkito_chill/【Chill】Oh Wonder - Landslide-GpLDMsYCoAs.mp3
-23:xkito_chill/【Chill】Oh Wonder - Lose It-QTcK1jhSMwo.mp3
-24:xkito_chill/【Chill】Oh Wonder - Technicolour Beat (Urban Contact Remix)-aMxU0Lrii7k.mp3
-25:xkito_chill/【Chill】Purple Shade & System B - Glorious-qC8r2hrTtjo.mp3
-26:xkito_chill/【Chill】Revive Us - Campfire Anthem-TSmSFfvxtDs.mp3
-27:xkito_chill/【Chill】Rhythm District ft. Linford K. Hydes - Impossible [PREMIERE]-otVgjZPdScQ.mp3
-28:xkito_chill/【Chill】Stalgia - Rust-ukeWBqyseDU.mp3
-29:xkito_chill/【Chill】The Aston Shuffle ft. Kaelyn Behr - No Place Like Home (Skrux Remix)-0kzu66Z9MnM.mp3
-30:xkito_chill/【Chill】Virtual Riot - Disintegrate-5LWj1MFUTrk.mp3
-31:xkito_chill/【Chill】XYLØ - Afterlife (Ark Patrol Remix)-iXlR7zRYPTw.mp3
-32:xkito_chill/【Chill】XYLØ - Between The Devil And The Deep Blue Sea (Skrux Remix)-Y9S5zrat44A.mp3
-33:xkito_chill/【Chill】Zacari ft. Josh J. - I Should Be Dreaming-03D13bfKP60.mp3
-34:xkito_chill/【Chillstep】Adil Laresh - The Way-8FOv_X8KVLo.mp3
-35:xkito_chill/【Chillstep】AgNO3, Mr FijiWiji & Laura Brehm - Pure Sunlight (Elliot Berger & SDDx Remix)-X-PIJJ0r5a8.mp3
-36:xkito_chill/【Chillstep】AZEDIA - Something (Rameses B Remix)-FvNqwNlQBd8.mp3
-37:xkito_chill/【Chillstep】CMA - Caught In Our Thoughts [Free Download]-gzV7bbER7rs.mp3
-38:xkito_chill/【Chillstep】EvenS - Tell [Free Download]-OaGOVADtQzc.mp3
-39:xkito_chill/【Chillstep】MitiS ft. Collin McLoughlin - Born-zJZu54gtmNc.mp3
-40:xkito_chill/【Chillstep】MYKOOL - Ikiru-bfRNYRcQugs.mp3
-41:xkito_chill/【Chillstep】None Like Joshua & Buddygirrl ft. Iain Mannix  - The Fall-Ut1avLHWfiE.mp3
-42:xkito_chill/【Chillstep】Oh Wonder - All We Do (LYAR Remix)-i59ONAi-5Uw.mp3
-43:xkito_chill/【Chillstep】Rameses B - Game Of Thrones [Free Download]-rQX8jHB4h78.mp3
-44:xkito_chill/【Chillstep】SizzleBird - Celeste-wCpY6p-V_dk.mp3
-45:xkito_chill/【Chillstep】SizzleBird - Elixir-UJfJ5z73fgA.mp3
-46:xkito_chill/【Chillstep】SizzleBird - Further-TDtg2kwTvhE.mp3
-47:xkito_chill/【Chillstep】Soulfy - Essence [Free Download]-_E5L-3w8kcs.mp3
-48:xkito_chill/【Chillstep】Soulfy - Skyfall [Free Download]-WyqFCvPKmVs.mp3
-49:xkito_chill/【Chillstep】Soulfy - When The Sun Sets-YCXuOvvWLQ8.mp3
-50:xkito_chill/【Chillstep】Sqeepo ft. Kristina - Flash-5sx8ZwsHa7s.mp3
-51:xkito_chill/【Chillstep】Tobu ft. Kamelia - Altitude [Free Download]-9258gJ5vrLI.mp3
-52:xkito_chill/【Chillstep】Wavetek - Uplift [Free Download]-d2sW3vx_3qc.mp3
-53:xkito_chill/Ark Patrol ft. Veronika Redd - At All-HKrOH0sQV6w.mp3
-54:xkito_chill/Billie Eilish - Ocean Eyes-2-8bMpIWiPM.mp3
-55:xkito_chill/Cabu & Akacia - Gold-ysCA-NDyvxs.mp3
-56:xkito_chill/Ciele & Mapps - Parking Lots-ClM5UqKQvEk.mp3
-57:xkito_chill/Kiiara - Feels (Jai Wolf Remix)-OdZt0ybmQCM.mp3
-58:xkito_chill/Phoebe Ryan - Dead (Louis Vivet Remix)-8GqLOxJn3CA.mp3
-59:xkito_chill/Prismo - Escape-Wg-VBr4X-NU.mp3
-60:xkito_chill/RAY - Back Words (Prod. by Mantra)-BdgHIO7UkYI.mp3
-61:xkito_chill/Running Touch - Courtesy Of--WdJXMqCHzo.mp3
-62:xkito_chill/TeZATalks - In The Dark-5NUl_xVVPXo.mp3
-63:xkito_chill/UNILAD Beats ft. Beatowski - My Days-WXePdL_XlpE.mp3
-64:xkito_chill/Wency Freak & Crooked Tunez ft. Anuka - Shadow-wfkfeKGCp28.mp3
-65:xkito_chill/William Bolton - Fading (Prod. by 20syl)-ALvYflEVXL4.mp3
-66:xkito_chill/Wisp X - Somewhere I'd Rather Be-V5-AQTPFJSg.mp3
+0:dbox/New/artist/feint/[DnB] - Feint - Fury [Monstercat Release]-J6-_qq9ySrc.mp3
+1:dbox/New/artist/feint/[DnB] - Feint - Homebound [Monstercat Release]-rqbMrRDOu34.mp3
+2:dbox/New/artist/feint/[DnB] - Feint - Snake Eyes (feat. CoMa) [Monstercat Release]-cvq7Jy-TFAU.mp3
+3:dbox/New/artist/feint/[Drumstep] - Feint - Formless [Monstercat Release]-EwDIs6zTBeA.mp3
+4:dbox/New/artist/feint/[Electronic] - Feint - Phosphor (feat. Miyoki) [Monstercat Release]-gMt3civOT7g.mp3
+5:dbox/New/artist/feint/B.o.B ft. Hayley Williams - Airplanes (Feint Remix) HD-c2FB1_ohlek.mp3
+6:dbox/New/artist/feint/Coldplay - Fix You (Feint Bootleg) [Unsigned]-Rh9CBrPzihs.mp3
+7:dbox/New/artist/feint/Dabin - Embers (Feint Remix)-DCgWKBjBbhs.mp3
+8:dbox/New/artist/feint/Dabin & Feint - When You Return (feat. Daniela Andrade)-69AcRTwF6E4.mp3
+9:dbox/New/artist/feint/Doxx & Feint - The Pink Fields-V-tq8KqRkJE.mp3
+10:dbox/New/artist/feint/Doxx & Feint EP - Mind In Motion [HD] (320kbps) - AD-FREE-1LbWbPpNrGA.mp3
+11:dbox/New/artist/feint/Feint - 161914-Mts-Szoti34.mp3
+12:dbox/New/artist/feint/Feint - A Moment In The Life Of...-NZFrSf7S9Ko.mp3
+13:dbox/New/artist/feint/Feint - Always Here-k25pNFvxMwk.mp3
+14:dbox/New/artist/feint/Feint - And I Knew-XQLdr9i7HLU.mp3
+15:dbox/New/artist/feint/Feint - Clockwork Hearts-32pHvXsxa9o.mp3
+16:dbox/New/artist/feint/Feint - Come Undone (feat. Eric Hayes)-WVKurCUeUqM.mp3
+17:dbox/New/artist/feint/Feint - Connections-sYK_Pwb7Icc.mp3
+18:dbox/New/artist/feint/Feint - Creed-NJg1sTLjGnQ.mp3
+19:dbox/New/artist/feint/Feint - Face Down-wZWCAglZT8M.mp3
+20:dbox/New/artist/feint/Feint - Face Down-ZrMBaINMxwY.mp3
+21:dbox/New/artist/feint/Feint - First Flight-yiQgPQHLRrA.mp3
+22:dbox/New/artist/feint/Feint - For The Fire (ft. Eric Hayes)-3T3wGy8l8WI.mp3
+23:dbox/New/artist/feint/Feint - Forget Me Not (feat. CoMa)-E09g5FjYtjU.mp3
+24:dbox/New/artist/feint/Feint - Freefall-GM134Tu3IyI.mp3
+25:dbox/New/artist/feint/Feint - From Butterflies To Hurricanes-Rf5fNyBOTnw.mp3
+26:dbox/New/artist/feint/Feint - Horizons (feat. Veela) (Bustre Remix)-Fnpt3pHw7SU.mp3
+27:dbox/New/artist/feint/Feint - In heart & mind-vFfBo9auOpA.mp3
+28:dbox/New/artist/feint/Feint - Laurence (VIP)-wQh18tXL_r0.mp3
+29:dbox/New/artist/feint/Feint - Laurence [FREE DOWNLOAD]-Q77LWPmAp4k.mp3
+30:dbox/New/artist/feint/Feint - Learning To Cope (Unmastered) (Mastered Version Out Now!)-YklUNorXC7A.mp3
+31:dbox/New/artist/feint/Feint - Lift-sQCufd-orR4.mp3
+32:dbox/New/artist/feint/Feint - My Sunset (Long Mix by Suni)-ybKQj1RyV_Q.mp3
+33:dbox/New/artist/feint/Feint - New Beginnings (VIP)-JPPRpa1iU8g.mp3
+34:dbox/New/artist/feint/Feint - No Chance-zl7FZGyFjqo.mp3
+35:dbox/New/artist/feint/Feint - One Last Time-Ft3YcspdlH8.mp3
+36:dbox/New/artist/feint/Feint - One Thousand Dreams [Free EP]-nFtTY2S20mI.mp3
+37:dbox/New/artist/feint/Feint - Paradise Lost (VIP)-wZ8HB7XwVAM.mp3
+38:dbox/New/artist/feint/Feint - Past Futures-wrKRg7XE8P0.mp3
+39:dbox/New/artist/feint/Feint - Pastels-066CyIM-PDk.mp3
+40:dbox/New/artist/feint/Feint - Promises-MT8kGkQK5SI.mp3
+41:dbox/New/artist/feint/Feint - Reprise-mVdSAWWOvSw.mp3
+42:dbox/New/artist/feint/Feint - Ripped Up_Torn Down-ajGklD6NX8A.mp3
+43:dbox/New/artist/feint/Feint - Signs--dzzo64HHb8.mp3
+44:dbox/New/artist/feint/Feint - Skyward (Full) [HD]-Ryro5z1Pbek.mp3
+45:dbox/New/artist/feint/Feint - Slip Away-XELQSIZkZQc.mp3
+46:dbox/New/artist/feint/Feint - Solitude (feat. CoMa)-FsgpudzThlc.mp3
+47:dbox/New/artist/feint/Feint - Sparks [Subsphere Records]-xyFSZz8HrJ8.mp3
+48:dbox/New/artist/feint/Feint - Straylight-cHiVkywefxU.mp3
+49:dbox/New/artist/feint/Feint - That Makes One-Nr1WuUO4BTs.mp3
+50:dbox/New/artist/feint/Feint - The Journey ft. Veela-knbkFOvfucQ.mp3
+51:dbox/New/artist/feint/Feint - The Things We've Seen [Dirt, Lies & Audio Black]-67X6LkNAB70.mp3
+52:dbox/New/artist/feint/Feint - Those Eyes [HD]-pU0ZxxWThBY.mp3
+53:dbox/New/artist/feint/Feint - Times Like These (Fracture Design remix)-ujyPc_ESwzM.mp3
+54:dbox/New/artist/feint/Feint - Times Like These-rMOQO-5QE2w.mp3
+55:dbox/New/artist/feint/Feint - Tower Of Heaven (You Are Slaves)-z-sAl3S5qB8.mp3
+56:dbox/New/artist/feint/Feint - Two Flares In The Night Sky-iOko18YZulg.mp3
+57:dbox/New/artist/feint/Feint - United We Stand-NH7bwZ0r_QI.mp3
+58:dbox/New/artist/feint/Feint - Unwanted-15wO1C6bbh0.mp3
+59:dbox/New/artist/feint/Feint - Vagrant (ft. Veela)-FTskgVFZUuQ.mp3
+60:dbox/New/artist/feint/Feint - Vision Driver-fwS7VltJGGk.mp3
+61:dbox/New/artist/feint/Feint - We Won't Be Alone (feat. Laura Brehm)-cyRyh6Zrifc.mp3
+62:dbox/New/artist/feint/Feint - Wishful Thinking-jLvfkdu1J5I.mp3
+63:dbox/New/artist/feint/FEINT - Your Own Way (feat. Stan SB) FULL-y1zLFj2TjlU.mp3
+64:dbox/New/artist/feint/Feint & Boyinaband - Time Bomb (feat. Veela)-v7BddpYYNGk.mp3
+65:dbox/New/artist/feint/Feint & Fiction - The Catch-qLwRmmVRMuw.mp3
+66:dbox/New/artist/feint/Feint_-_A_Moment_In_The_Life_Of....mp3
+67:dbox/New/artist/feint/Michael Seary feat. Luke Cusato - Can't Say It Back (Feint Remix)-kHgfLRaK9F8.mp3
+68:dbox/New/artist/feint/Moleman - Still (feat. Truski) (Feint Remix) [FREE DOWNLOAD]-Rby00__BaAk.mp3
+69:dbox/New/artist/feint/Rameses B - Memoirs (Feint Remix)-HQIGZnBjnLg.mp3
+70:dbox/New/artist/feint/Relay & Front - Tale Of A Shooting Star (Feint Remix)-uJgyigwwgDs.mp3
+71:dbox/New/artist/feint/Sabrepulse - Arcanine (Feint Bootleg)-xSVJbzt0IUE.mp3
+72:dbox/New/artist/feint/TwoThirds & Feint - Epiphany (ft. Veela)-6bquIwXzvW8.mp3
 playlist_end

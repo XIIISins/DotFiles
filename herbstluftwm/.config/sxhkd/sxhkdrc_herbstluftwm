@@ -61,7 +61,7 @@ super + m
 
 # terminal
 alt + shift + Return
-    termite
+    urxvt
 
 # close windows
 alt + shift + c
@@ -117,5 +117,9 @@ alt + m
 
 # LOCK SCREEN!
 alt + shift + l
-    i3blur &> $HOME/log/lock.log
+#    i3blur &> $HOME/log/lock.log
 #    py3lock &> $HOME/log/lock.log
+  lock.sh
+
+alt + s
+  /home/xiii/bin/scratchpad

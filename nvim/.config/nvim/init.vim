@@ -112,7 +112,7 @@ filetype off                  " required
 " Statusline {{{
   set laststatus=2
   let g:lightline = {
-    \ 'colorscheme': 'cloudy',
+    \ 'colorscheme': 'Tomorrow_Night',
     \ 'active': {
     \   'left': [ [ 'filename' ],
     \             [ 'readonly', 'fugitive' ] ],

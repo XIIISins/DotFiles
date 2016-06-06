@@ -27,7 +27,7 @@ function statusbar {
 	}
 
 	function clock() {
-		time=$(date "+%A %b %d %Y %R")
+  time=$(date +"%Y/%m/%d %R")
 		echo $time
 	}
 
@@ -76,7 +76,7 @@ function statusbar {
 #Desktop
 #	echo "^p(_LEFT) ^fg(#6F77A4)"$(desk)" ^fg(#2D2D2D)|^fg(#78924A) $(music) ^fg(#2D2D2D)|^fg(#FFFFFF) ^p(_CENTER)$(activewin) ^p(_RIGHT)^p(-340) ^fg(#98414F)$(battery)^fg(#2D2D2D) | ^fg(#98414F)$(load) ^fg(#2D2D2D) | ^fg(#98414F) $(clock)"
 #Laptop
-	echo "^p(_LEFT) ^fg(#6F77A4)"$(desk)" ^fg(#2D2D2D)|^fg(#78924A) $(music) ^fg(#2D2D2D)|^fg(#FFFFFF) $(activewin) ^p(_RIGHT)^p(-360) ^fg(#E84F4F)$(battery)^fg(#2D2D2D) | ^fg(#E84F4F)$(load) ^fg(#2D2D2D) | ^fg(#E84F4F) $(clock)"
+	echo "^p(_LEFT) ^fg(#6F77A4)"$(desk)" ^fg(#2D2D2D)|^fg(#78924A) $(music) ^fg(#2D2D2D)|^fg(#FFFFFF) $(activewin) ^p(_RIGHT)^p(-380) ^fg(#E84F4F)$(battery)^fg(#2D2D2D) | ^fg(#E84F4F)$(load) ^fg(#2D2D2D) | ^fg(#E84F4F) $(clock)"
 }
  while true 
  do
