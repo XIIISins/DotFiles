@@ -16,3 +16,6 @@ nvim/.config/nvim/tmp/
 *history*
 weechat/.weechat/logs/*
 mpd/.mpd/mpd.log
+mpd/.mpd/mpdstate
+vimperator/.vimperator/info/default/history-command
+vimperator/.vimperator/info/default/history-search

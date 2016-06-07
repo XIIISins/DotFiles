@@ -8,6 +8,7 @@
 #include ".xres/rofi"
 ! #include ".xres/colors/crshd"
 #include "git/xcolors/crayolo/fury"
+#include ".xres/dzen"
 #include ".xres/urxvt"
 #include ".xres/st"
 

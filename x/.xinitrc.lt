@@ -103,7 +103,7 @@ xrdb -load ~/.Xresources
 xsetroot -cursor_name left_ptr &
 
 # Shiny stuff
-#compton &
+compton &
 
 # URxvt Daemon
 urxvtd -q &

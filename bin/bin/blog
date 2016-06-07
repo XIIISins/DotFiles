@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+# Automated blog post setup
+#
+DATE=$(date +'%Y-%m-%d')
+TIME=$(date +'%H:%M:%S')
+TITLE=$1
+CAT=$2
+
+BlogDir=$HOME/blog
+BlogPost=$BlogDir/_posts/$DATE-$TITLE.md
+
+egasu() {
+  echo -e "\nUsage $(basename $0):\n$(basename $0) <title> <category>\
+    \n\nExample:\n$(basename $0) potatoes farming \n"
+}
+
+if [ -z $TITLE ]; then
+  echo -e "\nERROR :: No title given."
+  egasu
+  exit 2
+fi
+
+if [ -z $CAT ]; then
+  echo -e "\nERROR :: No categories given."
+  egasu
+  exit 3
+fi
+
+if [ ! -e $BlogDir ]; then
+  echo -e "\nERROR :: Cannot find blog dir.\nExit"
+  exit 1
+fi
+
+cat << EOF > $BlogPost
+---
+layout:     post
+title:      $TITLE
+date:       $DATE $TIME
+categories: $CAT
+---
+
+
+EOF
+
+$EDITOR $BlogPost
