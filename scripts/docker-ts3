@@ -1,0 +1,46 @@
+#!/bin/bash
+#
+# Docker TS3
+#
+docker=`which docker`
+instance_name=$1
+increment_port=$2
+ports=( "9987" "10011" "30033" )
+
+tsPort1=$(expr ${ports[0]} + $increment_port)
+tsPort2=$(expr ${ports[1]} + $increment_port)
+tsPort3=$(expr ${ports[2]} + $increment_port)
+
+function chkport() {
+    taken=`netstat -tuanp | grep :::$1 | wc -l`
+    if [ $taken -eq 1 ]; then
+	echo "port $1 in use, aborting.."
+	exit
+    fi
+}
+
+function openport() {
+    port=$1
+    firewall-cmd --add-port=$port/udp
+    firewall-cmd --reload
+}
+
+chkport $tsPort1
+chkport $tsPort2
+chkport $tsPort3
+
+echo -e "adding firewall rules for port $tsPort1/udp"
+echo -e "If u want the other ports, open them manually."
+openport $tsPort1
+
+echo -e "Instance $instance_name listening on ports:\nUDP:$tsPort1\nTCP:$tsPort2 $tsPort3"
+
+if [ -e $docker ]; then
+	echo -e "executing:\n$docker run -d -p $tsPort1:9987/udp -p $tsPort2:10011 -p $tsPort3:30033 --name=$instance_name aheil/teamspeak3-server"
+	$docker run -d -p $tsPort1:9987/udp -p $tsPort2:10011 -p $tsPort3:30033 --name=$instance_name aheil/teamspeak3-server
+	#$docker logs $instance_name
+else
+	echo "docker not found, please install"
+	exit 1
+fi
+
