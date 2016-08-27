@@ -1,7 +1,8 @@
 #!/bin/bash
 
+set -x
 # disable path name expansion or * will be expanded in the line
-# cmd=( $line )
+cmd=( $line )
 
 # easter eggs
 sep_m="%{B#292929}%{F#833228}  %{F-}%{B-}"
@@ -19,7 +20,6 @@ monitor=${1:-0}
 
 herbstclient pad $monitor 16
 
-funtion statusbar
 {
     # events:
     mpc idleloop player | cat &
@@ -113,4 +113,4 @@ funtion statusbar
                 ;;
         esac
     done
-} 2> /dev/null | bar -g x16+1280 -B "#1f1f22" -F '#a8a8a8' -f '*-stlarch-medium-r-*-*-10-*-*-*-*-*-*-*,-*-cure.se-medium-r-*-*-11-*-*-*-*-*-*-*' $1
+} 2> /dev/null | lemonbar -g "x16" -B "#1f1f22" -F '#a8a8a8' -f '-*-stlarch-medium-r-*-*-10-*-*-*-*-*-*-*, -*-cure.se-medium-r-*-*-11-*-*-*-*-*-*-*' $1

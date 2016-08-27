@@ -162,7 +162,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 hc detect_monitors
 
 ## panel for main monitor -- ignore second monitor
-# hc pad 0 14 0 0 0
+hc pad 0 14 0 0 0
 
 # find the panel
 panel=~/.config/herbstluftwm/panel.sh

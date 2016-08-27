@@ -42,11 +42,6 @@ fi
 # }}}
 
 # Set screen
-#xrandr --output LVDS-1 --primary
-xrandr --output DP-1 --left-of VGA-1
-xrandr --output VGA-1 --primary
-xrandr --output DP-3 --right-of VGA-1
-xrandr --output LVDS-1 --below VGA-1
 
 # Load fonts
 xset +fp ~/.fonts
@@ -61,8 +56,8 @@ autocutsel -selection clipboard -fork &
 #source ~/.scripts/screenlayout
 # It's unclutter-xfixes-git
 #unclutter -b
-mpd &
-redshift &
+#mpd &
+#redshift &
 #notifyd &
 xsetroot -cursor_name left_ptr &
 #exec wm

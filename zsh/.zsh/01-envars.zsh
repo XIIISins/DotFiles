@@ -19,9 +19,9 @@ export HISTSIZE=9000
 export SAVEHIST=9000
 export HISTFILE=$HOME/.zsh/history
 
-export SHELL='/usr/bin/zsh'
+export SHELL='/bin/zsh'
 export EDITOR='vim'
 export MANPAGER='vimpager'
 
 # VPN Settings
-source ~/.echovpn
+# source ~/.echovpn

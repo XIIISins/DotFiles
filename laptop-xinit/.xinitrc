@@ -28,30 +28,20 @@ autokill() {
 
 autostart() {
    setwp
-   unclutter -grab -root &
-   xcmenu -d
+#   unclutter -grab -root &
+#   xcmenu -d
 #   sxhkd &
 #   stalonetray &
-   $HOME/bin/tray &
-   dropbox &
+#   $HOME/bin/tray &
+#   dropbox &
    nm-applet &
    numlockx on
-   urxvt -e wdo -s
+#   urxvt -e wdo -s
 #   pulse.sh
 }
 
-homescreen() {
-xrandr --output VGA-1 --mode 1920x1080 --primary
-xrandr --output LVDS-1 --off
-}
-
-# General Setup
-
-# Home screen
-#homescreen
-
 # Start pulseaudio and load module-loopback
-(pulseaudio -D && pactl load-module module-loopback) &
+#(pulseaudio -D && pactl load-module module-loopback) &
 
 # Load resources.
 xrdb -load ~/.Xresources
@@ -66,25 +56,29 @@ xsetroot -cursor_name left_ptr &
 #urxvtd -q &
 
 # MPD daemon start (if no other user instance exists)
-[ ! -s ~/.config/mpd/pid ] && mpd
+#[ ! -s ~/.config/mpd/pid ] && mpd
 
 # Mouse accel off
 xset m 1 1
 
 # Start KVM Server (synergy)
-synergys -d ERROR -c $HOME/.quicksynergy/synergy.conf &
+#synergys -d ERROR -c $HOME/.quicksynergy/synergy.conf &
 
 xset s off
 xset -dpms
 xset r rate 350 45
-xset +fp /usr/share/fonts/TTF
-xset +fp /usr/share/fonts/local
-xset +fp /usr/share/fonts/artwiz-fonts
-xset +fp $HOME/.local/share/fonts
-xset +fp $HOME/.local/share/fonts/jmk
-xset +fp $HOME/.local/share/fonts/misc
-xset +fp $HOME/.local/share/fonts/ohsnap
-xset +fp $HOME/.local/share/fonts/terminesspowerline
+#xset +fp /usr/share/fonts/TTF
+#xset +fp /usr/share/fonts/local
+#xset +fp /usr/share/fonts/artwiz-fonts
+for dir in $(ls /usr/share/fonts); do
+  xset +fp /usr/share/fonts/$dir
+done
+xset +fp $HOME/.fonts
+#xset +fp $HOME/.local/share/fonts
+#xset +fp $HOME/.local/share/fonts/jmk
+#xset +fp $HOME/.local/share/fonts/misc
+#xset +fp $HOME/.local/share/fonts/ohsnap
+#xset +fp $HOME/.local/share/fonts/terminesspowerline
 setxkbmap -option terminate:ctrl_alt_bksp
 
 #######

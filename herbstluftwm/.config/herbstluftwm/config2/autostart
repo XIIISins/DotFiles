@@ -100,4 +100,4 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 hc detect_monitors
 
 # panel
-/home/xiii/.config/herbstluftwm/panel.sh &
+/home/tsuki/.config/herbstluftwm/panel.sh &

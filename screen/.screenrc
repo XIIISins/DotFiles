@@ -12,9 +12,6 @@ altscreen on
 
 # Windows opening by default
 screen -t "" 1 
-screen -t "" 2 ncmpcpp
-screen -t "" 3 weechat-curses -d /home/xiii/.weechat
-screen -t "" 4 htop
 
 # keybinds
 #bindkey -k k; quit

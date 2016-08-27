@@ -108,8 +108,8 @@ super + {Right,Left}
     herbstclient use_index {+1 --skip-visible,-1 --skip-visible}
 
 # shift client to specified monitor
-alt + {apostrophe,section}
-    herbstclient shift_to_monitor {1,0}
+#alt + {apostrophe,section}
+#    herbstclient shift_to_monitor {1,0}
 
 # swap
 alt + m

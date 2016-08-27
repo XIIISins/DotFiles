@@ -3,4 +3,5 @@ export BSPWM_STATE="/tmp/bspwm-state.json"
 export PANEL_FIFO="/tmp/panel-fifo"
 #export IOUP_TOKEN="$(cat ~/.iotoken)"
 #[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec xinit hlwm -- vt$XDG_VTNR
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && /home/xiii/bin/selectwm
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec xinit hlwm 
+#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && /home/xiii/bin/selectwm
