@@ -1,0 +1,23 @@
+#!/bin/bash
+
+display=${1}
+
+if [ -z $display ]; then
+  display=:0
+fi
+
+SelectWM() {
+  WM=("2bwm" "hlwm" "dwm" "bspwm" "awesome" "kde")
+  echo ${WM[@]}
+  echo -e "Select your WM"
+  read wm
+  if [ -z $wm ]; then
+    wm=hlwm
+  fi
+  export wm
+  export WM=$wm
+}
+
+SelectWM
+
+xinit $wm -- $display vt$XDG_VTNR

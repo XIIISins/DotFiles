@@ -34,7 +34,7 @@ autostart() {
    xcmenu -d
 #   sxhkd &
 #   stalonetray &
-   nm-applet &
+#   nm-applet &
    numlockx on
 #  urxvt -e todo -s
 #   pulse.sh
@@ -49,8 +49,12 @@ homescreen() {
 }
 
 workscreen() {
-	xrandr --output DP-1 --left-of VGA-1
-	xrandr --output DP-3 --right-of VGA-1
+#	xrandr --output DP-3 --left-of VGA-1
+#	xrandr --output DP-1 --right-of VGA-1
+#  xrandr --output DP-3 --mode 1920x1080 --rotate left --left-of VGA-1
+#  xrandr --output DP-1 --mode 1920x1080 --rotate left --right-of VGA-1
+#. $HOME/.screenlayout/workscreens_et.sh
+. $HOME/.screenlayout/workscreens_I--.sh
 }
 
 chkCon() {
@@ -72,17 +76,6 @@ setscreen() {
         ;;
     esac
 
-}
-
-SelectWM() {
-  WM=("2bwm" "hlwm" "dwm" "bspwm" "awesome" "kde")
-  echo ${WM[@]}
-  echo -e "Select your WM"
-  read wm
-  if [ -z $wm ]; then
-    wm=hlwm
-  fi
-  export wm
 }
 
 #################
@@ -129,6 +122,7 @@ xset +fp /usr/share/fonts/artwiz-fonts
 #xset +fp $HOME/.local/share/fonts/ohsnap
 #xset +fp $HOME/.local/share/fonts/terminesspowerline
 setxkbmap -option terminate:ctrl_alt_bksp
+
 
 #######
 # DWM #
@@ -198,7 +192,7 @@ start_bspwm() {
     xsetroot -name background
     autostart &
     statsbar.sh &
-    sxhkd -c $HOME/.config/sxhkd/sxhkdrc.bspwm &
+    sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm &
     exec bspwm
     autokill; sleep 1
 }
@@ -226,10 +220,12 @@ case $wm in
         start_hlwm
         ;;
     2bwm)
+        autostart
         start_2bwm
+        sleep 1 && autokill
         ;;
     bspwm)
-        start_bspwm
+        start_bspwm | tee -a /tmp/shiro.x.log
         ;;
     dwm)
         start_dwm

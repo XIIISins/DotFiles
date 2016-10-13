@@ -1,5 +1,5 @@
 #! /bin/bash
-set -x
+#set -x
 
 . panel_config.x
 . panel_icons

@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Test default vars
+#
+#
+set -x
+
+VARS=( 'EDITOR' 'PAGER' 'POTATO' )
+
+for v in ${VARS[@]}; do
+	test -z \$$v && echo "$v not filled! fill it for one session with 'export $v=<PROGRAM>'"
+done

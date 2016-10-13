@@ -40,12 +40,11 @@ XF86AudioNext
 
 # Volume adjustments (pulse+ladspa)
 XF86AudioRaiseVolume
-    /home/xiii/bin/pavosc raise
+    pamixer -i 5
 XF86AudioLowerVolume
-    /home/xiii/bin/pavosc lower
+    pamixer -d 5
 XF86AudioMute
-    /home/xiii/bin/pavosc mute
-XF86AudioPlayXF86AudioPlay
+    /home/shiro/bin/mute.sh
 
 super + v
     dmenu_vol.sh

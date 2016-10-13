@@ -1,0 +1,78 @@
+#!/bin/bash
+#
+# RDP Launch Script
+#
+
+USERNAME=""
+RDPASSWORD=""
+RDPDEST=""
+
+RDPCMD=$(which xfreerdp)
+RDPARG="/w:1910 /h:1060"
+RDPARG2="+clipboard +home-drive +auto-reconnect"
+
+
+if [ -z $RDPCMD ]; then
+	echo "xfreerdp not available, please install or modify script"
+	exit 2
+fi
+
+ChkVar() {
+	if [ -z $1 ]; then
+		echo "No option given"
+		break
+	fi
+}
+
+GetPass() {
+echo -e "Enter password for user $USERNAME \nPassword: "
+unset password;
+while IFS= read -r -s -n1 pass; do
+  if [[ -z $pass ]]; then
+     echo
+     break
+  else
+     echo -n '*'
+     password+=$pass
+  fi
+done
+RDPASSWORD=${password}
+}
+
+HELP() {
+echo -e "$(basename $0) usage: \n$(basename $0) -u potato -p -s myrdp.pota.to -e"
+exit 1
+}
+
+if [ $# -eq 0 ]; then
+	HELP
+fi
+
+while getopts "u:pes:" options; do
+	case $options in
+		u)
+			ChkVar $OPTARG
+			USERNAME=$OPTARG
+			export RDPARG="$RDPARG /u:$USERNAME"
+			;;
+		p)
+			GetPass
+			export RDPARG="$RDPARG /p:$RDPASSWORD"
+			unset RDPASSWORD
+			;;
+		s)
+			ChkVar $OPTARG
+			RDPDEST=$OPTARG
+			export RDPARG="$RDPARG /v:$RDPDEST"
+			;;
+		e)
+			export RDPARG="$RDPARG $RDPARG2"
+			;;
+		*)
+			echo "No arguments given."
+			HELP
+			;;
+	esac
+done
+
+$RDPCMD $RDPARG

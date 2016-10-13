@@ -75,11 +75,11 @@ fi
 
 echo ""
 
-echo -n "Waiting for dev tun0 to be set up."
+echo -e "Waiting for dev tun0 to be set up.\n\n"
 while true; do
   TUNSTAT=$(ip a l | awk '/tun0/ && /UP/' | wc -l)
   if [ $TUNSTAT -eq '1' ]; then
-    echo -e "\n\nDevice tun0 available.\n\nYou are now connected to the Sentia Network"
+    echo -e "\n\nDevice tun0 available.\n\nYou are now connected to the Sentia YMS Network"
     exit 0
   else
     sleep 2

@@ -19,3 +19,4 @@ mpd/.mpd/mpd.log
 mpd/.mpd/mpdstate
 vimperator/.vimperator/info/default/history-command
 vimperator/.vimperator/info/default/history-search
+mutt/.mutt/.*

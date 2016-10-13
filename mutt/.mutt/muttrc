@@ -1,0 +1,112 @@
+#-----------#
+# Passwords #
+#-----------#
+# remember our passwords file .gmpass?  Well these lines find it and decrypt it using gpg. Important note the my_ part of each of these is 
+# critical so don't leave it out, it must be "set my_etcetera .......
+set my_tmpsecret=`gpg -o ~/.mutt/.tmp -d ~/.mutt/.secret.gpg`
+set my_gpass1=`awk '/Gmail1/ {print $2}' ~/.mutt/.tmp`
+set my_gpass2=`awk '/Gmail2/ {print $2}' ~/.mutt/.tmp`
+#set my_gpass3=`awk '/Gmail3/ {print $2}' ~/.encrypt/.tmp`
+set my_del=`rm -f ~/.mutt/.tmp`
+
+#---------------#
+# Account Hooks #
+#---------------#
+# What you are replacing in here is "user#acct that is it the rest stays the same for each of the three accounts
+# all we are doing here is creating hooks to get the mail and stay in contact with gmail.  Ummm, don't try this with yahoo :)
+account-hook . "unset imap_user; unset imap_pass; unset tunnel" # unset first!
+account-hook        "imaps://myron.janssen@imap.gmail.com/" "\
+    set imap_user   = myron.janssen@gmail.com \
+        imap_pass   = $my_gpass1"
+account-hook        "imaps://imap.gmail.com/" "\
+    set imap_user   = myron.janssen@sentia.com \
+        imap_pass   = $my_gpass2"
+#account-hook        "imaps://user3rdacct@imap.gmail.com/" "\
+#    set imap_user   = user3rdacct@gmail.com \
+#        imap_pass   = $my_gpass3"
+
+#-------------------------------------#
+# Folders, mailboxes and folder hooks #
+#-------------------------------------#
+# In this section you are changing the user#acct and Your Name and that is it. You could monkey with the folder locations as you wish
+
+# Setup for user1:
+set folder          = imaps://myron.janssen@imap.gmail.com/
+mailboxes           = +INBOX =[Gmail]/Drafts =[Gmail]/'Sent Mail' =[Gmail]/Spam =[Gmail]/Trash
+set spoolfile       = +INBOX
+folder-hook         imaps://myron.janssen@imap.gmail.com/ "\
+    set folder      = imaps://myron.janssen@imap.gmail.com/ \
+        spoolfile   = +INBOX \
+        postponed   = +[Gmail]/Drafts \
+        record      = +[Gmail]/'Sent Mail' \
+        from        = 'Myron Janssen <myron.janssen@gmail.com> ' \
+        realname    = 'Myron Janssen' \
+        smtp_url    = smtps://myron.janssen@smtp.gmail.com \
+        smtp_pass   = $my_gpass1"
+
+# Setup for user2:
+set folder          = "imaps://imap.gmail.com/"
+mailboxes           = +INBOX =[Gmail]/Drafts =[Gmail]/'Sent Mail' =[Gmail]/Spam =[Gmail]/Trash
+set spoolfile       = +INBOX
+folder-hook         imaps://imap.gmail.com/ "\
+    set folder      = imaps://imap.gmail.com/ \
+        spoolfile   = +INBOX \
+        postponed   = +[Gmail]/Drafts \
+        record      = +[Gmail]/'Sent Mail' \
+        from        = 'Myron Janssen <myron.janssen@sentia.com> ' \
+        realname    = 'Myron Janssen' \
+        smtp_url    = smtps://myron.janssen@sentia.com@smtp.gmail.com \
+        smtp_pass   = $my_gpass2"
+
+# Setup for user3:
+#set folder          = imaps://user3rdacct@imap.gmail.com/
+#mailboxes           = +INBOX =[Gmail]/Drafts =[Gmail]/'Sent Mail' =[Gmail]/Spam =[Gmail]/Trash
+#set spoolfile       = +INBOX
+#folder-hook         imaps://user3rdacct@imap.gmail.com/ "\
+#    set folder      = imaps://user3rdacct@imap.gmail.com/ \
+#        spoolfile   = +INBOX \
+#        postponed   = +[Gmail]/Drafts \
+#        record      = +[Gmail]/'Sent Mail' \
+#        from        = 'Your Name <user3rdacct@gmail.com> ' \
+#        realname    = 'Your Name' \
+#        smtp_url    = smtps://user3rdacct@smtp.gmail.com \
+#        smtp_pass   = $my_gpass3"
+
+#--------#
+# Macros #
+#--------#
+macro index <F1> "y12<return><return>" # jump to mailbox number 12 (user1 inbox)
+macro index <F2> "y6<return><return>"  # jump to mailbox number 6 (user2 inbox)
+macro index <F3> "y18<return><return>"  # jump to mailbox number 18 (user3 inbox)
+# Below requires added script separate from mutt for more info see the section on opening HTML files in a browser
+macro index <F10> "<copy-message>/tmp/mutttmpbox\n<enter><shell-escape>~/bin/viewhtmlmail.py\n" "View HTML in browser"
+macro pager <F10> "<copy-message>/tmp/mutttmpbox\n<enter><shell-escape>~/bin/viewhtmlmail.py\n" "View HTML in browser"
+#-----------------------#
+# Gmail-specific macros #
+#-----------------------#
+# to delete more than 1 message, just mark them with "t" key and then do "d" on them
+macro index d ";s+[Gmail]/Trash<enter><enter>" "Move to Gmail's Trash"
+# delete message, but from pager (opened email)
+macro pager d "s+[Gmail]/Trash<enter><enter>"  "Move to Gmail's Trash"
+# undelete messages
+macro index u ";s+INBOX<enter><enter>"         "Move to Gmail's INBOX"
+macro pager u "s+INBOX<enter><enter>"          "Move to Gmail's INBOX"
+
+#-------------------------#
+# Misc. optional settings #
+#-------------------------#
+# Check for mail every minute for current IMAP mailbox every 1 min
+set timeout         = 60
+# Check for new mail in ALL mailboxes every 2 min
+set mail_check      = 120
+# keep imap connection alive by polling intermittently (time in seconds)
+set imap_keepalive  = 300
+# allow mutt to open new imap connection automatically
+unset imap_passive
+# store message headers locally to speed things up
+# (the ~/.mutt folder MUST exist! Arch does not create it by default)
+set header_cache    = ~/.mutt/hcache
+# sort mail by threads
+set sort            = threads
+# and sort threads by date
+set sort_aux        = last-date-received

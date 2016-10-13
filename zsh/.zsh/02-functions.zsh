@@ -5,7 +5,7 @@ precmd() {
 	setprompt
 
 	case $TERM in
-		rxvt-256color | screen-256color ) 
+		rxvt-256color | screen-256color )
 			print -Pn "\e]0;%n@%m: %~\a" ;;
 	esac
 }
@@ -91,5 +91,39 @@ curl --user-agent "$UA" \
     --data-urlencode "text=$TEXT" \
     --silent $TRANSLATEURL \
     | sed "s/<\/span>/$NEWLINE/g" | grep 'result_box' | sed 's/.*>//'
+}# }}}
+
+# {{{ Nato alphabet
+nato() {
+  cat << EOF
+
+A - Alpha
+B - Beta
+C - Charlie
+D - Delta
+E - Echo
+F - Foxtrot
+G - Golf
+H - Hotel
+I - India
+J - Juliet
+K - Kilo
+L - Lima
+M - Mike
+N - November
+O - Oscar
+P - Papa
+Q - Quebec
+R - Romeo
+S - Sierra
+T - Tango
+U - Uniform
+V - Victor
+W - Whiskey
+X - Xray
+Y - Yankee
+Z - Zulu
+- - Dash
+EOF
 }
 # }}}

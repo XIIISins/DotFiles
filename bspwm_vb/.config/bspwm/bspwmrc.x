@@ -8,7 +8,6 @@ fi
 #bspc config top_padding		15
 bspc config window_gap          10
 bspc config border_width        3
-bspc config focus_follow_pointer true
 
 bspc config split_ratio         0.50
 bspc config borderless_monocle  false
@@ -21,6 +20,7 @@ bspc config focused_border_color "#800000"
 bspc config focused_border_color "$(bspc config focused_border_color)"
 bspc config active_border_color "$(bspc config normal_border_color)"
 
+bspc config focus_follow_pointer true
 bspc rule -a URxvtQuake sticky=on floating=on
 
 if [ $(bspc query -M | wc -l) -eq 3 ]; then

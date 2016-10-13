@@ -27,6 +27,10 @@ progressbar_boldness = "no"
 display_bitrate = "no"
 enable_window_title = "no"
 
+# Visual Stuff
+visualizer_type = "spectrum"
+visualizer_look = "●▮"
+
 # cheat sheet
 # %l - length
 # %f - filename

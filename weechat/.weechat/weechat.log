@@ -1,17 +1,1 @@
-[2016-08-27 15:54:21] WeeChat 1.5 (compiled on Aug 27 2016 15:53:25)
-[2016-08-27 15:54:21] Reading configuration file sec.conf
-[2016-08-27 15:54:21] Reading configuration file weechat.conf
-[2016-08-27 15:54:21] Reading configuration file plugins.conf
-[2016-08-27 15:54:21] Reading configuration file charset.conf
-[2016-08-27 15:54:21] Reading configuration file logger.conf
-[2016-08-27 15:54:21] Reading configuration file exec.conf
-[2016-08-27 15:54:21] Reading configuration file trigger.conf
-[2016-08-27 15:54:21] Reading configuration file aspell.conf
-[2016-08-27 15:54:21] Reading configuration file alias.conf
-[2016-08-27 15:54:21] Reading configuration file xfer.conf
-[2016-08-27 15:54:21] Reading configuration file irc.conf
-[2016-08-27 15:54:21] Reading configuration file relay.conf
-[2016-08-27 15:54:21] Reading configuration file buffers.conf
-[2016-08-27 15:54:21] Reading configuration file iset.conf
-[2016-08-27 15:54:22] Reading configuration file script.conf
-[2016-08-27 15:54:28] irc: connecting to server irc.twitch.tv/6667...
+

@@ -1,6 +1,7 @@
 #!/bin/bash
+#
 #List content of random directories
-#set -x
+#
 
 random_ls ()  {
   for i in $(find . -maxdepth 1 -name "*pdb*"  | shuf -n4); do
