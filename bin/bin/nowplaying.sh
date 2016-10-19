@@ -11,7 +11,11 @@ while :; do
 	CURSONG=$(cat $HOME/.unp/unp_now_playing.txt)
 	if [ "$CURSONG" != "$NOWP" ]; then
 		NOWP=$CURSONG
-		echo $NOWP | $CMD
+    if [ $TOILET -eq '1' ]; then
+  		echo $NOWP | $CMD
+    else
+      echo $NOWP
+    fi
 		sleep 5
 	else
 		sleep 10

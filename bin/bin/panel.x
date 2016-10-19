@@ -58,6 +58,8 @@ while true; do
     last_title=$(mpc status | head -n 1) # In case the music is stopped
   elif [[ $(mpc status | wc -l) -eq 0 ]]; then
     last_title="-"
+  elif [[ $(mpc status | wc -l) -eq 1 ]]; then
+    last_title=$(cat $HOME/.unp/unp_now_playing.txt)
   fi
 
   if [[ -n $(mpc status | grep paused) ]]; then

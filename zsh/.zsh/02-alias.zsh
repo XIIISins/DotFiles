@@ -33,7 +33,7 @@ alias MountSD="sudo mount -t vfat -o rw,uid=1000 /dev/mmcblk0p1 /mnt/sdcard"
 #
 
 # Weather
-alias weather='curl -4 wttr.in'
+alias weather='curl -4 wttr.in/nieuwegein'
 
 alias s="sudo"
 alias umnt="umount"

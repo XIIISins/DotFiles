@@ -20,7 +20,6 @@ bspc config focused_border_color "#800000"
 bspc config focused_border_color "$(bspc config focused_border_color)"
 bspc config active_border_color "$(bspc config normal_border_color)"
 
-bspc config focus_follow_pointer true
 bspc rule -a URxvtQuake sticky=on floating=on
 
 if [ $(bspc query -M | wc -l) -eq 3 ]; then
