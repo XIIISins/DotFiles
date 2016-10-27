@@ -28,6 +28,7 @@ alias flux="xflux -l 52.0248 -g 5.0918"
 alias please='sudo $(fc -ln -1)'
 alias irc="ssh -t xiiisins 'screen -d -r'"
 alias MountSD="sudo mount -t vfat -o rw,uid=1000 /dev/mmcblk0p1 /mnt/sdcard"
+alias wapp="chromium --app="http://web.whatsapp.com""
 
 # Lazy ass mofo right here!
 #

@@ -55,7 +55,7 @@ function uniq_linebuffered() {
     # volume
     while true ; do
         # echo "vol $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')" # ALSA volume
-				 echo "vol $(pacmd list-sinks | sed -ne '/Creative_Technology_Ltd/,$p' | awk '/volume/ {print $5; exit}')" # Alsa for Output Device Corsair Vengeance 2100 Analog Stereo
+				 echo "vol $(pacmd list-sinks | sed -ne '/.*analog-stereo/,$p' | awk '/volume/ {print $5; exit}')" # Alsa for Output Device Corsair Vengeance 2100 Analog Stereo
 #        echo "vol $(pactl list sinks | sed -ne '/Name:\ combined/,$p' | awk -F'/' '/Volume/ {print $2}' | head -n1)" # Alsa for Output Device Combined Sink
 	sleep 1 || break
     done > >(uniq_linebuffered) &

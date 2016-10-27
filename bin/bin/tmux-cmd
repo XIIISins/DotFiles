@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+
+tSESSION="home"
+tWINDOW=""
+
+# ArrSession=$(tmux list-session | awk -F: '{print $1}')
+# ArrWindows=$(tmux list-window -t $tSESSION | awk -F: '{print $1}')
+
+SpawnWindow(){
+	NewWinNR=$(expr $(tmux list-window -t home | awk -F: '{print $1}' | tail -n1 ) + 1)
+	export tWINDOW=$NewWinNR
+	tmux new-window -t $tSESSION:$NewWinNR
+}
+
+tRunCMD(){
+	echo "in func tRunCMD"
+	echo "$@"
+	tmux send -t $tSESSION:$tWINDOW "$@" ENTER
+}
+
+if [ $# -eq '0' ]; then
+	echo "Specify command to run!"
+	exit 1
+fi
+
+SpawnWindow
+tRunCMD "$@" 

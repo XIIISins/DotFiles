@@ -135,6 +135,9 @@ super + @button{1-3}
 super + Return
 	urxvt
 
+super + r
+  rofi -show run -lines 3 -eh 2 -fullscreen -opacity 90
+
 super + F11
   passmenu
 
@@ -161,3 +164,6 @@ super + Escape
 # Shortcuts
 super + shift + f
   firefox &
+
+super + alt + s
+  rofi -show ssh -fullscreen

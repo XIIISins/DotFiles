@@ -1,0 +1,22 @@
+#!/bin/bash
+ 
+FULLURL='https://en.wikipedia.org/w/api.php?action=query&redirects&prop=extracts&explaintext&format=json&formatversion=2&titles='
+URL='https://en.wikipedia.org/w/api.php?action=query&redirects&prop=extracts&exintro&explaintext&format=json&formatversion=2&titles='
+ 
+if [[ "$#" -eq 2 && "$1" == "full" ]]
+    then
+    QUERY=$2
+    curl -s "${FULLURL}${QUERY}" | jq -r '.query.pages[].title, .query.pages[].extract' | fold -s -w 111 | sed -e "1i\\\n  Wikipedia entry for: " -e "2i\ " -e 's/^/  /' -e '$a\ ' | less
+    exit 0
+ 
+elif [ "$#" -eq 1 ]
+    then
+    QUERY=$1
+    curl -s "${URL}${QUERY}" | jq -r '.query.pages[].title, .query.pages[].extract' | fold -s -w 111 | sed -e "1i\\\n  Wikipedia entry for: " -e "2i\ " -e 's/^/  /' -e '$a\ '
+    exit 0
+ 
+else
+    echo "Syntax Error. Usage: wiki [full] query"
+    exit 2
+fi
+exit 0

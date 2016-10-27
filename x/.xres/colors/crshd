@@ -1,7 +1,7 @@
 ! vim: set filetype=xdefaults :
 *foreground: #D7D0C7
 *background: #151515
-URxvt.background: #151515
+URxvt.background: [94]#151515
 
 !black
 ! *color0:     #AF875F
@@ -30,7 +30,7 @@ URxvt.background: #151515
 *color7:     #dddddd
 *color15:    #dddddd
 
-URxvt*borderColor:        #151515
+URxvt*borderColor:        [94]#151515
 URxvt*colorBD:            #ffffff
 URxvt*cursorColor:        #ff8939
 URxvt*cursorColor2:       #151515

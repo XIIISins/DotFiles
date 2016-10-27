@@ -2,7 +2,10 @@
 #
 # Now playing with UNP (Firefox)
 #
+set -x
+
 NOWP=""
+TOILET=0
 CMD="toilet -f chunky"
 
 

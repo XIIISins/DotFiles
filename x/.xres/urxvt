@@ -13,16 +13,16 @@ URxvt.depth: 32
 URxvt.iso14755: false
 URxvt.iso14755_52: false
 URxvt.perl-ext-common: default,clipboard,matcher,tabbed
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/qutebrowser
 URxvt.matcher.button: 1
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 
 ! URxvt tab config
 URxvt.tabbed.tabbar-fg: 8
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg: 8
-URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.tabbar-bg: [50]#101010
+URxvt.tabbed.tab-fg: 7
+URxvt.tabbed.tab-bg: [96]#101010
 URxvt.tabbed.autohide:  yes
 URxvt.tabbed.new-button:  no
 URxvt.tabbed.title: no

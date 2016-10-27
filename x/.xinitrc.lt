@@ -18,7 +18,7 @@ fi
 }
 
 autokill() {
-   killall unclutter
+#   killall unclutter
    killall xcmenu
    killall unclutter
    killall sxhkd
@@ -30,7 +30,7 @@ autokill() {
 
 autostart() {
    setwp
-   unclutter -grab -root &
+#   unclutter -grab -root &
    xcmenu -d
 #   sxhkd &
 #   stalonetray &
@@ -130,13 +130,13 @@ setxkbmap -option terminate:ctrl_alt_bksp
 start_dwm() {
 # status bar
 while true; do
- xsetroot -name "NP: `mpc_np` | `uname -r` | `uptime | sed 's/.*average: //'` | `memusage` | Batt: `acpi | awk '{print $4}' | sed 's/,//g'` |`date "+%A %b %d %Y %R"`"
+  xsetroot -name "NP: $(nowplaying.sh) | `uname -r` | `uptime | sed 's/.*average: //'` | `memusage` | Batt: `acpi | awk '{print $4}' | sed 's/,//g'` |`date "+%A %b %d %Y %R"`"
  sleep 1
 done &
 
 
 # Set a nice background.
-setwp
+#setwp
 
 # relaunch DWM if the binary changes, otherwise bail
 csum=$(sha1sum $(which dwm))
@@ -236,4 +236,4 @@ case $wm in
     kde)
         start_kde
         ;;
-esac
+esac | tee -a /tmp/wtf.log
