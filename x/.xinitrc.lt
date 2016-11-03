@@ -26,12 +26,16 @@ autokill() {
    killall dropbox
    killall nm-applet
 #   killall pulse.sh
+   killall notifyd
+   killall np-notify
 }
 
 autostart() {
    setwp
 #   unclutter -grab -root &
    xcmenu -d
+   notifyd
+   np-notify
 #   sxhkd &
 #   stalonetray &
 #   nm-applet &
@@ -112,7 +116,7 @@ xset m 1 1
 
 xset s off
 xset -dpms
-xset r rate 350 45
+xset r rate 500 5
 xset +fp /usr/share/fonts/TTF
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/artwiz-fonts

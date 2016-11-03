@@ -28,7 +28,7 @@ alias flux="xflux -l 52.0248 -g 5.0918"
 alias please='sudo $(fc -ln -1)'
 alias irc="ssh -t xiiisins 'screen -d -r'"
 alias MountSD="sudo mount -t vfat -o rw,uid=1000 /dev/mmcblk0p1 /mnt/sdcard"
-alias wapp="chromium --app="http://web.whatsapp.com""
+alias ts3="teamspeak3 -nosingleinstance"
 
 # Lazy ass mofo right here!
 #
@@ -43,12 +43,18 @@ alias pk="pkill"
 alias k="kill"
 alias yau="yaourt -Syu --aur --devel --noconfirm"
 
-#
-# End lazy ass mofo section!
+alias wapp="chromium --app="http://web.whatsapp.com""
+alias wrike="chromium --app="http://wrike.com/workspace.htm""
+alias gcal="gcalcli --military --monday --calendar "myron.janssen@sentia.com" calw"
 
 alias sis_gateway="ssh -t mjanssen@zabbix 'tail -f /var/log/sis_gateway.log'"
 alias zabbix_log="ssh -t mjanssen@zabbix 'tail -f /var/log/zabbix/zabbix_server.log'"
 alias tickets="ssh -t mjanssen@zabbix 'tickets'"
+
+alias cmtmsg="curl -s whatthecommit.com | sed -n 's/^<p>//p'"
+#
+# End lazy ass mofo section!
+
 # Grep fix
 alias grep="grep $GREP_OPTIONS"
 unset GREP_OPTIONS

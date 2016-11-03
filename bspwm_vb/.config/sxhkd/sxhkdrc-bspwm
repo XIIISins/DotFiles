@@ -165,5 +165,12 @@ super + Escape
 super + shift + f
   firefox &
 
+# Laauncher like things
+super + r
+  rofi -show run -lines 3 -eh 2 -fullscreen -opacity 90
+
 super + alt + s
   rofi -show ssh -fullscreen
+
+super + shift + w
+  rofi -show window -fullscreen

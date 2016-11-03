@@ -47,7 +47,7 @@ printinfo () {
     info "${c01}▉▉  | $(tput sgr0)$(tput setaf 1)Uptime" uptime
     info "${c09}  ▉▉| $(tput sgr0)$(tput setaf 1)Packages" packages
     info "${c02}▉▉  | $(tput sgr0)$(tput setaf 1)Shell" shell
-    prin "${c10}  ▉▉| $(tput sgr0)$(tput setaf 1)Window Manager $(tput setaf 6)wmutils"
+    # prin "${c10}  ▉▉| $(tput sgr0)$(tput setaf 1)Window Manager $(tput setaf 6)bspwm"
     info "${c03}▉▉  | $(tput sgr0)$(tput setaf 1)GTK Theme" theme
     info "${c11}  ▉▉| $(tput sgr0)$(tput setaf 1)Icons" icons
     info "${c04}▉▉  | $(tput sgr0)$(tput setaf 1)CPU" cpu
@@ -274,7 +274,7 @@ shuffle_dir="$HOME/Pictures/wallpapers/wash"
 
 # Crop mode
 # --crop_mode normal/fit/fill
-crop_mode="normal"
+crop_mode="fit"
 
 # Crop offset
 # Only affects normal mode.
@@ -299,8 +299,8 @@ gap=4
 # Image offsets
 # --xoffset px
 # --yoffset px
-yoffset=0
-xoffset=0
+yoffset=20
+xoffset=20
 
 
 # }}}

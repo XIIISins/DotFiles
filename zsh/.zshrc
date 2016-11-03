@@ -47,7 +47,7 @@ else
   export LS_COLORS
 fi
 
-shinymotd
+#shinymotd
 
 if [ -e $HOME/dead.letter ]; then
   echo -e "\n\nNotice: dead letter found\n\n"
