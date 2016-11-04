@@ -8,4 +8,4 @@ if [ $MUTE == "true" ]; then
 	pamixer -u
 else
 	pamixer -m
-fi:
+fi

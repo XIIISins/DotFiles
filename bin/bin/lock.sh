@@ -43,6 +43,7 @@ convert /tmp/screen.png -scale 10% -scale 1000% /tmp/screen.png
 
 # Stop music
 MusicStat stop
+mute.sh
 
 # Lock desktop
 if [ -e $(which i3lock) ]; then
@@ -58,5 +59,6 @@ fi
 
 # If we reach this, we have been unlocked and we can start music and cleanup!
 MusicStat start
+mute.sh
 rm /tmp/screen.png
 

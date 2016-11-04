@@ -43,15 +43,24 @@ alias pk="pkill"
 alias k="kill"
 alias yau="yaourt -Syu --aur --devel --noconfirm"
 
+# Productivity Apps
 alias wapp="chromium --app="http://web.whatsapp.com""
 alias wrike="chromium --app="http://wrike.com/workspace.htm""
 alias gcal="gcalcli --military --monday --calendar "myron.janssen@sentia.com" calw"
 
+# Work
 alias sis_gateway="ssh -t mjanssen@zabbix 'tail -f /var/log/sis_gateway.log'"
 alias zabbix_log="ssh -t mjanssen@zabbix 'tail -f /var/log/zabbix/zabbix_server.log'"
 alias tickets="ssh -t mjanssen@zabbix 'tickets'"
 
 alias cmtmsg="curl -s whatthecommit.com | sed -n 's/^<p>//p'"
+
+# Git stuffs
+alias gcm="git commit -m "$(cmtmsg)""
+alias gs="git status"
+alias gp="git push -u origin master"
+alias gaa="git add ."
+
 #
 # End lazy ass mofo section!
 
