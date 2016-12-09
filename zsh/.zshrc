@@ -53,3 +53,9 @@ if [ -e $HOME/dead.letter ]; then
   echo -e "\n\nNotice: dead letter found\n\n"
   cat $HOME/dead.letter
 fi
+
+PATH="/home/shiro/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/shiro/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/shiro/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/shiro/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/shiro/perl5"; export PERL_MM_OPT;

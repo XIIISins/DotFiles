@@ -48,8 +48,8 @@ autostart() {
 # SCREEN SETUP #
 ################
 homescreen() {
-	xrandr --output VGA-1 --mode 1920x1080 --primary
-	xrandr --output LVDS-1 --off
+	#xrandr --output VGA-1 --mode 1920x1080 --primary
+	xrandr --output LVDS-1 --primary
 }
 
 workscreen() {
@@ -116,7 +116,7 @@ xset m 1 1
 
 xset s off
 xset -dpms
-xset r rate 500 5
+xset r rate 500 50
 xset +fp /usr/share/fonts/TTF
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/artwiz-fonts

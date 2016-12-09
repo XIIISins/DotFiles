@@ -41,7 +41,7 @@ alias umnt="umount"
 alias mnt="mount"
 alias pk="pkill"
 alias k="kill"
-alias yau="yaourt -Syu --aur --devel --noconfirm"
+alias yau="yaourt -Syu --aur --devel --noconfirm | tee -a ${HOME}/var/log/update.log"
 
 # Productivity Apps
 alias wapp="chromium --app="http://web.whatsapp.com""
@@ -50,16 +50,19 @@ alias gcal="gcalcli --military --monday --calendar "myron.janssen@sentia.com" ca
 
 # Work
 alias sis_gateway="ssh -t mjanssen@zabbix 'tail -f /var/log/sis_gateway.log'"
-alias zabbix_log="ssh -t mjanssen@zabbix 'tail -f /var/log/zabbix/zabbix_server.log'"
+alias zabbix_log="ssh -t mjanssen@zabbix 'tail -f /var/log/zabbix/zabbix_server.log | grep -iv ipmi'"
 alias tickets="ssh -t mjanssen@zabbix 'tickets'"
 
 alias cmtmsg="curl -s whatthecommit.com | sed -n 's/^<p>//p'"
 
 # Git stuffs
-alias gcm="git commit -m "$(cmtmsg)""
+alias gcmess="git commit -m "$(cmtmsg)""
 alias gs="git status"
 alias gp="git push -u origin master"
 alias gaa="git add ."
+
+# Easy navigation
+alias devenv="cd $DEVEL_HOME"
 
 #
 # End lazy ass mofo section!

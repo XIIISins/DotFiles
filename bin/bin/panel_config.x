@@ -1,5 +1,7 @@
 #! /bin/bash
 
+set -x
+
 PANEL_FIFO=/tmp/pamel-fifo
 PANEL_HEIGHT=20
 PANEL_WM_NAME="lemonbar"

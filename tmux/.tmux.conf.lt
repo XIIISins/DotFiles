@@ -22,6 +22,9 @@ bind r source-file ~/.tmux.conf
 bind-key F11 lock-session
 bind-key F12 lock-server
 
+# Resize
+set -g aggressive-resize on
+
 # Windows & Panes
 set -g pane-border-fg black
 set -g pane-active-border-fg red
