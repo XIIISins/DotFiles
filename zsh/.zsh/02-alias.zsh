@@ -56,7 +56,7 @@ alias tickets="ssh -t mjanssen@zabbix 'tickets'"
 alias cmtmsg="curl -s whatthecommit.com | sed -n 's/^<p>//p'"
 
 # Git stuffs
-alias gcmess="git commit -m "$(cmtmsg)""
+alias gcmess="git commit -m `curl -s whatthecommit.com | sed -n 's/^<p>//p'`"
 alias gs="git status"
 alias gp="git push -u origin master"
 alias gaa="git add ."
