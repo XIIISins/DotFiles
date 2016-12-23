@@ -42,6 +42,7 @@ alias mnt="mount"
 alias pk="pkill"
 alias k="kill"
 alias yau="yaourt -Syu --aur --devel --noconfirm | tee -a ${HOME}/var/log/update.log"
+alias jlog="sudo journalctl -fn120 | tee var/log/journal.log"
 
 # Productivity Apps
 alias wapp="chromium --app="http://web.whatsapp.com""
@@ -56,6 +57,7 @@ alias tickets="ssh -t mjanssen@zabbix 'tickets'"
 alias cmtmsg="curl -s whatthecommit.com | sed -n 's/^<p>//p'"
 
 # Git stuffs
+
 alias gcmess="git commit -m `curl -s whatthecommit.com | sed -n 's/^<p>//p'`"
 alias gs="git status"
 alias gp="git push -u origin master"

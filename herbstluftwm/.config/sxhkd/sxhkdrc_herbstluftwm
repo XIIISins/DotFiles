@@ -14,6 +14,18 @@ alt + control + q
 control + apostrophe
     pkill -USR1 redshift
 
+
+# Rofi
+super + r
+  rofi -show run -lines 3 -eh 2 -fullscreen -opacity 90
+
+super + alt + s
+  rofi -show ssh -fullscreen
+
+super + shift + w
+  rofi -show window -fullscreen
+
+
 # menu
 alt + d
     dmenu_run -q -z -l 9 -fn Envypn -x 0 -y 0 -w 160 -nb "#1A1C1F" -nf "#A8A8A8" -sb "#93503e" -sf "#c4bbb0" -p "»"

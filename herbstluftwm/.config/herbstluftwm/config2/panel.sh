@@ -3,6 +3,8 @@
 # Just a dirty script for lemonbar,
 # you need to use 'siji' font for icons.
 
+set -x
+
 # If home, then 1 else 0
 HOME_SET=`xrandr | grep 'DP' | grep -v 'disconnected' | wc -l`
 
@@ -36,6 +38,12 @@ sm="%{F$RED}  %{F-}"
 sv="%{F$BLU}  %{F-}"
 sd="%{F$VLT}  %{F-}"
 
+# Potato
+# sha="$(sha1sum $HOME/.unp/unp_now_playing.txt | awk '{print $1}')"
+sha="null"
+new_sha="null"
+boe=1
+
 # padding
 herbstclient pad $monitor 16
 
@@ -49,8 +57,55 @@ function uniq_linebuffered() {
 # events
 {
     # now playing
-    mpc idleloop player | cat &
-    mpc_pid=$!
+    #
+
+    while true ; do
+       if [ -z $(mpc playlist) ]; then  # if no plYLIAAR
+         if [ -e $HOME/.unp/unp_now_playing.txt ]; then
+           if [ "$sha" != "$new_sha" ]; then
+             sha=$new_sha
+              echo "youtube $boe" 
+    #          printf "POTATO boe %d\n" $boe >>   /tmp/potato_out
+           fi
+           new_sha=$(sha1sum $HOME/.unp/unp_now_playing.txt | awk '{print $1}')
+          fi
+        else
+          mpc idleloop player | cat &
+          mpc_pid=$!
+        fi
+    let boe+=1
+    # printf "Kalote boe %d\n" $boe >>   /tmp/potato_out
+    sleep 1 || break
+    done > >(uniq_linebuffered) & 
+    potato_pid=$!
+    # echo $potato_pid >> /tmp/potato_out
+
+
+
+
+
+    # 
+    # broken
+    # 
+    # while true; do
+    #     if [ -z $(mpc playlist) ]; then
+    #       if [ -e $HOME/.unp/unp_now_playing.txt ]; then
+    #       old_sha=""
+    #       new_sha=$(sha1sum $HOME/.unp/unp_now_playing.txt | awk '{print $1}')
+    #         if [ "$old_sha" != "$new_sha" ]; then
+    #           echo youtube
+    #         fi
+    #       fi
+    #     else
+    #       # echo mpc
+    #       mpc idleloop player | cat &
+    #       mpc_pid=$!
+    #     fi
+    # sleep 1 || break
+    # done > >(uniq_linebuffered) &
+    #
+    # broken
+    #
 
     # volume
     while true ; do
@@ -60,6 +115,7 @@ function uniq_linebuffered() {
 	sleep 1 || break
     done > >(uniq_linebuffered) &
     vol_pid=$!
+# echo $vol_pid >> /tmp/potato_out
 
     # date
     while true ; do
@@ -72,8 +128,8 @@ function uniq_linebuffered() {
     herbstclient --idle
 
     # exiting; kill stray event-emitting processes
-    kill $mpc_pid $vol_pid $date_pid
-} 2> /dev/null | {
+    kill $potato_pid $mpc_pid $vol_pid $date_pid
+} 2> $DEVEL_HOME/panel_stderr.log | {
     TAGS=( $(herbstclient tag_status $monitor) )
     unset TAGS[${#TAGS[@]}]
     time=""
@@ -125,6 +181,11 @@ function uniq_linebuffered() {
         # wait for next event
         read line || break
         cmd=( $line )
+        # index=0
+        # while [ $index -lt "${#cmd[@]}" ]; do
+        #     printf "pipo $index- %s\n" ${cmd[$index]} >> /tmp/potato_out2
+        #     let index+=1
+        # done
         # find out event origin
         case "${cmd[0]}" in
             tag*)
@@ -136,6 +197,11 @@ function uniq_linebuffered() {
                 song="$(mpc current | awk -F'/' '{print $1}')"
                 song2="$(mpc current | awk -F'/' '{print $2}')"
 #		song2="$(mpc -f %title% current)"
+                ;;
+            youtube)
+                song="$(cat $HOME/.unp/unp_now_playing.txt | awk -F"-" '{print $1}')"
+                song2="$(cat $HOME/.unp/unp_now_playing.txt | awk -F"-" '{print $2}')"
+    # printf "youtube boe %d\n" $boe >>   /tmp/potato_out
                 ;;
             vol)
                 volume="${cmd[@]:1}"
