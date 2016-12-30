@@ -90,10 +90,10 @@ VERSION = 'Python Proxy/'+__version__
 HTTPVER = 'HTTP/1.1'
 host = socket.gethostbyname_ex(socket.gethostname())
 hostname, unknown, ip = host
-ipaddr = ip[1]
+ipaddr = ip
 
-print ip
-print ipaddr
+print(ip)
+print(ipaddr)
 
 class ConnectionHandler:
     def __init__(self, connection, address, timeout):
@@ -115,7 +115,7 @@ class ConnectionHandler:
             end = self.client_buffer.find('\n')
             if end!=-1:
                 break
-        print '%s'%self.client_buffer[:end]#debug
+        print('%s'%self.client_buffer[:end])#debug
         data = (self.client_buffer[:end+1]).split()
         self.client_buffer = self.client_buffer[end+1:]
         return data

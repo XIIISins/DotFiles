@@ -5,7 +5,7 @@ from datetime import datetime
  
 app_conf = {
         "menu": ["rofi", "-dmenu", "-mesg", "Chose session or create new one!"],
-        "term": ["urxvt", "-e"],
+        "term": ["urxvt", "-e sh -c"],
 }
  
 def session_list():
@@ -45,7 +45,7 @@ def get_user_choice(items):
     return user_choice.decode().strip()
  
 def launch_term_with_cmd(cmd):
-    return Popen(app_conf.get("term", ["xterm", "-e"]) + [cmd], stdout=DEVNULL, stderr=DEVNULL)
+    return Popen(app_conf.get("term", ["urxvt", "-e sh -c "]) + [cmd], stdout=DEVNULL, stderr=DEVNULL)
  
 def launch_session(session_name):
     return launch_term_with_cmd("tmux att -t %s" % session_name)

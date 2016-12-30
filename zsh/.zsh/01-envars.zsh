@@ -23,6 +23,8 @@ export SHELL='/bin/zsh'
 export EDITOR='vim'
 export MANPAGER='vimpager'
 
+export DATE=$(date +"%F_%H%M")
+
 # VPN Settings
 # source ~/.echovpn
 

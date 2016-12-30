@@ -150,6 +150,7 @@ do
    if [ "$csum" != "$new_csum" ]
    then
        csum=$new_csum
+       export WM='dwm'
        dwm
    else
        exit 0
@@ -165,6 +166,7 @@ done
 start_2bwm(){
 # Start window manager in the background. If it dies, X still lives.
 2bwm > $HOME/var/xorg/x.out &
+export WM='2bwm'
 
 # Panel
 #2bwm_panel | lemonbar -p -F "#FFB5B2AF" -B "#FF282522" -g "1920x20+0+0" -f "Tewi-9" &
@@ -184,6 +186,7 @@ exec urxvt
 start_hlwm(){
 # autostart
 autostart &
+export WM='hlwm'
 sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
 exec herbstluftwm
 autokill; sleep 1
@@ -195,6 +198,7 @@ autokill; sleep 1
 start_bspwm() {
     xsetroot -name background
     autostart &
+    export WM='bspwm'
     statsbar.sh &
     sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm &
     exec bspwm
@@ -206,6 +210,7 @@ start_bspwm() {
 ################
 start_awesome() {
     autostart &
+    export WM='AwesomeWM'
     xsetroot -name background
     exec awesome
     autokill; sleep 1
