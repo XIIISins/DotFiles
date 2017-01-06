@@ -1,6 +1,6 @@
 #! /bin/bash
 #
-set -x
+#set -x
 
 # Get coords of the monitor
 monitor_x=$(xrandr | grep "primary" | awk '{print $4}' | awk -F+ '{print $2}')
@@ -11,12 +11,12 @@ monitor_width=$(xrandr | grep "primary" | awk -F'[ x+]' '{print $4}')
 monitor_height=$(xrandr | grep "primary" | awk -F'[ x+]' '{print $5}')
 
 # Panel size
-pad_x="50"
+pad_x="8"
 pad_y="30"
 height="50"
 
 # Padding of the text in the panel
-in_pad="30"
+in_pad="15"
 
 # Yes.
 font="-*-erusfont-medium-*-*-*-11-*-*-*-*-*-*-*"
@@ -50,7 +50,7 @@ sind -d -t $dismiss -f '%s^%b' |\
     text_width=$(txtw -f $font "${summary}${body}")
     width=$((2 * in_pad + text_width))
 #   bar_y=$(( monitor_y + monitor_height - active * (pad_y + height) ))
-    bar_y=1010
+    bar_y=35
     bar_opts="-d -g ${width}x${height}+$((monitor_x + monitor_width - pad_x - width))+$bar_y -B $color_bg -f $font"
     # Show it and wait 3 seconds
     (echo "%{c}%{F$color_summary}${summary}${space}%{F$color_fg}${body}"; sleep $dismiss; current=$(cat $TEMP_FILE); echo "$((current - 1))" > $TEMP_FILE) | lemonbar ${bar_opts} &

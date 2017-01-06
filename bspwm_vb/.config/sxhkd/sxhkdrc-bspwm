@@ -172,5 +172,5 @@ super + r
 super + alt + s
   rofi -show ssh -fullscreen
 
-super + shift + w
+super + alt + w
   rofi -show window -fullscreen
