@@ -56,14 +56,14 @@ fi
 if [ $UID -gt '999' ]; then
   echo $SSLENDP | awk -F/ '{sub(/^www\.?/,"",$3); print $3}' | awk -F"." '{print $1}' | toilet -f chunky -F border -F gay
   echo -e "\nUID > 1000\n"
-  echo $SSLPASS | sudo openconnect -b -d --pid-file=/tmp/ssl.pid --no-cert-check --disable-ipv6 -u $SSLUSER --passwd-on-stdin --juniper $SSLENDP >> $LOGFILE &
+  echo $SSLPASS | sudo openconnect -b -d --pid-file=/tmp/ssl.pid --servercert sha256:0c2f157892c5c7fecb8954c3514a1727f1b245aec7e1a0b91ed4952ac054f1cc --disable-ipv6 -u $SSLUSER --passwd-on-stdin --juniper $SSLENDP >> $LOGFILE &
   if [ $? -gt '0' ]; then
     clear
     toilet -f chunky -F border -F gay "Error"
   fi
 elif [ $UID -eq '0' ]; then
   echo "UID = 0"
-  echo $SSLPASS | openconnect -b -d --pid-file=/tmp/ssl.pid --no-cert-check --disable-ipv6 -u $SSLUSER --passwd-on-stdin --juniper $ENDPOINT >> $LOGFILE &
+  echo $SSLPASS | openconnect -b -d --pid-file=/tmp/ssl.pid --servercert sha256:0c2f157892c5c7fecb8954c3514a1727f1b245aec7e1a0b91ed4952ac054f1cc --disable-ipv6 -u $SSLUSER --passwd-on-stdin --juniper $ENDPOINT >> $LOGFILE &
 else
   echo "UID = potato"
   if [ -e $(which fortune) ]; then
