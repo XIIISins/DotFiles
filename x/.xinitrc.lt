@@ -120,11 +120,13 @@ xset r rate 500 50
 xset +fp /usr/share/fonts/TTF
 xset +fp /usr/share/fonts/local
 xset +fp /usr/share/fonts/artwiz-fonts
+xset +fp $HOME/.local/share/fonts/fonts
 #xset +fp $HOME/.local/share/fonts
 #xset +fp $HOME/.local/share/fonts/jmk
 #xset +fp $HOME/.local/share/fonts/misc
 #xset +fp $HOME/.local/share/fonts/ohsnap
 #xset +fp $HOME/.local/share/fonts/terminesspowerline
+xset fp rehash
 setxkbmap -option terminate:ctrl_alt_bksp
 
 

@@ -38,9 +38,15 @@ fi
 #compton -b
 #panel.x > $HOME/var/log/panel.log 2>&1 &
 
-(sleep 5 && polybar example > $HOME/var/log/polybar.log 2>&1) &
-for mon in $(bspc query -M); do
-	bspc config -m $mon top_padding 5
-done
-sleep 1
-bspc config -m 0x00800005 top_padding 30
+# (sleep 5 && polybar example > $HOME/var/log/polybar.log 2>&1) &
+# for mon in $(bspc query -M); do
+# 	bspc config -m $mon top_padding 5
+# done
+# sleep 1
+# bspc config -m 0x00800005 top_padding 30
+
+if [ -e $HOME/.config/bspwm/pad_panel ]; then
+	$HOME/.config/bspwm/pad_panel
+else
+	printf "No pad fix file in %s" "$XDG_CONFIG_HOME/bspwm" >> $HOME/var/log/panel.log
+fi
