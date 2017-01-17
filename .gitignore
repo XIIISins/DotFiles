@@ -9,6 +9,7 @@ xiii_git.pub
 *.orig
 *.swp
 *.log
+*.log.old
 mpdstate
 mpd.pid
 mpd.log
