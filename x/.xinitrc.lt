@@ -91,7 +91,8 @@ setscreen $(xrandr | awk '/\sconnected/ { print $1 }' | wc -l)
 
 
 # Start pulseaudio and load module-loopback
-(pulseaudio -D && pactl load-module module-loopback) &
+#(pulseaudio -D && pactl load-module module-loopback) &
+[ $(pgrep -c pulseaudio) -lt 1 ] && pulseaudio -D &
 
 # Load resources.
 xrdb -load ~/.Xresources
