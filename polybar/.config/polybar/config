@@ -57,7 +57,7 @@ font-3 = ipagothic:pixelsize=8
 
 modules-left = bspwm xwindow
 modules-center = 
-modules-right = nowp volume packages memory cpu battery temperature wlan eth date powermenu
+modules-right = nowp volume packages memory cpu battery temperature wlan eth tun0 date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -281,6 +281,21 @@ label-connected = %local_ip%
 format-disconnected-underline = ${self.format-connected-underline}
 label-disconnected = %ifname% disconnected
 label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/tun0]
+type = internal/network
+interface = tun0
+interval = 3.0
+
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-foreground-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
+
 
 [module/date]
 type = internal/date

@@ -201,8 +201,8 @@ start_bspwm() {
     xsetroot -name background
     autostart &
     export WM='bspwm'
-    statsbar.sh &
     sxhkd -c $HOME/.config/sxhkd/sxhkdrc-bspwm &
+    (sleep 15 && $HOME/.config/bspwm/pad_panel) &
     exec bspwm
     autokill; sleep 1
 }

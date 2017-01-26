@@ -20,6 +20,7 @@ mpd/.mpd/mpd.log
 mpd/.mpd/mpdstate
 vimperator/.vimperator/info/default/history-command
 vimperator/.vimperator/info/default/history-search
+vimperator/.vimperator/info/default/local-marks
 mutt/.mutt/.*
 mutt/.mutt/hcache
 vimperator/.vimperator/info/default/macros
