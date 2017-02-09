@@ -1,25 +1,15 @@
-# Statusbar
-hardstatus off
-hardstatus alwayslastline
-# hardstatus string "%{+b wk} %-w%{+b wk} %n %t %{-}%+w %41=%H @ %l %-= %= %D, %c:%s "
-hardstatus string "%{+b wk} %-w%{+b wB} %n %t %{-}%+w %41=%H @ %l %-= %= %D, %c:%s "
-
-# Escape key
-#escape \\q
-
-# To clear the screen after closing some programs
-altscreen on
-
-# Windows opening by default
-screen -t "" 1 
-
-# keybinds
-#bindkey -k k; quit
-
-# COLORS! and some usefull terminfo
-term screen-256color
-terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
-
-# Do not show startup message
+vbell off
+autodetach on
 startup_message off
 
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+screen 1
+
+#utf8 on
+term screen-256color
+terminfo rxvt-256color 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+shell zsh
+defscrollback 1000
+hardstatus alwayslastline "%{= d}%{r}screen %{w}%H %{r}>> %{w}${USER}%{w}@%{w}%H: %t %L>%1`%? %?%{.g}%u%? %-18=%?%{m} %{w}%-=%{k}%-w%{r}%n %t%{w}%+w %{w}| %C"

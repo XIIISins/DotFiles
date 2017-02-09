@@ -2,10 +2,4 @@
 #
 #
 
-MUTE=$(pamixer --get-mute)
-
-if [ $MUTE == "true" ]; then
-	pamixer -u
-else
-	pamixer -m
-fi
+amixer sset Master toggle > /dev/null

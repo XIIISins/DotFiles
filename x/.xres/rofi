@@ -10,6 +10,7 @@ rofi.color-urgent: #2d2c28, #a4a6ab, #2d2c28, argb:60a4a6ab, argb:a2dbdde2
 ! ------------------------------------------------------------------------------
 ! ROFI Config
 ! ------------------------------------------------------------------------------
+rofi.font: fixed 10
 rofi.terminal: urxvt
 rofi.ssh-client: tmux-cmd
 rofi.ssh-command: {ssh-client} "ssh {host}"

@@ -1,7 +1,7 @@
 !URxvt.font: -erus-erusfont-medium-r-normal--11-80-100-100-c-60-iso10646-1,xft:Noto Sans,xft:Symbola
 !URxvt.font: -*-hack-medium-*-normal-*-11-*-*-*-*-*-*-*,xft:Noto Sans,xft:Symbola
-!URxvt.font: -*-berry-medium-r-normal-sans-11-*-*-*-m-*-*-1
-URxvt.font: -*-gohufont-medium-r-normal-*-11-*-*-*-c-*-*-1
+URxvt.font: -*-berry-medium-r-normal-sans-11-*-*-*-m-*-*-1
+!URxvt.font: -*-gohufont-medium-r-normal-*-11-*-*-*-c-*-*-1
 !URxvt.font: -misc-hack-medium-r-normal--17-*-100-100-m-0-ascii-0,xft:Noto Sans,xft:Symbola
 ! No bold font
 URxvt.boldFont:

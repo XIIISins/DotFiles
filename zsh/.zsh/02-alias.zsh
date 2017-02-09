@@ -69,6 +69,12 @@ alias devenv="cd $DEVEL_HOME"
 #
 # End lazy ass mofo section!
 
+# Gentoo Stuff
+alias emerge="sudo emerge --autounmask-write"
+alias etc-update="sudo etc-update"
+
+
+
 # Grep fix
 alias grep="grep $GREP_OPTIONS"
 unset GREP_OPTIONS

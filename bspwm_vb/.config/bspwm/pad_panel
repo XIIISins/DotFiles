@@ -5,51 +5,66 @@
 # LEFT = 0x00800003
 # MAIN = 0x00800005
 # RIGHT = 0x00800001
-if [ $DEBUG == "1" ]; then
+
+getMon() {
+	MON="$1"
+	for d in $(bspc query -M); do 
+		echo "$d" | \
+			awk '{
+		mon=match($i, /0x00[a-zA-Z]0000'"$MON"'/)
+		if (mon) { print $i }
+		}';
+	done 
+}
+
+if [ ${DEBUG:-0} == "1" ]; then
   set -x
 fi
 
-SCREENS=$(bspc query -M | wc -l)
-SCRARR="$(bspc query -M)"
+SCRARR=( $(bspc query -M) )
+SCREENS=${#SCRARR[@]}
 PolyState=$(pgrep -c polybar)
 PolyPID=$(pgrep polybar)
 PolyCMD="polybar example"
 
 # Set MAIN and Monitor if we have more than 1 screen
 if [ $SCREENS > '2' ]; then
-	MAIN='0x00A00005'
+	MAIN=$(getMon 5)
+	LEFT=$(getMon 3)
+	RIGHT=$(getMon 1)
 	MONITOR=$(xrandr | awk '/ primary/ { print $1 }')
+	[ ${DEBUG:-0} == "1" ] && printf "\n\nLeft: %s\t Main: %s\t Right: %s\n\n" "$LEFT" "$MAIN" "$RIGHT"
 else
-	MONITOR="LVDS-1"
+	MONITOR="LVDS-0"
 fi
 
 #Killing bar if it's running before spawning a new one
-while [ $PolyState -eq '1' ]; do
-	COUNT=0
-	while [ $COUNT -lt 10 ]; do
-		kill -9 $PolyPID
-    RET=$?
-    if [ $RET -gt "0" ]; then
-		  let COUNT=COUNT+1
-    else
-      break 3
-    fi
-		sleep 2
-    PolyState=$(pgrep -c polybar)
-	done
-done
+#while [ $PolyState -eq '1' ]; do
+#	COUNT=0
+#	while [ $COUNT -lt 10 ]; do
+#		kill -9 $PolyPID
+#    RET=$?
+#    if [ $RET -gt "0" ]; then
+#		  let COUNT=COUNT+1
+#    else
+#      break 3
+#    fi
+#		sleep 2
+#    PolyState=$(pgrep -c polybar)
+#	done
+#done
 
 if [ ! -z $MONITOR ]; then
-  printf "start PolyCMD: %s" "$PolyCMD"
-	$PolyCMD > /dev/null 2>&1 &
+  printf "start PolyCMD: %s\n" "$PolyCMD"
+	$PolyCMD > $HOME/var/log/panel.log 2>&1 &
 fi
 
 # Fix the screen padding
 for screens in ${SCRARR[@]}; do
-  printf "Setting screen: %s" "$screens"
+  printf "Setting screen: %s\n" "$screens"
 	if [ $screens == "$MAIN" ]; then
 		bspc config -m $screens top_padding 30
-	else
+	elif [ $screens == $LEFT ] || [ $screens == $RIGHT ]; then
 		bspc config -m $screens top_padding 5
   fi
   sleep 0.5

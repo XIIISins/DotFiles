@@ -52,14 +52,14 @@ homescreen() {
 	xrandr --output LVDS-1 --primary
 }
 
-workscreen() {
+#workscreen() {
 #	xrandr --output DP-3 --left-of VGA-1
 #	xrandr --output DP-1 --right-of VGA-1
 #  xrandr --output DP-3 --mode 1920x1080 --rotate left --left-of VGA-1
 #  xrandr --output DP-1 --mode 1920x1080 --rotate left --right-of VGA-1
 #. $HOME/.screenlayout/workscreens_et.sh
-. $HOME/.screenlayout/workscreens_I--.sh
-}
+#. $HOME/.screenlayout/workscreens_I--.sh
+#}
 
 chkCon() {
 	xrandr | awk '/\sconnected/ && /'"$1"'/ { print $2 }'
@@ -76,7 +76,7 @@ setscreen() {
         echo "Unknown Setup, please set manual screen config and remember to automate it"
         ;;
     3)
-        workscreen
+        xrandr --output DisplayPort-2 --mode 1920x1080 --rotate left --left-of VGA-0 --output VGA-0 --primary --output DisplayPort-0 --right-of VGA-0
         ;;
     esac
 
@@ -118,15 +118,12 @@ xset m 1 1
 xset s off
 xset -dpms
 xset r rate 500 50
-xset +fp /usr/share/fonts/TTF
-xset +fp /usr/share/fonts/local
-xset +fp /usr/share/fonts/artwiz-fonts
-xset +fp $HOME/.local/share/fonts/fonts
-#xset +fp $HOME/.local/share/fonts
-#xset +fp $HOME/.local/share/fonts/jmk
-#xset +fp $HOME/.local/share/fonts/misc
-#xset +fp $HOME/.local/share/fonts/ohsnap
-#xset +fp $HOME/.local/share/fonts/terminesspowerline
+for i in $(find /usr/share/fonts -maxdepth 1 -type d); do
+  xset +fp $i;
+done
+for i in $(find $HOME/.local/share/fonts/fonts -maxdepth 1 -type d); do
+  xset +fp $i;
+done
 xset fp rehash
 setxkbmap -option terminate:ctrl_alt_bksp
 

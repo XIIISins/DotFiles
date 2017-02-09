@@ -15,6 +15,9 @@ XF86AudioLowerVolume
 XF86AudioMute
   amixer sset Master toggle
 
+alt + m
+  amixer sset Master toggle
+
 XF86MonBrightnessUp
   xbacklight -inc 10%
 

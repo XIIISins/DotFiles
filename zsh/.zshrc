@@ -28,7 +28,7 @@ bindkey -v
 # Import seperate config files
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-source $HOME/.oh-my-zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.sentiarc
 
 for r in $HOME/.zsh/*.zsh; do
@@ -54,10 +54,5 @@ if [ -e $HOME/dead.letter ]; then
   cat $HOME/dead.letter
 fi
 
-PATH="/home/shiro/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/shiro/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/shiro/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/shiro/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/shiro/perl5"; export PERL_MM_OPT;
-
 [ $[ $RANDOM % 6 ] = 0 ] &&  $HOME/bin/motd_color || $HOME/.scripts/dynmotd
+ ( curl -s google.com > /dev/null; export RET="$?") && if [[ $RET -lt 1 ]]; then curl -s "wttr.in/Nieuwegein?lang=nl" | head -7; else echo "NOPE"; fi

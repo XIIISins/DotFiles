@@ -1,0 +1,56 @@
+#!/bin/bash
+#
+# Veracrypt wrapper
+#
+KEYFILE=$HOME/.sen_enc/sen_enc
+ENCDEV=""
+MPOINT=""
+VCRYP=$(which veracrypt)
+
+
+if [ ${DEBUG:-0} -gt 0 ]; then
+	echo "NR ARGS: $#"
+	echo "ARGS: $@"
+fi
+
+if [ $# -lt 2 ]; then
+	printf "\n!>ERROR: Missing device or mountpoint<!\n\nUsage $(basename $0): $(basename $0) mountpoint device\nExample: $(basename $0) /dev/sdz12 /mnt/potato\n"
+	exit 1
+fi
+
+if [ ! -e $VCRYP ]; then
+	printf "\n!>ERROR: Veracrypt not found<!\n"
+	exit 2
+fi
+
+function checkdevice() {
+	for d in "$@"; do
+		echo "$d" | \
+		awk -F" " '{
+			dev=match($i, /\/dev\/sd[a-z]/)
+			if (dev) {
+				print $i
+			}
+		}';
+	done
+}
+
+function checkmnt() {
+	for m in "$@"; do
+		echo "$m" | \
+		awk -F" " '{
+			dev=match($i, /\/mnt\//)
+			if (dev) {
+				print $i
+			}
+		}';
+	done
+}
+
+ENCDEV=$(checkdevice "$@")
+MPOINT=$(checkmnt "$@")
+if [ ${DEBUG:-0} -gt 0 ]; then
+	echo "ENCDEV: >$ENCDEV<"
+	echo "MPOINT: >$MPOINT<"
+fi
+$VCRYP -t -k $KEYFILE $ENCDEV $MPOINT

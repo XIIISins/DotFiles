@@ -1,0 +1,895 @@
+windows:
+- active: true
+  geometry: !!binary |
+    AdnQywACAAAAAARCAAAAKAAAC60AAAQtAAAERQAAACsAAAuqAAAEKgAAAAAAAAAAB4A=
+  tabs:
+  - history:
+    - original-url: http://studio.sentia.com/zabbix/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Warning [refreshed every 30 sec.]
+      url: https://studio.sentia.com/zabbix/zabbix.php?action=dashboard.view
+      zoom: 1.0
+    - original-url: https://studio.sentia.com/zabbix/index.php?request=zabbix.php%3Faction%3Ddashboard.view
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'sen-dmon-p02: Dashboard'
+      url: https://studio.sentia.com/zabbix/zabbix.php?action=dashboard.view
+      zoom: 1.0
+    - original-url: https://studio.sentia.com/zabbix/screens.php?ddreset=1
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'sen-dmon-p02: Configuration of screens'
+      url: https://studio.sentia.com/zabbix/screenconf.php
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: 401 - Unauthorized
+      url: https://studio.sentia.com/zabbix/zabbix.php?action=dashboard.view&ddreset=1
+      zoom: 1.0
+    - active: true
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Studio ThiemeMeulenhoff
+      url: https://studio.sentia.com/maintenance/
+      zoom: 1.0
+  - history:
+    - active: true
+      original-url: http://studio.sentia.com/zabbix/sis_gateway_prd
+      scroll-pos:
+        x: 0
+        y: 0
+      title: PRD - SIS Gateway Dashboard - Delta Team Tickets
+      url: https://studio.sentia.com/sis_gateway_prd/
+      zoom: 1.0
+  - history:
+    - original-url: http://ipam.sentia.com/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Sentia IP Address Management
+      url: https://ipam.sentia.com/?page=login
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 864
+      title: Create Call - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/new
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls
+      scroll-pos:
+        x: 0
+        y: 60
+      title: Call 121972 - VPN Aanvraag tbv tooling thiememeulenhoff - Sentia Information
+        System - SIS
+      url: https://sis.sentia.com/calls/121972
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/call_relations
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 121972 - VPN Aanvraag tbv tooling thiememeulenhoff - Sentia Information
+        System - SIS
+      url: https://sis.sentia.com/calls/121972
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122004 - Account Constantijn de Jonge - Sentia Information System
+        - SIS
+      url: https://sis.sentia.com/calls/122004
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 853
+      title: Call 122004 - Account Constantijn de Jonge - Sentia Information System
+        - SIS
+      url: https://sis.sentia.com/calls/122004#
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/122004/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 1741
+      title: Call 122004 - Account Constantijn de Jonge - Sentia Information System
+        - SIS
+      url: https://sis.sentia.com/calls/122004#1016737
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/122004/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122004 - Account Constantijn de Jonge - Sentia Information System
+        - SIS
+      url: https://sis.sentia.com/calls/122004#1016751
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 1511
+      title: Call 121513 - FG - [AMS] VPN - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/121513
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/121513/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 121513 - FG - [AMS] VPN - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/121513#1016965
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Sentia Information System - SIS
+      url: https://sis.sentia.com/session/new
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/session
+      scroll-pos:
+        x: 0
+        y: 423
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 89
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=#
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 1190
+      title: Call 119167 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/119167
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/119167/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 1299
+      title: Call 119167 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/119167#1025451
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/119167/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 360
+      title: Call 119167 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/119167#1025453
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 120
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 1190
+      title: Call 119976 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/119976
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/119976/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 1299
+      title: Call 119976 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/119976
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/119976/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 119976 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/119976#1025459
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 1190
+      title: Call 122101 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122101
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/122101/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 1299
+      title: Call 122101 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122101
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/122101/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122101 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122101
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122101 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122101#
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/call_surveys/submit_survey/122101
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122101 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122101#1025483
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 579
+      title: Unassigned Calls for Customer Team Delta - Sentia Information System
+        - SIS
+      url: https://sis.sentia.com/calls/support_pool_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?&c=creation_time&d=ASC&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&s=direct&utf8=%E2%9C%93
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?&c=creation_time&d=DESC&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&s=direct&utf8=%E2%9C%93
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 366
+      title: Call 122545 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122545
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/122545/take
+      scroll-pos:
+        x: 0
+        y: 1737
+      title: Call 122545 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122545
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/122545/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 1410
+      title: Call 122545 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122545#1025810
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/122545/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122545 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122545
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122545 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122545#
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/call_surveys/submit_survey/122545
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 122545 - Controleren Vmware - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/122545#1025814
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/notification_dialog/181967/read_notification
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 86089 - SQL cluster installeren op productieomgeving - Sentia Information
+        System - SIS
+      url: https://sis.sentia.com/calls/86089
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls#
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: All Calls - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A39136130&filter%5Bcompany%5D%5B%5D=company%3A201008589&filter%5Bcall_status%5D%5B%5D=&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 10608
+      title: Call 86089 - SQL cluster installeren op productieomgeving - Sentia Information
+        System - SIS
+      url: https://sis.sentia.com/calls/86089
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 10248
+      title: Call 86089 - SQL cluster installeren op productieomgeving - Sentia Information
+        System - SIS
+      url: https://sis.sentia.com/calls/86089/create_callupdate#newcallupdate
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/calls/86089/create_callupdate#newcallupdate
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Call 86089 - SQL cluster installeren op productieomgeving - Sentia Information
+        System - SIS
+      url: https://sis.sentia.com/calls/86089#1026033
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Time Registrations on call 'SQL cluster installeren op productieomgeving'
+        - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/86089/time_registrations
+      zoom: 1.0
+    - original-url: https://sis.sentia.com/time_registrations/428119
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Time Registrations on call 'SQL cluster installeren op productieomgeving'
+        - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/86089/time_registrations
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Calls assigned to Myron Janssen - Sentia Information System - SIS
+      url: https://sis.sentia.com/calls/my_calls
+      zoom: 1.0
+    - active: true
+      original-url: https://sis.sentia.com/calls?utf8=%E2%9C%93&filter%5Bcompany%5D%5B%5D=company%3A201008575&filter%5Bcompany%5D%5B%5D=company%3A201008588&filter%5Bcompany%5D%5B%5D=company%3A201008590&filter%5Bcompany%5D%5B%5D=company%3A201008592&filter%5Bcompany%5D%5B%5D=company%3A201008595&filter%5Bcompany%5D%5B%5D=company%3A201008587&filter%5Bcompany%5D%5B%5D=company%3A201008617&filter%5Bcompany%5D%5B%5D=company%3A201008579&filter%5Bcompany%5D%5B%5D=company%3A201008576&filter%5Bcall_status%5D%5B%5D=1&filter%5Bcall_status%5D%5B%5D=2&filter%5Bcall_status%5D%5B%5D=3&filter%5Bcall_status%5D%5B%5D=5&filter%5Bcall_status%5D%5B%5D=6&filter%5Bresponsible%5D%5B%5D=SupportPool%3A10&filter%5Bcreated_after%5D=&filter%5Bcreated_before%5D=
+      scroll-pos:
+        x: 0
+        y: 59
+      title: Sentia Information System - SIS
+      url: https://sis.sentia.com/session/new
+      zoom: 1.0
+  - history:
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: funtoo no current/everything logfile - Google Search
+      url: http://www.google.nl/search?q=funtoo%20no%20current/everything%20logfile
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: funtoo no system log - Google Search
+      url: http://www.google.nl/search?q=funtoo+no+system+log&safe=off&oq=funtoo+no+system+log&gs_l=heirloom-serp.3...6534.7839.0.7949.13.3.0.10.10.0.115.238.2j1.3.0....0...1ac.1.34.heirloom-serp..9.4.240.lAUdEYemZvo
+      zoom: 1.0
+    - original-url: http://www.google.nl/url?q=http://www.funtoo.org/Installing_a_Logger&sa=U&ved=0ahUKEwjQptzFke_RAhXM2BoKHdOgBl0QFggUMAA&sig2=OJyc5quOlzPCYgvq88yyJA&usg=AFQjCNH-531PG-prNYV2c6Chf4Wnn_bPTg
+      scroll-pos:
+        x: 0
+        y: 117
+      title: Installing a Logger - Funtoo
+      url: http://www.funtoo.org/Installing_a_Logger
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Category:System - Funtoo
+      url: http://www.funtoo.org/Category:System
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Make.conf - Funtoo
+      url: http://www.funtoo.org/Make.conf
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Category:HOWTO - Funtoo
+      url: http://www.funtoo.org/Category:HOWTO
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Category:Tutorial - Funtoo
+      url: http://www.funtoo.org/Category:Tutorial
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Category:FLOP - Funtoo
+      url: http://www.funtoo.org/Category:FLOP
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 120
+      title: Category:Articles - Funtoo
+      url: http://www.funtoo.org/Category:Articles
+      zoom: 1.0
+    - active: true
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'Awk by Example, Part 1 : An intro to the great language with the strange
+        name'
+      url: http://www.funtoo.org/Awk_by_Example%2C_Part_1
+      zoom: 1.0
+  - history:
+    - active: true
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 401 Authorization Required
+      url: http://monitor-echo.sentia.com/sis_gateway/
+      zoom: 1.0
+  - history:
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: VMware virtualcenter service error code 2 - Google Search
+      url: http://www.google.nl/search?q=VMware%20virtualcenter%20service%20error%20code%202
+      zoom: 1.0
+    - active: true
+      original-url: https://kb.vmware.com/kb/1038138
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'Starting the VMware VirtualCenter Server service fails with the error:
+        Windows could not start the VMware VirtualCenter Server on Local Computer
+        (1038138) | VMware KB'
+      url: https://kb.vmware.com/selfservice/microsites/search.do?language=en_US&cmd=displayKC&externalId=1038138
+      zoom: 1.0
+  - active: true
+    history:
+    - original-url: http://monitor-echo.sentia.com/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'Sentia Monitoring: Dashboard'
+      url: http://monitor-echo.sentia.com/dashboard.php
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: 'Sentia Monitoring: Custom screens [refreshed every 20 sec.]'
+      url: http://monitor-echo.sentia.com/screens.php?ddreset=1&sid=af4088519eedb2d0
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: 'Sentia Monitoring: Latest data [refreshed every 20 sec.]'
+      url: http://monitor-echo.sentia.com/latest.php?ddreset=1&sid=af4088519eedb2d0
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: 'Sentia Monitoring: Latest data [refreshed every 20 sec.]'
+      url: http://monitor-echo.sentia.com/latest.php?sid=af4088519eedb2d0&form_refresh=1&select=&hostids%5B%5D=11414&hostids%5B%5D=11590&show_without_data=1&application=&filter_set=Filter
+      zoom: 1.0
+    - active: true
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'Sentia Monitoring: Dashboard'
+      url: http://monitor-echo.sentia.com/dashboard.php?ddreset=1&sid=af4088519eedb2d0
+      zoom: 1.0
+- geometry: !!binary |
+    AdnQywACAAAAAAAKAAAADwAABC0AAAO8AAAADQAAABIAAAQqAAADuQAAAAIAAAAABDg=
+  tabs:
+  - active: true
+    history:
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Homepage
+      url: https://ghostcloud.tk/homepage/
+      zoom: 1.0
+    - original-url: http://slack.com/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: 'Slack: Where work happens'
+      url: https://slack.com/
+      zoom: 1.0
+    - scroll-pos:
+        x: 0
+        y: 0
+      title: Sign in | Slack
+      url: https://slack.com/signin
+      zoom: 1.0
+    - original-url: https://slack.com/signin
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Slack
+      url: https://xiiiteam.slack.com/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: https://xiiiteam.slack.com/messages/general/
+      url: https://xiiiteam.slack.com/messages/general/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/general/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ikku | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@ikku/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@ikku/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lunch-meeting | XIII Slack
+      url: https://xiiiteam.slack.com/messages/lunch-meeting/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/lunch-meeting/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: general | XIII Slack
+      url: https://xiiiteam.slack.com/messages/general/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/general/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: random | XIII Slack
+      url: https://xiiiteam.slack.com/messages/random/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/random/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lunch-meeting | XIII Slack
+      url: https://xiiiteam.slack.com/messages/lunch-meeting/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/lunch-meeting/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: spectroman | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@spectroman/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@spectroman/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: random | XIII Slack
+      url: https://xiiiteam.slack.com/messages/random/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/random/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: spectroman | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@spectroman/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@spectroman/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: spectroman | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@spectroman/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@spectroman/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: random | XIII Slack
+      url: https://xiiiteam.slack.com/messages/random/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/random/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: gaming | XIII Slack
+      url: https://xiiiteam.slack.com/messages/gaming/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/gaming/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: general | XIII Slack
+      url: https://xiiiteam.slack.com/messages/general/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/general/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: gaming | XIII Slack
+      url: https://xiiiteam.slack.com/messages/gaming/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/gaming/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ikku | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@ikku/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@ikku/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ikku | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@ikku/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@ikku/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ikku | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@ikku/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@ikku/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ikku | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@ikku/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@ikku/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/convo/D2NSW5QKF-1486558599.000420/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/convo/D2NSW5QKF-1486558599.000420/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ikku | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@ikku/convo/D2NSW5QKF-1486558599.000420/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@ikku/convo/D2NSW5QKF-1486558599.000420/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/convo/D2NSW5QKF-1486558599.000420/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/convo/D2NSW5QKF-1486558599.000420/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: gaming | XIII Slack
+      url: https://xiiiteam.slack.com/messages/gaming/convo/D2NSW5QKF-1486558599.000420/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/gaming/convo/D2NSW5QKF-1486558599.000420/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: lazarou | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@lazarou/convo/D2NSW5QKF-1486558599.000420/
+      zoom: 1.0
+    - original-url: https://xiiiteam.slack.com/messages/@lazarou/convo/D2NSW5QKF-1486558599.000420/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: ikku | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@ikku/convo/D2NSW5QKF-1486558599.000420/
+      zoom: 1.0
+    - active: true
+      original-url: https://xiiiteam.slack.com/messages/@ikku/convo/D2NSW5QKF-1486558599.000420/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: spectroman | XIII Slack
+      url: https://xiiiteam.slack.com/messages/@spectroman/convo/D2NSW5QKF-1486558599.000420/
+      zoom: 1.0
+  - history:
+    - original-url: http://teamintelligent.slack.com/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Slack
+      url: https://teamintelligent.slack.com/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: bar | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/bar/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/bar/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: delta-home | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/delta-home/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/delta-home/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: yvovanzee | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/@yvovanzee/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/@yvovanzee/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: delta-home | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/delta-home/details/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/delta-home/details/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: delta-cr | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/delta-cr/details/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/delta-cr/details/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: yvovanzee | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/@yvovanzee/details/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/@yvovanzee/details/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: delta-home | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/delta-home/details/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/delta-home/details/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: yvovanzee | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/@yvovanzee/details/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/@yvovanzee/details/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: delta-home | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/delta-home/details/
+      zoom: 1.0
+    - original-url: https://teamintelligent.slack.com/messages/delta-home/details/
+      scroll-pos:
+        x: 0
+        y: 0
+      title: Threads | Intelligent Slack
+      url: https://teamintelligent.slack.com/threads/details/
+      zoom: 1.0
+    - active: true
+      original-url: https://teamintelligent.slack.com/threads/details/
+      scroll-pos:
+        x: 563
+        y: 0
+      title: delta-home | Intelligent Slack
+      url: https://teamintelligent.slack.com/messages/delta-home/details/
+      zoom: 1.0
