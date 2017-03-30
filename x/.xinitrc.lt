@@ -76,7 +76,8 @@ setscreen() {
         echo "Unknown Setup, please set manual screen config and remember to automate it"
         ;;
     3)
-        xrandr --output DisplayPort-2 --mode 1920x1080 --rotate left --left-of VGA-0 --output VGA-0 --primary --output DisplayPort-0 --right-of VGA-0
+        #xrandr --output DP-2 --mode 1920x1080 --rotate left --left-of VGA-0 --output VGA-0 --primary --output DP-0 --right-of VGA-0
+        xrandr --output DP-3 --rotate left --left-of VGA-1 --output VGA-1 --primary --output DP-1 --right-of VGA-1
         ;;
     esac
 

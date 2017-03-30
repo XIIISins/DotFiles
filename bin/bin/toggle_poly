@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# toggle polybar for bspwm
+# set -x
+
+PID=$(pgrep polybar)
+
+getMon() {
+	MON="$1"
+	for d in $(bspc query -M); do
+		echo "$d" | \
+			awk '{
+		mon=match($i, /0x00[a-zA-Z0-9]0000'"$MON"'/)
+		if (mon) { print $i }
+		}';
+	done
+}
+
+killcmd() {
+	kill -SIGQUIT $PID
+	if [ $? -gt 0 ]; then
+		printf "Failed to kill pid: %d\n" "$PID"
+	else
+		printf "Killed pid: %d\n" "$PID"
+	fi
+}
+
+startbar() {
+	CMD='polybar example'
+	if [ -e "$HOME/.config/bspwm/pad_panel" ]; then
+		$HOME/.config/bspwm/pad_panel
+	else
+		$CMD
+	fi
+}
+
+pad() {
+	SCRARR=( $(bspc query -M) )
+	SCREENS=${#SCRARR[@]}
+	for screens in ${SCRARR[@]}; do
+		bspc config -m $screens top_padding 0
+	done
+}
+
+if [ -z $PID ]; then
+	startbar
+else
+	killcmd
+	pad
+fi
+

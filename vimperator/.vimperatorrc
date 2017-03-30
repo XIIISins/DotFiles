@@ -1,8 +1,8 @@
-colo ocean
+"colo ocean
 map <silent> <C-F8> :js toggle_bottombar()<CR>
 set gui=none,tabs
 
-colorscheme indigo
+colorscheme fxdevtools-dark
 
 set maxitems=20
 set titlestring=
@@ -21,3 +21,4 @@ function toggle_bottombar() {
 EOF
 
 " vim: set ft=vim:
+

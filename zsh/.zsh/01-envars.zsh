@@ -4,9 +4,15 @@ export XDG_CACHE_HOME="$HOME/etc/cache"
 export XDG_DATA_HOME="$HOME/var"
 export GNUPGHOME="$HOME/etc/gnupg/"
 export DEVEL_HOME="$HOME/dev"
+
+# Script Paths
 export BIN_HOME="$HOME/bin"
-export RB_BIN="$HOME/.gem/ruby/2.3.0/bin"
+export RB_BIN="$HOME/.gem/ruby/2.4.0/bin"
 export LO_BIN="$HOME/.local/bin"
+export GOPATH="$HOME/dev/src/study/Go"
+
+# Env
+export SSH_ENV="$HOME/.ssh/environment"
 
 export LANG="en_US.UTF-8"
 

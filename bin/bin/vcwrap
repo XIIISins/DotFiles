@@ -6,6 +6,7 @@ KEYFILE=$HOME/.sen_enc/sen_enc
 ENCDEV=""
 MPOINT=""
 VCRYP=$(which veracrypt)
+FUSE=$(lsmod | grep -i fuse | wc -l)
 
 
 if [ ${DEBUG:-0} -gt 0 ]; then
@@ -53,4 +54,13 @@ if [ ${DEBUG:-0} -gt 0 ]; then
 	echo "ENCDEV: >$ENCDEV<"
 	echo "MPOINT: >$MPOINT<"
 fi
+
+if [ $FUSE -lt 1 ]; then
+	if [ $? -gt 0 ]; then
+		sudo modprobe fuse
+  else
+   	modprobe fuse
+	fi
+fi
+
 $VCRYP -t -k $KEYFILE $ENCDEV $MPOINT

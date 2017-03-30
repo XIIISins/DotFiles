@@ -31,6 +31,18 @@ tfonts() { for i in ${TOILET_FONT_PATH:=/usr/share/figlet}/*.{t,f}lf; do j=${i##
 ydl() { [ -z "$1" ] || youtube-dl -x --audio-format mp3 --audio-quality 0 "$@" }
 # }}}
 
+function ssh_start_agent {
+    ssh_priv_key=( $(find .ssh -type f -not -name "*.pub" -name "id_rsa*") )
+    echo "Initialising new SSH agent..."
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    echo succeeded
+    chmod 600 "${SSH_ENV}"
+    source "${SSH_ENV}" > /dev/null
+    for key in ${ssh_priv_key[@]}; do
+        /usr/bin/ssh-add $key;
+    done
+}
+
 # {{{ Most used Commands
 mostused() {
 	sed -n 's/^\([a-z]*\) .*/\1/p' $HISTFILE |
@@ -42,7 +54,7 @@ mostused() {
 } # }}}
 
 # {{{ ARK Extraction
-ark() {
+extract() {
     case $1 in
         e)
             case $2 in
@@ -57,7 +69,7 @@ ark() {
                 *.zip)       unzip $2         ;;
                 *.Z)         uncompress $2    ;;
                 *.7z)        7z x $2          ;;
-                *)           echo "'$2' Cannot be extracted with ARK" ;;
+                *)           echo "'$2' Cannot be extracted with $0" ;;
             esac ;;
 
         c)
@@ -71,7 +83,7 @@ ark() {
                 *.rar)      shift; rar a -m5 -r $@; rar k $1    ;;
                 *.zip)      shift; zip -9r $@                   ;;
                 *.7z)       shift; 7z a -mx9 $@                 ;;
-                *)          echo "Kein gültiger Archivtyp"      ;;
+                *)          echo "Unknown archive type"      ;;
             esac ;;
             *)
                     echo "WATT?" ;;
@@ -165,7 +177,7 @@ Z - Zulu
 EOF
 }
 # }}}
- 
+
 
 # {{{ Password (re)Generator
 repass() {
@@ -173,3 +185,42 @@ printf "Enter your password:\n"
 printf "%s\xFE" $(read -se) | base64
 }
 # }}}
+
+# {{{ Weather
+login_weather() {
+
+curl -s google.com > /dev/null
+NetConn="$?"
+dTime=$(date +"%d%H%M%S")
+lForecast=$(find $HOME/tmp/ -name "fcast*" -mtime 0 2>/dev/null)
+lForecastDate=$(basename "$lForecast" | cut -c6-13)
+
+if [ $NetConn -lt 1 ]; then
+    if [ ! -z $lForecast ]; then
+        printf "Last known forcast: %s\n" $lForecastDate
+        cat $lForecast
+    else
+        curl -s "wttr.in/Nieuwegein?lang=en" | head -7 > $HOME/tmp/fcast$dTime
+        cat $lForecast
+    fi
+else
+    printf "Last known forcast: %s\n" $lForecastDate
+    cat $lForecast
+fi
+
+}
+#}}}
+#
+
+# {{{ Conversion
+convert() {
+  from=$1
+  to=$2
+
+  case $to in
+    cm)  export to=2.54;;
+    inch) export to=0.39;;
+  esac
+
+  echo "$from * $to" | bc
+}

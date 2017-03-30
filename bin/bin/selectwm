@@ -12,7 +12,7 @@ SelectWM() {
   echo -e "Select your WM"
   read wm
   if [ -z $wm ]; then
-    wm=hlwm
+    wm=bspwm
   fi
   export wm
   export WM=$wm

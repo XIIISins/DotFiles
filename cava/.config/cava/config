@@ -44,11 +44,11 @@ bar_spacing = 1
 #
 # for alsa 'source' will be the capture device. Default: 'hw:Loopback,1'
 # for fifo 'source' will be the path to fifo-file. Default: '/tmp/mpd.fifo'
-; method = alsa
-; source = hw:Loopback,1
+method = alsa
+source = hw:PCH
 
-method = fifo
-source = /tmp/mpd.fifo
+; method = fifo
+; source = /tmp/mpd.fifo
 
 ; method = pulse
 ; source = 3

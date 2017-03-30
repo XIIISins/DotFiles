@@ -29,7 +29,9 @@ bindkey -v
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.sentiarc
+if [ -e $(readlink "$HOME/.sentiarc") ]; then
+  source $HOME/.sentiarc
+fi
 
 for r in $HOME/.zsh/*.zsh; do
   if [[ $DEBUG > 0 ]]; then
@@ -47,6 +49,17 @@ else
   export LS_COLORS
 fi
 
+# Source SSH settings, if applicable
+if [ -f "${SSH_ENV}" ]; then
+    source "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        ssh_start_agent;
+    }
+else
+    ssh_start_agent;
+fi
+
 #shinymotd
 
 if [ -e $HOME/dead.letter ]; then
@@ -55,4 +68,4 @@ if [ -e $HOME/dead.letter ]; then
 fi
 
 [ $[ $RANDOM % 6 ] = 0 ] &&  $HOME/bin/motd_color || $HOME/.scripts/dynmotd
- ( curl -s google.com > /dev/null; export RET="$?") && if [[ $RET -lt 1 ]]; then curl -s "wttr.in/Nieuwegein?lang=nl" | head -7; else echo "NOPE"; fi
+login_weather

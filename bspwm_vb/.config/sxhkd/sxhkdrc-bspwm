@@ -9,7 +9,13 @@ super + shift + x
 XF86AudioRaiseVolume
   amixer sset Master 5%+ unmute
 
+super + ctrl + equal
+  amixer sset Master 5%+ unmute
+
 XF86AudioLowerVolume
+  amixer sset Master 5%- unmute
+
+super + ctrl + minus
   amixer sset Master 5%- unmute
 
 XF86AudioMute
@@ -33,8 +39,15 @@ XF86AudioStop
 XF86AudioNext
   mpc next
 
+super + alt + l
+  mpc next
+
 XF86AudioPrev
   mpc prev
+
+super + alt + h
+  mpc prev
+
 
 #
 ## bspwm hotkeys
@@ -177,3 +190,6 @@ super + alt + s
 
 super + alt + w
   rofi -show window -fullscreen
+
+super + F12
+  toggle_poly > /dev/null 2>&1

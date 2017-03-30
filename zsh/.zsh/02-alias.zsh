@@ -49,6 +49,8 @@ alias wapp="chromium --app="http://web.whatsapp.com""
 alias wrike="chromium --app="http://wrike.com/workspace.htm""
 alias gcal="gcalcli --military --monday --calendar "myron.janssen@sentia.com" calw"
 
+alias gdiff="git diff --no-index -- "
+
 # Work
 alias sis_gateway="ssh -t mjanssen@zabbix 'tail -f /var/log/sis_gateway.log'"
 alias zabbix_log="ssh -t mjanssen@zabbix 'tail -f /var/log/zabbix/zabbix_server.log | grep -iv ipmi'"
