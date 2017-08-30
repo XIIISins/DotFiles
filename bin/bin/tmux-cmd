@@ -1,7 +1,9 @@
 #!/bin/bash
 #
 
-tSESSION="home"
+if [ -z $tSESSION ]; then
+  tSESSION="home"
+fi
 tWINDOW=""
 
 # ArrSession=$(tmux list-session | awk -F: '{print $1}')

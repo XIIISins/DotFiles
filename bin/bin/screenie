@@ -1,5 +1,5 @@
 #! /bin/bash
 
-scrot -q 100 /tmp/screenie.png
+sleep 1; scrot -q 100 /tmp/screenie.png
 
 notify-send "Screenshot taken"

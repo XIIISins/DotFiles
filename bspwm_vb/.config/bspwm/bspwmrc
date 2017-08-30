@@ -1,1 +1,36 @@
-bspwmrc.wtf
+#! /bin/sh
+set -x
+
+if [ -e "$BSPWM_STATE" ]; then
+  bspc wm -l "$BSPWM_STATE"
+  rm "$BSPWM_STATE"
+fi
+
+bspc config window_gap          5
+bspc config border_width        2
+
+bspc config split_ratio         0.52
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config focus_follows_pointer true
+
+bspc config normal_border_color "#151515"
+#bspc config focused_border_color "#800000"
+bspc config focused_border_color "#634237"
+bspc config active_border_color "$(bspc config normal_border_color)"
+
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+
+if [[ $(bspc query -M | wc -l) > 3 ]]; then
+  bspc monitor DP-2 -d 七 八 九
+#  bspc monitor DisplayPort-2 -d 一 二 三
+  bspc monitor DP-0 -d 一 二 三
+#  bspc monitor VGA-0 -d 四 五 六
+  bspc monitor VGA-0 -d 	四 五 六
+#  bspc monitor DisplayPort-0 -d 	七 八 九
+else
+  bspc monitor -d 一 二 三 四 五 六
+fi
+
+

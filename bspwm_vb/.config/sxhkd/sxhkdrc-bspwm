@@ -131,6 +131,10 @@ super + {_,shift + }{1-9,0}
 super + shift + s
   bspc node -g sticky
 
+# move a floating window
+super + {left,Down,Up,Right}
+  bspc node -v {-20 0,0 20,0 -20,20 0}
+
 # adjust window gap
 super + {F10,F9}
     bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
@@ -139,7 +143,7 @@ super + {F10,F9}
 	bspc pointer -g focus
 
 super + button{1-3}
-	; bspc pointer -g {move,resize_side,resize_corner}
+	bspc pointer -g {move,resize_side,resize_corner}
 
 super + @button{1-3}
 	bspc pointer -u
@@ -149,19 +153,17 @@ super + @button{1-3}
 #
 
 super + Return
-	urxvt
-
-super + r
-  rofi -show run -lines 3 -eh 2 -fullscreen -opacity 90
+  termite
+#	urxvt
 
 super + F11
   passmenu
 
-super + space
-  ~/.scripts/run_dmenu
-
 Print
   ~/.scripts/screenie
+
+super + Print
+  activescrshot
 
 super + Pause
   lock.sh
@@ -183,7 +185,7 @@ super + shift + f
 
 # Laauncher like things
 super + r
-  rofi -show run -lines 3 -eh 2 -fullscreen -opacity 90
+  rofi -show run -lines 3 -eh 2 -fullscreen -opacity 50
 
 super + alt + s
   rofi -show ssh -fullscreen
@@ -192,4 +194,4 @@ super + alt + w
   rofi -show window -fullscreen
 
 super + F12
-  toggle_poly > /dev/null 2>&1
+  /home/kenko/.config/polybar/poly.sh

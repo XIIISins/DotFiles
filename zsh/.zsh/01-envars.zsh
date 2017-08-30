@@ -10,13 +10,14 @@ export BIN_HOME="$HOME/bin"
 export RB_BIN="$HOME/.gem/ruby/2.4.0/bin"
 export LO_BIN="$HOME/.local/bin"
 export GOPATH="$HOME/dev/src/study/Go"
+export JS_BIN="$HOME/node_modules/"
 
 # Env
 export SSH_ENV="$HOME/.ssh/environment"
 
 export LANG="en_US.UTF-8"
 
-export PATH="$PATH:$LO_BIN:$BIN_HOME:$RB_BIN:/sbin:/usr/sbin:/usr/local/bin"
+export PATH="$PATH:$LO_BIN:$BIN_HOME:$RB_BIN:$JS_BIN:/sbin:/usr/sbin:/usr/local/bin"
 
 # JAVA
 #export LD_LIBRARY_PATH=/usr/lib/jre1.7.0/lib/amd64

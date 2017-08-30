@@ -2,10 +2,11 @@
 #
 # automount private encrypted disk
 #
+set -x 
 
 pen_disk='/dev/sda2'
 pen_mnt='/mnt/veracrypt2'
-pen_vera=$(mount | awk -F" " '/veracrypt[0-9]/ {print $1 }' | tail -1)
+pen_vera=$(mount | awk -F" " '/veracrypt2/ {print $1 }' | tail -1)
 ver_wrap=$(which vcwrap)
 if [[ -z $pen_vera ]]; then
 	echo "$ver_wrap $pen_disk $pen_mnt" > $HOME/var/log/cripple.log

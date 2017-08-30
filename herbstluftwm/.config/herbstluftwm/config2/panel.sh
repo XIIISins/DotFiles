@@ -20,7 +20,7 @@ fi
 #RES="1080+1920"
 #RES="x16"
 FONT="*-siji-medium-r-*-*-10-*-*-*-*-*-*-*"
-FONT2="-*-cure.se-medium-r-*-*-11-*-*-*-*-*-*-*"
+FONT2="-*-cure-medium-r-*-*-11-*-*-*-*-*-*-*"
 # FONT3="IPAGothic-8"
 FONT3="-*-ipagothic-medium-r-*-*-8-*-*-*-*-*-*-*"
 BG="#1A1C1F"
@@ -106,6 +106,9 @@ function uniq_linebuffered() {
     #
     # broken
     #
+
+    mpc idleloop player | cat &
+    mpc_pid=$!
 
     # volume
     while true ; do

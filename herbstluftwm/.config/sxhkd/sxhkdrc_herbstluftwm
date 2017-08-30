@@ -22,19 +22,12 @@ super + r
 super + alt + s
   rofi -show ssh -fullscreen
 
-super + shift + w
-  rofi -show window -fullscreen
-
-
-# menu
-alt + d
-    dmenu_run -q -z -l 9 -fn Envypn -x 0 -y 0 -w 160 -nb "#1A1C1F" -nf "#A8A8A8" -sb "#93503e" -sf "#c4bbb0" -p "»"
-
 alt + comma
     dmenufm
 
-alt + t
-    dmtodo
+# volume control
+super + {minus, equal, 0}
+  vol {down, up, toggle}
 
 # mpd toggle
 control + m
@@ -50,25 +43,9 @@ XF86AudioPrev
 XF86AudioNext
     mpc next
 
-# Volume adjustments (pulse+ladspa)
-XF86AudioRaiseVolume
-    pamixer -i 5
-XF86AudioLowerVolume
-    pamixer -d 5
-XF86AudioMute
-    /home/shiro/bin/mute.sh
-
-super + v
-    dmenu_vol.sh
-
 # web, fm, img
 alt + {1,2,3}
-    {qutebrowser,spacefm,gimp}
-
-#alt + {odiaeresis,adiaeresis}
-#    {xcmenuctrl,lolimpdnu}
-super + m
-    lolimpdnu
+    {firefox,spacefm,gimp}
 
 # terminal
 alt + shift + Return
@@ -91,6 +68,8 @@ alt + {w,q,e}
     herbstclient split {bottom 0.5,right 0.5, explode}
 
 # focus
+super + {1,2,3}
+    herbstclient focus_monitor {1,0,2}
 
 alt + period
     herbstclient cycle_monitor
@@ -132,5 +111,3 @@ alt + shift + l
 #    py3lock &> $HOME/log/lock.log
   lock.sh
 
-alt + s
-  /home/xiii/bin/scratchpad

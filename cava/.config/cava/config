@@ -19,8 +19,8 @@ autosens = 1
 # The number of bars. 0 (default) sets it to auto (fil upp console).
 # width of bras and space between bars in number of characters. Default witdth 3 and space 1.
 ; bars = 0
-bar_width = 3
-bar_spacing = 1
+bar_width = 1
+bar_spacing = 0
 
 # Lower cutoff freq for lowest bar and higheset for highest bar
 # the bandwith of the visualizer, defaults to 50 - 10000 Hz
@@ -44,14 +44,14 @@ bar_spacing = 1
 #
 # for alsa 'source' will be the capture device. Default: 'hw:Loopback,1'
 # for fifo 'source' will be the path to fifo-file. Default: '/tmp/mpd.fifo'
-method = alsa
-source = hw:PCH
+; method = alsa
+; source = hw:PCH
 
 ; method = fifo
 ; source = /tmp/mpd.fifo
 
-; method = pulse
-; source = 3
+method = pulse
+source = 0
 
 
 
@@ -97,8 +97,8 @@ monstercat = 1
 # This one is tricky. You can have as much keys as you want.
 # remember to uncomment more then one key! More keys = more precision.
 # Look at readme.md on github for further explanations and examples.
- 1 = 4 # bass
- 2 = 3
+ 1 = 1 # bass
+ 2 = 2
  3 = 2 # midtone
  4 = 1
- 5 = 0 # treble
+ 5 = 1 # treble

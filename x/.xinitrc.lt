@@ -31,11 +31,11 @@ autokill() {
 }
 
 autostart() {
-   setwp
+#   setwp
 #   unclutter -grab -root &
    xcmenu -d
    notifyd
-   np-notify
+#   np-notify
 #   sxhkd &
 #   stalonetray &
 #   nm-applet &
@@ -77,8 +77,15 @@ setscreen() {
         ;;
     3)
         #xrandr --output DP-2 --mode 1920x1080 --rotate left --left-of VGA-0 --output VGA-0 --primary --output DP-0 --right-of VGA-0
-        xrandr --output DP-3 --rotate left --left-of VGA-1 --output VGA-1 --primary --output DP-1 --right-of VGA-1
+        xrandr --output VGA-0 --primary --mode 1920x1080 --pos 1080x328 --rotate normal --output LVDS-0 --off --output DP-5 --off --output DP-4 --off --output DP-3 --off --output DP-2 --mode 1920x1080 --pos 3000x328 --rotate normal --output DP-1 --off --output DP-0 --mode 1920x1080 --pos 0x0 --rotate left
+        #xrandr --output DP-0 --rotate left --left-of VGA-0 --output VGA-0 --primary --output DP-2 --right-of VGA-0 --output LVDS-0 --off
         ;;
+    4)
+        #xrandr --output DP-2 --mode 1920x1080 --rotate left --left-of VGA-0 --output VGA-0 --primary --output DP-0 --right-of VGA-0
+        xrandr --output VGA-0 --primary --mode 1920x1080 --pos 1080x328 --rotate normal --output LVDS-0 --off --output DP-5 --off --output DP-4 --off --output DP-3 --off --output DP-2 --mode 1920x1080 --pos 3000x328 --rotate normal --output DP-1 --off --output DP-0 --mode 1920x1080 --pos 0x0 --rotate left
+        #xrandr --output DP-0 --rotate left --left-of VGA-0 --output VGA-0 --primary --output DP-2 --right-of VGA-0 --output LVDS-0 --off
+        ;;
+ 
     esac
 
 }
@@ -186,11 +193,11 @@ exec urxvt
 ################
 start_hlwm(){
 # autostart
-autostart &
+#autostart &
 export WM='hlwm'
-sxhkd -c $HOME/.config/sxhkd/sxhkdrc &
+sxhkd -c $HOME/.config/sxhkd/sxhkdrc_herbstluftwm &
 exec herbstluftwm
-autokill; sleep 1
+#autokill; sleep 1
 }
 
 #########
@@ -227,7 +234,7 @@ start_kde() {
 # Start dwm if argument is given
 case $wm in
     hlwm)
-        start_hlwm
+        start_hlwm | tee -a /tmp/hlwm.log
         ;;
     2bwm)
         autostart

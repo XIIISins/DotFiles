@@ -24,8 +24,14 @@ fi
 
 
 #
+#if [[ -z $DISPLAY ]] && [[ ${XDG_VTNR:-1} -eq 1 ]] && [[ $TTY =~ "/dev/tty" ]]; then
+#  if [[ -e "$HOME/bin/selectwm" ]]; then
+#    $HOME/bin/selectwm
+#  fi
+#fi
+
 if [[ -z $DISPLAY ]] && [[ ${XDG_VTNR:-1} -eq 1 ]] && [[ $TTY =~ "/dev/tty" ]]; then
   if [[ -e "$HOME/bin/selectwm" ]]; then
-    $HOME/bin/selectwm
+    startx
   fi
 fi

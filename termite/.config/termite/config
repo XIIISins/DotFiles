@@ -7,7 +7,7 @@ allow_bold = false
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-font = Envypn 12
+font = berry 10
 scrollback_lines = 1000
 search_wrap = true
 geometry = 380x220
@@ -30,7 +30,8 @@ modify_other_keys = false
 
 [colors]
 cursor = #7B8695
-foreground = #7B8695
+#foreground = #7B8695
+foreground = #bfbfbf
 foreground_bold = #eee8d5
 #background = [80]#202225
 

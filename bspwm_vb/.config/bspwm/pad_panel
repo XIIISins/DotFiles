@@ -30,9 +30,9 @@ PolyCMD="polybar example"
 
 # Set MAIN and Monitor if we have more than 1 screen
 if [ $SCREENS > '2' ]; then
-	MAIN=$(getMon 5)
-	LEFT=$(getMon 3)
-	RIGHT=$(getMon 1)
+	MAIN=$(getMon 2)
+	LEFT=$(getMon 4)
+	RIGHT=$(getMon 6)
 	MONITOR=$(xrandr | awk '/ primary/ { print $1 }')
 	[ ${DEBUG:-0} == "1" ] && printf "\n\nLeft: %s\t Main: %s\t Right: %s\n\n" "$LEFT" "$MAIN" "$RIGHT"
 else
