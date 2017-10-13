@@ -2,5 +2,5 @@
 #
 #
 
-sudo openconnect https://vpn.jitscale.com/2fa
+sudo openconnect -b -u mjanssen https://vpn.jitscale.com/2fa
 

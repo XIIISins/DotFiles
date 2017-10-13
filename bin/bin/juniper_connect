@@ -87,4 +87,11 @@ while true; do
   fi
 done
 
+echo -e "Adding route back to sentia VLAN36.\n"
+VLAN36=$(ip route | grep '10.0.36.0' | wc -l
+if [ $VLAN36 -eq 0 ]; then
+  sudo ip route add 10.0.36.0/24 via 10.0.1.250 dev eth0
+  echo -e "Route added.\n"
+fi
+
 fortune -s
