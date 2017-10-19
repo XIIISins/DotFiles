@@ -37,6 +37,7 @@ alias ts3="teamspeak3 -nosingleinstance"
 alias weather='curl -4 wttr.in/nieuwegein'
 
 alias s="sudo"
+alias S="sudo su -"
 alias umnt="umount"
 alias mnt="mount"
 alias pk="pkill"

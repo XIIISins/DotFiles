@@ -22,8 +22,11 @@ setopt \
   prompt_subst \
   inc_append_history
 
-bindkey -v
+# VI Mode
+#bindkey -v
 
+# EMACS Mode
+#bindkey -e
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Import seperate config files
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
