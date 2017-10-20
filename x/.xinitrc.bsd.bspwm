@@ -1,0 +1,31 @@
+#!/usr/local/bin/bash
+set -x
+# Screens
+screens=$(xrandr | awk '/ connected/' | wc -l)
+if [ $screens -gt 3 ]; then
+  $HOME/.screenlayout/work.sh
+elif [ $screens -eq 2 ]; then
+  $HOME/.screenlayout/home.sh
+fi
+
+
+# Some X Settings
+xrdb -override $HOME/.Xresources
+xsetroot -cursor_name left_ptr &
+xset +fp $HOME/.local/share/fonts/fonts
+xset fp rehash
+
+# KBD/Mouse sharing
+synergyc 192.168.0.104
+
+# Shiny
+compton -b
+
+# Not so tiring at night
+redshift -l 52:5 -t 6400:4800 & 
+
+# Start bspwm
+polybar top &
+sxhkd &
+exec bspwm
+
