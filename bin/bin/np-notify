@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 #
 # send now playing to notifyd using notify-send
 #set -x

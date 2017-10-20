@@ -9,7 +9,7 @@ URxvt.scrollBar: false
 URxvt.letterSpace: 0
 URxvt.cursorBlink: true
 URxvt.cursorUnderline: false
-URxvt.internalBorder: 10
+URxvt.internalBorder: 20
 URxvt.geometry: 100x30
 URxvt.depth: 32
 

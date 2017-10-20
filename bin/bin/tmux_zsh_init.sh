@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 set -x
 # TMUX YO #
 MUXHOME=$(test -z $(tmux ls | awk '/home/' | wc -l))$?

@@ -17,13 +17,13 @@ linecolor = #b948be
 border-color = #634237
 
 [bar/top]
-monitor = VGA-0
-#monitor = DP-0
+#monitor = ${MONITOR:VGA-0}
+monitor = DP-0
 monitor-fallback = LVDS-0
-width = 100%
+width = 1880
 height = 20
-offset-x = 0
-offset-y = 0
+offset-x = 20
+offset-y = 10
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -34,7 +34,7 @@ border-color = ${colors.border-color}
 
 spacing = 1
 lineheight = 1
-padding-left = 0
+padding-left = 2
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
@@ -46,10 +46,10 @@ font-3 = ipagothic:pixelsize=8
 font-4 = siji:pixelsize=10
 font-5 = unifont:size=6:heavy:fontformat=truetype;-2
 
-modules-left = xwindow
-modules-center = unp
+modules-left = xwindow wlan eth
+modules-center = bspwm
 #modules-right = kitsu pavolume
-modules-right = pavolume
+modules-right = loadavg5 memusage amixvol date powermenu
 tray-position = right
 
 wm-restack = bspwm
@@ -87,23 +87,27 @@ modules-right = memory cpu date powermenu
 wm-restack = ${bar/top.wm-restack}
 
 
-[bar/bottom-right]
+[bar/top-right]
 monitor = DP-2
-bottom = true
-width = 100%
+#bottom = true
+width = ${bar/top.width}
 height = ${bar/top.height}
+offset-x = ${bar/top.offset-x}
+offset-y = ${bar/top.offset-y}
 
 background = ${bar/top.background}
 foreground = ${bar/top.foreground}
 linecolor = ${bar/top.linecolor}
 
-border-top-size = 2
-border-top-color = #634237
+border-bottom-size = 2
+border-color = #634237
 
 spacing = ${bar/top.spacing}
 lineheight = ${bar/top.lineheight}
 #padding-right = ${bar/top.padding_right}
-module-margin-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 2
 #module-margin-right = ${bar/top.module_margin_right}
 
 font-0 = fixed:size=10;3
@@ -117,26 +121,31 @@ font-1 = unifont:size=6:heavy:fontformat=truetype;-2
 #font-3 = ${bar/top.font-3}
 
 modules-center = bspwm
+modules-right = date
 
 wm-restack = ${bar/top.wm-restack}
 
-[bar/bottom-left]
+[bar/top-left]
 monitor = DP-0
-bottom = true
-width = 100%
+#bottom = true
+width = 1040
 height = ${bar/top.height}
+offset-x = ${bar/top.offset-x}
+offset-y = ${bar/top.offset-y}
 
 background = ${bar/top.background}
 foreground = ${bar/top.foreground}
 linecolor = ${bar/top.linecolor}
 
-border-top-size = 2
-border-top-color = #634237
+border-bottom-size = 2
+border-color = #634237
 
 spacing = ${bar/top.spacing}
 lineheight = ${bar/top.lineheight}
 #padding-right = ${bar/top.padding_right}
-module-margin-left = 0
+padding-left = 2
+module-margin-left = 1
+module-margin-right = 2
 #module-margin-right = ${bar/top.module_margin_right}
 
 font-0 = fixed:size=10;3
@@ -151,6 +160,7 @@ font-3 = siji:pixelsize=10
 #font-3 = ${bar/top.font-3}
 
 modules-center = bspwm
+modules-left = date
 
 wm-restack = ${bar/top.wm-restack}
 
@@ -315,7 +325,7 @@ label = %gb_used% / %gb_total% |
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlan0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -337,7 +347,7 @@ ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
 type = internal/network
-interface = enp11s0
+interface = em0
 interval = 3.0
 
 format-connected-underline = #55aa55
@@ -459,6 +469,21 @@ click-left = ~/.config/polybar/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/pavolume.sh --up
 scroll-down = ~/.config/polybar/pavolume.sh --down
 
+[module/amixvol]
+type = custom/script
+interval = 2
+label =  %output%
+exec = ~/.config/polybar/amixvol.sh
+scroll-up = ~/.config/polybar/amixvol.sh --up
+scroll-down = ~/.config/polybar/amixvol.sh --down
+
+[module/memusage]
+type = custom/script
+interval = 2
+label = %output% |
+exec = ~/bin/memusage
+
+
 [global/wm]
 margin-top = 5
 margin-bottom = 5
@@ -470,6 +495,12 @@ exec = cat /home/kenko/.unp/unp_now_playing.txt
 label = %output%
 
 interval = 10
+
+[module/loadavg5]
+type = custom/script
+exec = uptime | awk '{printf "%.2f",$8 }'
+label = %output% |
+interval = 5
 
 [module/kitsu]
 type = custom/script

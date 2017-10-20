@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 #
 # Fix flash HTML files in REN_HOME/var/flash
 #

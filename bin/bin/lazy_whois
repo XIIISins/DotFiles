@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 printf "\nEnter IP: "
 while read line; do

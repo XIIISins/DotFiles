@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 TRAY=`which stalonetray`
 NM_APP=`which nm-applet`

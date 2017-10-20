@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 #
 # Automagically create SSH tunnel to remote host on port 9090
 #

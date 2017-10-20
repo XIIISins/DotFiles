@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 # Simple mixtape uploader by https://twitter.com/nossadlccara
 # Requires curl and jshon (http://kmkeen.com/jshon/)
 DEST="https://mixtape.moe/upload.php"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
  
 FULLURL='https://en.wikipedia.org/w/api.php?action=query&redirects&prop=extracts&explaintext&format=json&formatversion=2&titles='
 URL='https://en.wikipedia.org/w/api.php?action=query&redirects&prop=extracts&exintro&explaintext&format=json&formatversion=2&titles='

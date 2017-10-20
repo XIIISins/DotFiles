@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/local/bin/bash
+set -x
 
-exec &>> /tmp/poly.log
+screens=$(xrandr | awk '/ connected/' | wc -l)
+#exec &>> /tmp/poly.log
 
 # Terminate already running bar instances
 killall -q polybar
@@ -9,7 +11,10 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bars
-polybar top &
-polybar bottom &
-polybar bottom-left &
-polybar bottom-right &
+if [ $screens -eq 2 ]; then
+  polybar top &
+else
+  polybar top &
+  polybar top-left &
+  polybar top-right &
+fi

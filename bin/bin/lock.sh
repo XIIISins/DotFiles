@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 # Locking your PC made easy with potatoes!
 # set -x
 

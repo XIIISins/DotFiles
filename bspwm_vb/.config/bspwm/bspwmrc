@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 set -x
 
 if [ -e "$BSPWM_STATE" ]; then
@@ -6,7 +6,8 @@ if [ -e "$BSPWM_STATE" ]; then
   rm "$BSPWM_STATE"
 fi
 
-bspc config window_gap          5
+bspc config window_gap          15
+bspc config top_padding         25
 bspc config border_width        2
 
 bspc config split_ratio         0.52
@@ -22,7 +23,7 @@ bspc config active_border_color "$(bspc config normal_border_color)"
 bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 
-if [[ $(bspc query -M | wc -l) > 2 ]]; then
+if [[ $(bspc query -M | wc -l) -gt 2 ]]; then
   bspc monitor DP-2 -d 七 八 九
 #  bspc monitor DisplayPort-2 -d 一 二 三
   bspc monitor DP-0 -d 一 二 三

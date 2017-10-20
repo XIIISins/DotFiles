@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 #
 # Soundcloud MPD wrapper for Bash
 # Example URL: https://soundcloud.com/xiiisins/sets/ind

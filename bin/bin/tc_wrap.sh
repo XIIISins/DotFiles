@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 ## create encrypted containers, for use with tcplay
 ## create hidden volumes; plausible deniability
 ## use of keyfiles; working on it.
