@@ -18,7 +18,7 @@ border-color = #634237
 
 [bar/top]
 #monitor = ${MONITOR:VGA-0}
-monitor = DP-0
+monitor = DisplayPort-0
 monitor-fallback = LVDS-0
 width = 1880
 height = 20
@@ -39,17 +39,17 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:size=10;0
-font-1 = icomoon:size=11;2
+font-0 = Spectrum Berry:size=10;0
+font-1 = IPAGothic:size=8
 font-2 = Material Icons:size=11;2
-font-3 = ipagothic:pixelsize=8
-font-4 = siji:pixelsize=10
-font-5 = unifont:size=6:heavy:fontformat=truetype;-2
+font-3 = icomoon:size=11;2
+font-4 = Wuncon Siji:size=10
+font-5 = Unifont:size=6
 
 modules-left = xwindow wlan eth
 modules-center = bspwm
 #modules-right = kitsu pavolume
-modules-right = loadavg5 memusage amixvol date powermenu
+modules-right = cpu memory amixvol date powermenu
 tray-position = right
 
 wm-restack = bspwm

@@ -3,182 +3,52 @@
       xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
       xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
 >
-  <bookmark href="file:///home/kenko/dotfiles/.stalonetrayrc" added="2017-01-31T11:51:13Z" modified="2017-01-31T11:51:13Z" visited="2017-01-31T11:51:13Z">
+  <bookmark href="file:///home/kenko/wp.jpg" added="2017-10-22T17:02:36Z" modified="2017-10-22T17:02:36Z" visited="2017-10-22T17:02:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/jpeg"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-10-22T17:02:36Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/kenko/Downloads/KPDB2.X.kdbx" added="2017-10-22T17:10:16Z" modified="2017-10-22T17:12:09Z" visited="2017-10-22T17:10:16Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/octet-stream"/>
         <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-01-31T11:51:13Z" count="1"/>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-10-22T17:12:09Z" count="2"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/kenko/.config/sxhkd/sxhkdrc-bspwm" added="2017-02-01T14:10:36Z" modified="2017-02-01T14:10:36Z" visited="2017-02-01T14:10:36Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-01T14:10:36Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/test.sh" added="2017-02-02T10:34:32Z" modified="2017-02-02T10:34:32Z" visited="2017-02-02T10:34:32Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-02T10:34:32Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/test2.sh" added="2017-02-02T10:44:49Z" modified="2017-02-02T10:44:49Z" visited="2017-02-02T10:44:50Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-02T10:44:49Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/bin/vcwrap" added="2017-02-02T10:57:59Z" modified="2017-02-02T10:57:59Z" visited="2017-02-02T10:57:59Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-02T10:57:59Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/.muttrc" added="2017-02-02T13:35:06Z" modified="2017-02-02T13:35:06Z" visited="2017-02-02T13:35:06Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-02T13:35:06Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/dev/tst/test.sh" added="2017-02-02T15:49:55Z" modified="2017-02-02T15:49:55Z" visited="2017-02-02T15:49:56Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/x-shellscript"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-02T15:49:55Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/dev/tst/mount_test.sh" added="2017-02-02T15:55:15Z" modified="2017-02-02T15:55:15Z" visited="2017-02-02T15:55:15Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-02T15:55:15Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/Downloads/SIS121972.txt" added="2017-02-03T09:41:49Z" modified="2017-02-03T09:41:49Z" visited="2017-02-03T09:41:49Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="text/plain"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-03T09:41:49Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/Downloads/Win10_1607_EnglishInternational_x64.iso" added="2017-02-03T12:56:48Z" modified="2017-02-03T12:56:48Z" visited="2017-02-03T12:56:48Z">
+  <bookmark href="file:///data/vm/iso/CentOS-7-x86_64-Minimal-1708.iso" added="2017-10-22T19:52:45Z" modified="2017-10-22T19:52:45Z" visited="2017-10-22T19:52:45Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/x-cd-image"/>
         <bookmark:applications>
-          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-02-03T12:56:48Z" count="1"/>
+          <bookmark:application name="virt-manager" exec="&apos;virt-manager %u&apos;" modified="2017-10-22T19:52:45Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/kenko/dev/src" added="2017-02-07T09:09:42Z" modified="2017-02-10T09:53:55Z" visited="2017-02-07T09:09:43Z">
+  <bookmark href="file:///data/vm/vm" added="2017-10-22T19:57:14Z" modified="2017-10-22T19:57:14Z" visited="2017-10-22T19:57:14Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="inode/directory"/>
         <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-10T09:53:55Z" count="2"/>
+          <bookmark:application name="virt-manager" exec="&apos;virt-manager %u&apos;" modified="2017-10-22T19:57:14Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>
   </bookmark>
-  <bookmark href="file:///home/kenko/dev/src/scripts/generali/jksExpire.sh" added="2017-02-07T09:30:12Z" modified="2017-02-07T12:44:30Z" visited="2017-02-07T09:30:12Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/x-shellscript"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-07T12:44:30Z" count="2"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/.scripts/juniper_connect" added="2017-02-07T12:02:45Z" modified="2017-02-07T12:02:45Z" visited="2017-02-07T12:02:45Z">
+  <bookmark href="file:///home/kenko/.screenlayout/default" added="2017-11-21T17:58:39Z" modified="2017-11-21T17:58:39Z" visited="2017-11-21T17:58:39Z">
     <info>
       <metadata owner="http://freedesktop.org">
         <mime:mime-type type="application/octet-stream"/>
         <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-07T12:02:45Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/.config/bspwm/pad_panel" added="2017-02-08T14:40:39Z" modified="2017-02-08T14:40:39Z" visited="2017-02-08T14:40:40Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-08T14:40:39Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/dev/src/vimperator-labs/downloads/vimperator-3.15.0.xpi" added="2017-02-10T10:07:52Z" modified="2017-02-10T10:08:34Z" visited="2017-02-10T10:07:52Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/x-xpinstall"/>
-        <bookmark:applications>
-          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2017-02-10T10:08:34Z" count="2"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/.config/polybar/config" added="2017-02-10T13:08:02Z" modified="2017-02-10T13:08:02Z" visited="2017-02-10T13:08:03Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-10T13:08:02Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko" added="2017-02-13T07:37:24Z" modified="2017-02-13T07:37:24Z" visited="2017-02-13T07:37:25Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="inode/directory"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-13T07:37:24Z" count="1"/>
-        </bookmark:applications>
-      </metadata>
-    </info>
-  </bookmark>
-  <bookmark href="file:///home/kenko/.zsh/test.sh" added="2017-02-13T08:34:00Z" modified="2017-02-13T08:34:00Z" visited="2017-02-13T08:34:00.275424Z">
-    <info>
-      <metadata owner="http://freedesktop.org">
-        <mime:mime-type type="application/octet-stream"/>
-        <bookmark:applications>
-          <bookmark:application name="Sublime Text" exec="&apos;subl %u&apos;" modified="2017-02-13T08:34:00Z" count="1"/>
+          <bookmark:application name="arandr" exec="&apos;arandr %u&apos;" modified="2017-11-21T17:58:39Z" count="1"/>
         </bookmark:applications>
       </metadata>
     </info>

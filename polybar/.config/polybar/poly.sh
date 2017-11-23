@@ -11,10 +11,4 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bars
-if [ $screens -eq 2 ]; then
-  polybar top &
-else
-  polybar top &
-  polybar top-left &
-  polybar top-right &
-fi
+polybar top &

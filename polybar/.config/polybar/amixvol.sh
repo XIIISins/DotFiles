@@ -1,6 +1,6 @@
 #!/usr/local/bin/bash
 #
-sink=Master
+sink=PCM
 curvol=$(amixer get $sink | egrep -o "[0-9]+%" |tr -d % | uniq)
 
 volUp() {

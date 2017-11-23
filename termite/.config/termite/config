@@ -1,4 +1,5 @@
 [options]
+font = spectrum berry:size=10
 scroll_on_output = false
 scroll_on_keystroke = true
 audible_bell = false
@@ -8,7 +9,7 @@ dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
 font = berry 10
-scrollback_lines = 1000
+scrollback_lines = 100000
 search_wrap = true
 geometry = 380x220
 #icon_name = terminal
@@ -104,15 +105,15 @@ color15 = #F2F1F0
 #color14 = #525F61
 #color15 = #b2b2b2
 
-[hints]
-#font = Monospace 12
+[options]
+# font = "spectrum berry" 10
 #foreground = #dcdccc
 #background = #3f3f3f
 #active_foreground = #e68080
 #active_background = #3f3f3f
-#padding = 2
+# padding = 5
 #border = #3f3f3f
-#border_width = 0.5
+# border_width = 5
 #roundness = 2.0
 
 # vim: ft=dosini cms=#%s
