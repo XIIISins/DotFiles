@@ -27,9 +27,9 @@ windows:
       panes:
         - htop
         - sudo dmesg -ew
-        - sudo tail -f /var/log/everything/current
-        - ncp
+        - sudo journalctl -fn120
+        -
         - vi
-  - dev:
-      layout: 2e4a,161x65,0,0[161x32,0,0{80x32,0,0,39,80x32,81,0,41},161x32,0,33,40]
-      panes:
+          #- dev:
+          #      layout: 2e4a,161x65,0,0[161x32,0,0{80x32,0,0,39,80x32,81,0,41},161x32,0,33,40]
+          #      panes:

@@ -70,3 +70,14 @@ c.colors.tabs.selected.even.bg = xresources['*.foreground']
 c.colors.webpage.bg = '#ffffff'
 c.colors.prompts.border = xresources['*.color12']
 c.colors.prompts.bg = xresources['*.color0']
+
+# BINDINGS
+# Youtube MPV
+config.bind('m', 'spawn /home/ghost/bin/umpv {url}')
+config.bind('M', 'hint links spawn /home/ghost/bin/umpv {hint-url}')
+config.bind(';M', 'hint --rapid links spawn /home/ghost/bin/umpv {hint-url}')
+#
+# :bind m spawn umpv {url}
+# :bind M hint links spawn umpv {hint-url}
+# :bind ;M hint --rapid links spawn umpv {hint-url}
+#
