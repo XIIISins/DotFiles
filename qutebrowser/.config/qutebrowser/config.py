@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 from qutebrowser.config.configfiles import ConfigAPI
 from qutebrowser.config.config import ConfigContainer
+from os.path import expanduser
+
 import subprocess
 import yaml
 
 c = c
 config = config
+home = expanduser("~")
 
 
 def read_xresources(prefix):
@@ -25,6 +28,8 @@ config.load_autoconfig()
 # Behaviour
 c.auto_save.session = True
 c.backend = 'webengine'
+c.downloads.location.directory = home + '/tmp/'
+c.downloads.remove_finished = 5000
 c.downloads.location.prompt = False
 c.scrolling.bar = False
 c.scrolling.smooth = True

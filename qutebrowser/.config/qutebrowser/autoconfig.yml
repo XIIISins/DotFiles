@@ -4,3 +4,5 @@
 config_version: 1
 global:
   content.cache.size: 2147483647
+  downloads.location.directory: $HOME/tmp
+  downloads.location.prompt: true

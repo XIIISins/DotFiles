@@ -1,1 +1,0 @@
-../../gitrepo/neeasade/dotfiles/home/vim/.vim/colors/mustang.vim
