@@ -1,5 +1,5 @@
 egrep -v '^#' .ncmpcpp/config
-mpd_music_dir = "/data/Music/"
+mpd_music_dir = "/data/music/"
 
 mpd_crossfade_time = "3"
 mpd_host = "127.0.0.1"
