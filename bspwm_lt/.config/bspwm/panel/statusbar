@@ -1,8 +1,0 @@
-#!/bin/bash
-
-source $(dirname $0)/panel_colors
-
-while true ; do
-    echo "S $(./applet_cpu)     $(./applet_ram)     $(./applet_wifi)     $(./applet_date)     $(./applet_time)"
-	sleep 0.3
-done

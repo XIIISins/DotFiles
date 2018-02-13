@@ -1,3 +1,0 @@
-#! /bin/dash
-
-ffmpeg -f x11grab -video_size 3840x1080 -i $DISPLAY+1080,384 -r 30 -an ${1}
