@@ -1,0 +1,3 @@
+#include "etc/X11/xres/miasma.Xcolors"
+#include "etc/X11/xres/urxvt"
+#include "etc/X11/xres/xft"
