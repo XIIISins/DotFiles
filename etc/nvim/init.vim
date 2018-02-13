@@ -1,1 +1,1 @@
-/home/ghost/.vimrc
+../vim/vimrc
