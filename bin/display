@@ -1,0 +1,48 @@
+#!/bin/bash
+#                       ██   ██   ██ ██                             ██
+#                      ░██  ░██  ░░ ░██                            ░██
+#  ██████████  ██   ██ ░██ ██████ ██░██       █████   ██████       ░██
+# ░░██░░██░░██░██  ░██ ░██░░░██░ ░██░██████  ██░░░██ ░░░░░░██   ██████
+#  ░██ ░██ ░██░██  ░██ ░██  ░██  ░██░██░░░██░███████  ███████  ██░░░██
+#  ░██ ░██ ░██░██  ░██ ░██  ░██  ░██░██  ░██░██░░░░  ██░░░░██ ░██  ░██
+#  ███ ░██ ░██░░██████ ███  ░░██ ░██░██  ░██░░██████░░████████░░██████
+# ░░░  ░░  ░░  ░░░░░░ ░░░    ░░  ░░ ░░   ░░  ░░░░░░  ░░░░░░░░  ░░░░░░ 
+{
+set -x
+
+screens=$(xrandr | awk '/ connected/' | wc -l)
+TIME=$(date +%H%M)
+SINK='PCM'
+if [[ ${TIME:0:1} -eq 0 ]]; then
+	TIME=${TIME#0}
+fi
+if [[ "$TIME" -lt 1800 && "$TIME" -gt 800 ]]; then
+	echo 'between 800 and 1800' >> /tmp/display.log
+#if [[ "$TIME" -lt 1800 ]] || [[ "$TIME" -gt 0800 ]]; then
+	if [[ "$screens" -gt 3 ]]; then
+		echo 'between 0800 and 1800, screens greater than 3' >> /tmp/display.log
+		"$HOME/etc/screenlayout/work.sh"
+		nitrogen --restore
+	elif [[ "$screens" -gt 1 ]]; then
+		echo 'between 0800 and 1800, screens greater than 1' >> /tmp/display.log
+		amixer set "$SINK" 0%
+	else
+		echo 'between 0800 and 1800, state unknown' >> /tmp/display.log
+		amixer set "$SINK" 0%
+	fi
+elif [[ "$screens" -gt 1 ]]; then
+	echo 'outside 0800 and 1800, screens greater than 1' >> /tmp/display.log
+	"$HOME/etc/screenlayout/home.sh"
+	synergyc -d ERROR 192.168.0.104
+	# feh --bg-scale "$HOME/wp/single.jpg"
+else
+	echo 'unknown state' >> /tmp/display.log
+	synergyc -d ERROR 192.168.0.104
+fi
+
+xset +fp /home/ghost/.fonts &
+xset fp rehash
+
+compton --config ~/etc/compton/compton.conf &
+sleep 2 
+} | tee -a /tmp/display.log

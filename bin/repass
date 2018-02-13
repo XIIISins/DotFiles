@@ -1,0 +1,14 @@
+#!/usr/bin/perl
+#
+use Term::ReadKey;
+use MIME::Base64;
+
+#print "Enter password:\n";
+ReadMode('noecho');
+$input = ReadLine(0);
+$random = "\xFE";
+$password = $input.$random;
+$password =~ s/\n//g;
+$enc = encode_base64($password);
+
+print $enc;

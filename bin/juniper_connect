@@ -1,0 +1,97 @@
+#!/bin/bash
+#
+# Juniper VPN script
+#
+
+# DEBUG
+if [ -z $DEBUG]; then
+  DEBUG="0"
+fi
+
+if [ $DEBUG -eq '1' ]; then
+  set -x
+fi
+
+# LOG
+#LOGFILE="$HOME/var/log/vpn.log"
+LOGFILE="$HOME/tmp/vpn.log"
+
+[[ -e /tmp/ssl.pid ]] && (echo "/tmp/ssl.pid exists." & exit 1)
+
+# Username
+if [ -z $SSLUSER ]; then
+  echo "Username: "
+  read SSLUSER
+fi
+
+# URL
+if [ -z $SSLENDP ]; then
+  echo "Endpoint: "
+  read SSLENDP
+fi
+
+# Password
+echo "Password: "
+unset password;
+while IFS= read -r -s -n1 pass; do
+  if [[ -z $pass ]]; then
+     echo
+     break
+  else
+     echo -n '*'
+     password+=$pass
+  fi
+done
+SSLPASS=${password}
+
+echo "DEBUG=$DEBUG" >>$LOGFILE
+if [ $DEBUG -gt '0' ]; then
+  echo -e "\n##DEBUG##"
+  echo "SSLUSER: $SSLUSER"
+  echo "SSLPASS: $SSLPASS"
+  echo "SSLENDP: $SSLENDP"
+  echo -e "##DEBUG##\n"
+fi
+
+if [ $UID -gt '999' ]; then
+  echo $SSLENDP | awk -F/ '{sub(/^www\.?/,"",$3); print $3}' | awk -F"." '{print $1}' | toilet -f chunky -F border -F gay
+  echo -e "\nUID > 1000\n"
+  echo $SSLPASS | sudo openconnect -b -d --pid-file=/tmp/ssl.pid --servercert sha256:039f149630e7727ab78aa3088a12a6ee9876340f9157261878ed398af87bd7e6 --disable-ipv6 -u $SSLUSER --passwd-on-stdin --juniper $SSLENDP >> $LOGFILE &
+  if [ $? -gt '0' ]; then
+    clear
+    toilet -f chunky -F border -F gay "Error"
+  fi
+elif [ $UID -eq '0' ]; then
+  echo "UID = 0"
+  echo $SSLPASS | openconnect -b -d --pid-file=/tmp/ssl.pid --servercert sha256:039f149630e7727ab78aa3088a12a6ee9876340f9157261878ed398af87bd7e6 --disable-ipv6 -u $SSLUSER --passwd-on-stdin --juniper $ENDPOINT >> $LOGFILE &
+else
+  echo "UID = potato"
+  if [ -e $(which fortune) ]; then
+    fortune
+  else
+    echo -e "\n\nPotatoes are flying." | toilet -f chunky -F rainbow -F border
+  fi
+fi
+
+echo ""
+
+echo -e "Waiting for dev tun0 to be set up.\n\n"
+while true; do
+  TUNSTAT=$(ip a l | awk '/tun0/ && /UP/' | wc -l)
+  if [ $TUNSTAT -eq '1' ]; then
+    echo -e "\n\nDevice tun0 available.\n\nYou are now connected to the Sentia YMS Network"
+    exit 0
+  else
+    sleep 2
+    echo -n "."
+  fi
+done
+
+echo -e "Adding route back to sentia VLAN36.\n"
+VLAN36=$(ip route | grep '10.0.36.0' | wc -l
+if [ $VLAN36 -eq 0 ]; then
+  sudo ip route add 10.0.36.0/24 via 10.0.1.250 dev eth0
+  echo -e "Route added.\n"
+fi
+
+fortune -s

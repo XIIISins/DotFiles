@@ -1,0 +1,75 @@
+#!/bin/bash
+#
+# TS wrapper
+#
+
+if [[ -t 0 || -p /dev/stdin ]]; then
+    is_a_term=true
+fi
+
+echo_ts(){
+    if [ ! -z "$ECHTS_PASS" ]; then
+        if [ $is_a_term = true ]; then
+          xfreerdp /u:mjanssen@nl.yenlo /p:"$ECHTS_PASS" +clipboard +home-drive +auto-reconnect /v:10.31.52.17 /w:1880 /h:1035
+        fi
+    else
+        ECHTS_PASS=$(zenity --password)
+        xfreerdp /u:mjanssen@nl.yenlo /p:"$ECHTS_PASS" +clipboard +home-drive +auto-reconnect /v:10.31.52.17 /w:1880 /h:1035
+    fi
+}
+
+delt_ts(){
+    if [ ! -z "$SENDTS_PASS" ]; then
+        if [ $is_a_term = true ]; then
+            xfreerdp /w:1910 /h:1052 +clipboard +home-drive +auto-reconnect /v:213.214.120.106 /u:myronj /p:"$SENDTS_PASS"
+        fi
+    else
+        SENDTS_PASS=$(zenity --password)
+        xfreerdp /w:1910 /h:1052 +clipboard +home-drive +auto-reconnect /v:213.214.120.106 /u:myronj /p:"$SENDTS_PASS"
+    fi
+}
+
+FSTeam(){
+    if [ ! -z "$SENDTS_PASS" ]; then
+        if [ $is_a_term = true ]; then
+            xfreerdp +clipboard /v:213.214.120.108 /u:myronj /p:"$FSTEAM_PASS" /w:1920 /h:1035
+        fi
+    else
+        FSTEAM_PASS=$(zenity --password)
+        xfreerdp +clipboard /v:213.214.120.108 /u:myronj /p:"$FSTEAM_PASS" /w:1920 /h:1035
+    fi
+}
+
+alpha_ts(){
+	ALPHATS_PASS=$(zenity --password)
+    xfreerdp +home-drive +clipboard /v:213.214.121.27 /u:mjanssen /p:"$ALPHATS_PASS" /w:1920 /h:1035
+}
+
+home_ts(){
+    HOMEPASS=$(zenity --password)
+    xfreerdp +home-drive +clipboard /u:XIIISins /p:"$HOMEPASS" /v:192.168.1.150 /w:1920 /h:1035
+}
+
+ts_select=$(zenity --entry --text='delta, echo, FSTeam, alpha or home')
+
+case $ts_select in
+    echo)
+        echo_ts
+        ;;
+    delta)
+        delt_ts
+        ;;
+    FSTeam|fsteam)
+        FSTeam
+        ;;
+    alpha)
+        alpha_ts
+        ;;
+    home)
+        home_ts
+        ;;
+    *)
+        zenity --error --text="No selection made"
+        ;;
+esac
+
