@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#█▓▒░ lemonbar info
+
+#f="-Gohu-GohuFont-Medium-R-Normal--11-80-100-100-C-60-ISO10646-1"
+f="-*-berry-medium-r-normal-sans-11-*-*-*-m-*-*-1"
+fg='#ffd0d8e0'
+bg='#ff111111'
+
+if [ -z "$SINK" ]; then
+	SINK=PCM
+fi
+
+battery='/sys/class/power_supply/BAT0'
+
+
+while :; do 
+	vol=$(amixer get "$SINK" | grep -Eo "[0-9]+%" | uniq)
+	
+	if [ -e /sys/class/power_supply/BAT0 ]; then
+		bat=$(( 100 * $(cat "$battery"/charge_now) / $(cat "$battery"/charge_full) ))
+	else
+		bat='N/A'
+	fi
+	
+	load=$(uptime | grep -Eo "[0-9]+\\.[0-9]+" | head -n1)
+	
+
+	echo "%{c}$load ${vol%?} $bat%{c}"
+	sleep 1 || break
+done | lemonbar -d -p -g 111x16+3711+1 -f "$f" -B $bg -F $fg
