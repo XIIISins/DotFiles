@@ -9,18 +9,20 @@
 #    ░░  ░░░     ░░░░░░░░   ██     
 #                          ░░      
 
-stalonetray --kludges fix_window_pos --dockapp-mode simple --geometry 1x1+111 &
+#stalonetray --kludges fix_window_pos,force_icons_size --dockapp-mode simple --geometry 1x1+2041 &
+set -x
+clock=124
+screens=$(xrandr | grep -c ' connected')
+primary=$(xrandr | awk -F+ '/primary/{print $2}')
 
-# keyring
-#gnome-keyring-daemon &
+case $screens in
+	2|3|4)
+		offset=$(( primary + clock ))
+		;;
+	*)
+		offset=$clock
+		;;
+esac
 
-# wifi
-#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+stalonetray --kludges force_icons_size --dockapp-mode simple --geometry 1x1+$offset+1 &
 
-# sound mixer
-#pnmixer &
-
-# clipboard manager
-#clipit &
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &

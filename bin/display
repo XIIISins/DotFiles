@@ -12,7 +12,7 @@ set -x
 
 screens=$(xrandr | awk '/ connected/' | wc -l)
 TIME=$(date +%H%M)
-SINK='PCM'
+export SINK='PCM'
 if [[ ${TIME:0:1} -eq 0 ]]; then
 	TIME=${TIME#0}
 fi
@@ -30,8 +30,8 @@ if [[ "$TIME" -lt 1800 && "$TIME" -gt 800 ]]; then
 		echo 'between 0800 and 1800, state unknown' >> /tmp/display.log
 		amixer set "$SINK" 0%
 	fi
-elif [[ "$screens" -gt 1 ]]; then
-	echo 'outside 0800 and 1800, screens greater than 1' >> /tmp/display.log
+elif [[ "$screens" -ge 1 ]]; then
+	echo 'outside 0800 and 1800, screens greater than or equal to 1' >> /tmp/display.log
 	"$HOME/etc/screenlayout/home.sh"
 	synergyc -d ERROR 192.168.0.104
 	# feh --bg-scale "$HOME/wp/single.jpg"

@@ -42,6 +42,7 @@ c.messages.timeout = 6000
 c.url.default_page = 'https://xiiisins.info/homepage'
 c.url.start_pages = c.url.default_page
 c.url.searchengines["DEFAULT"] = "https://google.com/search?q={}"
+c.url.searchengines["google"] = "https://google.com/search?q={}"
 
 # FONTS
 c.fonts.monospace = ('"spectrum berry", "xos4 Terminus", Terminus, Monospace, '
@@ -59,18 +60,26 @@ c.fonts.web.size.default = 11
 
 # COLORS
 # Statusbar
+# normal mode
 c.colors.statusbar.normal.bg = xresources['*.color0']
 c.colors.statusbar.command.bg = xresources['*.color0']
+c.colors.statusbar.insert.bg = xresources['*.color2']
+# private mode
+c.colors.statusbar.private.fg = xresources['*.color4']
+c.colors.statusbar.private.bg = xresources['*.color13']
+
 # Statusbar messages
 c.colors.messages.error.bg = xresources['*.color1']
 c.colors.messages.warning.bg = xresources['*.color3']
 c.colors.messages.info.bg = xresources['*.color8']
+# Statusbar ssl
+c.colors.statusbar.url.success.https.fg = xresources['*.color2']
 # Tabs
 c.colors.tabs.bar.bg = xresources['*.color0']
 c.colors.tabs.even.bg = xresources['*.color0']
 c.colors.tabs.odd.bg = xresources['*.color8']
-c.colors.tabs.selected.odd.bg = xresources['*.foreground']
-c.colors.tabs.selected.even.bg = xresources['*.foreground']
+c.colors.tabs.selected.odd.bg = xresources['*.color7']
+c.colors.tabs.selected.even.bg = xresources['*.color15']
 # Misc
 c.colors.webpage.bg = '#ffffff'
 c.colors.prompts.border = xresources['*.color12']
@@ -81,3 +90,8 @@ c.colors.prompts.bg = xresources['*.color0']
 config.bind('m', 'spawn /home/ghost/bin/umpv {url}')
 config.bind('M', 'hint links spawn /home/ghost/bin/umpv {hint-url}')
 config.bind(';M', 'hint --rapid links spawn /home/ghost/bin/umpv {hint-url}')
+#
+# :bind m spawn umpv {url}
+# :bind M hint links spawn umpv {hint-url}
+# :bind ;M hint --rapid links spawn umpv {hint-url}
+#

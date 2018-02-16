@@ -31,9 +31,10 @@ battery=/sys/class/power_supply/BAT0
 distro="arch linux"
 kernel=$(uname -r)
 pkgs=$(pacman -Qqs | wc -l)
-colors='miasma'
-font='Spectrum Berry 11'
+colors=$(cat .Xdefaults | grep -v \! | head -1 | sed -e 's/.*colors\/\(.*\)\"/\1/')
+font=$(xrdb -q | awk '/URxvt.font:/{print $2}' | awk -F'-' '{print $3" "$8}')
 wm='bspwm'
+sink='PCM'
 
 #█▓▒░ progress bar
 draw()
@@ -107,8 +108,8 @@ esac
 printf "   \e[0;${color}m%-4s \e[1;${color}m%-5s %-25s \n" " bat" "$charge%" `draw $charge 15 $color`
 
 #█▓▒░ volume
-vol=`amixer get Master | awk '$0~/%/{print $4}' | tr -d '[]%'`
-if amixer get Master | grep -q '\[off\]' 
+vol=`amixer get $sink | awk '$0~/%/{print $5}' | uniq | tr -d '[]%'`
+if amixer get $sink | grep -q '\[off\]' 
 then
   color='31'
 else

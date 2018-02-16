@@ -12,34 +12,20 @@ gap=$(bspc config window_gap)
 primary=$(xrandr | awk -F+ '/primary/{print $2}')
 res=$(xrandr | awk -F'current' -F',' 'NR==1{gsub("( | current)","");print $2}')
 
-
 case $screens in
 	2|3|4)
 		#offset=$(( primary + ${res/x*/} - ( gap + 111 ) ))
-		offset=$(( (primary * 2) - ( gap + 111 ) ))
+		offset=$(( (primary * 2) - ( gap + (111 + 400) ) ))
 		;;
 	*)
 		offset=$(( ${res/x*/} - (gap + 111) ))
 		;;
 esac
 
-if [ -z "$SINK" ]; then
-	SINK=PCM
-fi
-battery='/sys/class/power_supply/BAT0'
+cal=/tmp/next_cal
 
 while :; do 
-	vol=$(amixer get "$SINK" | grep -Eo "[0-9]+%" | uniq)
-	
-	if [ -e /sys/class/power_supply/BAT0 ]; then
-		bat=$(( 100 * $(cat "$battery"/charge_now) / $(cat "$battery"/charge_full) ))
-	else
-		bat='N/A'
-	fi
-	
-	load=$(uptime | grep -Eo "[0-9]+\\.[0-9]+" | head -n1)
-	
-
-	echo "%{c}$load ${vol%?} $bat%{c}"
-	sleep 1 || break
-done | lemonbar -d -p -g 111x16+$offset+1 -f "$f" -B $bg -F $fg
+	item=$(cut -d\  -f5- /tmp/next_cal)
+	echo "%{c}$item%{c}"
+	sleep 30 || break
+done | lemonbar -d -p -g 400x16+$offset+1 -f "$f" -B $bg -F $fg
