@@ -1,28 +1,5 @@
-"           ██
-"          ░░
-"  ██    ██ ██ ██████████  ██████  █████
-" ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
-" ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
-"  ░░████  ░██ ░██ ░██ ░██ ░██   ░██   ██
-"   ░░██   ░██ ███ ░██ ░██░███   ░░█████
-"    ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
-"
-"  ▓▓▓▓▓▓▓▓▓▓
-" ░▓ author ▓ xero <x@xero.nu>
-" ░▓ code   ▓ http://code.xero.nu/dotfiles
-" ░▓ mirror ▓ http://git.io/.files
-" ░▓▓▓▓▓▓▓▓▓▓
-" ░░░░░░░░░░
-"
-
-" wizard colors https://git.io/vim.sourcerer
-"colorscheme sourcerer
-
-" dark wizard colors http://git.io/blaquemagick.vim
-colorscheme blaquemagick
-
-" use your shell colors
-"colorscheme noctu
+"Colorscheme
+colorscheme sourcerer
 
 " omnifuncs
 augroup omnifuncs
@@ -56,14 +33,16 @@ if has('nvim')
   inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 endif
 
+" Nerdtree configs
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()
 " linting
 let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '× '
 let g:ale_sign_warning = '> '
-"let g:ale_open_list = 1
-"let g:ale_lint_on_text_changed = 'never'
-highlight ALEErrorSign ctermbg=234 ctermfg=magenta
 
 " disable folding
 let g:vim_json_syntax_conceal = 0
@@ -95,15 +74,6 @@ highlight GitGutterChange ctermfg=yellow ctermbg=234
 highlight GitGutterDelete ctermfg=red ctermbg=234
 highlight GitGutterChangeDelete ctermfg=red ctermbg=234
 
-" use the silver searcher
-let g:ag_prg="ag -i --vimgrep"
-let g:ag_highlight=1
-" map \ to the ag command for quick searching
-nnoremap \ :Ag<SPACE>
-
-" use ^{h,j} to move lines
-let g:move_key_modifier = 'A'
-
 " distraction free writing mode
 let g:limelight_conceal_ctermfg = 240
 function! s:goyo_enter()
@@ -132,12 +102,8 @@ augroup goyoactions
   autocmd! User GoyoLeave nested call <SID>goyo_leave()
 augroup end
 
-" ┏━┓╺┳╸┏━┓╺┳╸╻ ╻┏━┓╻  ╻┏┓╻┏━╸
-" ┗━┓ ┃ ┣━┫ ┃ ┃ ┃┗━┓┃  ┃┃┗┫┣╸ 
-" ┗━┛ ╹ ╹ ╹ ╹ ┗━┛┗━┛┗━╸╹╹ ╹┗━╸
-" lightline http://git.io/lightline
-" █▓▒░ wizard status line
 
+" Status line
 let s:base03 = [ '#151513', 233 ]
 let s:base02 = [ '#222222', 0 ]
 let s:base01 = [ '#4e4e43', 239 ]
@@ -200,43 +166,9 @@ let g:lightline = {
   \ 'separator': { 'left': '▓▒░', 'right': '░▒▓' },
   \ 'subseparator': { 'left': '▒', 'right': '░' }
   \ }
-" \ 'separator': { 'left': '▊▋▌▍▎', 'right': '▎▍▌▋▊' },
-
-function! WizMod()
-  return &ft =~ 'help\|vimfiler' ? '' : &modified ? '» ' : &modifiable ? '' : ''
-endfunction
-
-function! WizRO()
-  return &ft !~? 'help\|vimfiler' && &readonly ? '× ' : ''
-endfunction
-
-function! WizGit()
-  return exists('*fugitive#head') ? fugitive#head() : ''
-endfunction
-
-function! WizName()
-  let l:name = expand('%:t')
-  if l:name =~ 'NetrwTreeListing'
-    return ''
-  endif
-  return ('' != WizRO() ? WizRO() : WizMod()) .
-        \ ('' != expand('%:t') ? expand('%:t') : '[none]') 
-endfunction
-
-function! WizType()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : '') : ''
-endfunction
-
-function! WizEncoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &enc : &enc) : ''
-endfunction
-
-function! WizErrors() abort
-  let l:counts = ale#statusline#Count(bufnr(''))
-  return l:counts.total == 0 ? '' : printf('×%d', l:counts.total)
-endfunction
 
 augroup alestatus
   au!
   autocmd User ALELint call lightline#update()
 augroup end
+

@@ -1,18 +1,3 @@
-"           ██
-"          ░░
-"  ██    ██ ██ ██████████  ██████  █████
-" ░██   ░██░██░░██░░██░░██░░██░░█ ██░░░██
-" ░░██ ░██ ░██ ░██ ░██ ░██ ░██ ░ ░██  ░░
-"  ░░████  ░██ ░██ ░██ ░██ ░██   ░██   ██
-"   ░░██   ░██ ███ ░██ ░██░███   ░░█████
-"    ░░    ░░ ░░░  ░░  ░░ ░░░     ░░░░░
-"
-"  ▓▓▓▓▓▓▓▓▓▓
-" ░▓ author ▓ xero <x@xero.nu> ░▓ code   ▓ http://code.xero.nu/dotfiles
-" ░▓ mirror ▓ http://git.io/.files
-" ░▓▓▓▓▓▓▓▓▓▓
-" ░░░░░░░░░░
-"
 " use vim settings, rather than vi settings
 " must be first, because it changes other options as a side effect
 set nocompatible
@@ -25,7 +10,7 @@ set hidden
 
 " maintain undo history between sessions
 set undofile
-set undodir=~/.vim/undo
+set undodir=$HOME/etc/vim/undo
 set noswapfile
 
 " fuzzy find
@@ -86,24 +71,4 @@ augroup ws
   autocmd FileType c,cpp,java,php,js,json,css,scss,sass,py,rb,coffee,python,twig,xml,yml autocmd BufWritePre <buffer> :call setline(1,map(getline(1,"$"),'substitute(v:val,"\\s\\+$","","")'))
 augroup end
 
-" set leader key to comma
-let mapleader=","
-
-
-" NETRW
-"let g:netrw_banner = 0
-"let g:netrw_liststyle = 3
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 25
-"augroup ProjectDrawer
-"  autocmd!
-"  autocmd VimEnter * :Vexplore
-"augroup END
-" Split vertical when using netrw
-let g:netrw_browse_split = 2
-
-" new coffee pasta commands
-"vnoremap <silent> <leader>y :w !xsel -i -b<CR>
-"nnoremap <silent> <leader>y V:w !xsel -i -b<CR>
-"nnoremap <silent> <leader>p :silent :r !xsel -o -b<CR>
 set clipboard^=unnamedplus
