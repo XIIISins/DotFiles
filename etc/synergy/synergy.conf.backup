@@ -1,0 +1,53 @@
+section: screens
+	bakemono:
+		halfDuplexCapsLock = false
+		halfDuplexNumLock = false
+		halfDuplexScrollLock = false
+		xtestIsXineramaUnaware = false
+		switchCorners = none 
+		switchCornerSize = 0
+	senjo:
+		halfDuplexCapsLock = false
+		halfDuplexNumLock = false
+		halfDuplexScrollLock = false
+		xtestIsXineramaUnaware = false
+		switchCorners = none 
+		switchCornerSize = 0
+	akuma:
+		halfDuplexCapsLock = false
+		halfDuplexNumLock = false
+		halfDuplexScrollLock = false
+		xtestIsXineramaUnaware = false
+		switchCorners = none 
+		switchCornerSize = 0
+end
+
+section: aliases
+  akuma:
+    masamune
+end
+
+section: links
+	bakemono:
+		left = senjo
+	senjo:
+		left = akuma
+		right = bakemono
+	akuma:
+		right = senjo
+end
+
+section: options
+	heartbeat = 5000
+	relativeMouseMoves = false
+	screenSaverSync = true
+	win32KeepForeground = false
+	clipboardSharing = true
+	switchCorners = none 
+	switchCornerSize = 0
+	keystroke(Control+Alt+End) = lockCursorToScreen(toggle)
+	keystroke(Alt+Control+1) = switchToScreen(senjo)
+	keystroke(Alt+Control+2) = switchToScreen(bakemono)
+	keystroke(Alt+Control+3) = switchToScreen(akuma)
+end
+

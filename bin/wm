@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# ███     ██ ██████████ 
+#░░██  █ ░██░░██░░██░░██
+# ░██ ███░██ ░██ ░██ ░██
+# ░████░████ ░██ ░██ ░██
+# ███░ ░░░██ ███ ░██ ░██
+#░░░    ░░░ ░░░  ░░  ░░ 
+
+~/bin/display > /tmp/display.log &
+~/bin/tray &
+~/bin/clock &
+~/bin/infobar &
+#dunst &
+~/bin/notifyd &
+sxhkd -c "$HOME/.config/sxhkd/sxhkdrc" &
+exec bspwm
+#~/bin/xwait

@@ -1,0 +1,28 @@
+#!/bin/sh
+#    ██                   
+#   ░██                   
+#  ██████ ██████  ██████    ██   ██
+# ░░░██░ ░░██░░█ ░░░░░░██  ░░██ ██ 
+#   ░██   ░██ ░   ███████   ░░███  
+#   ░██   ░██    ██░░░░██    ░██   
+#   ░░██ ░███   ░░████████   ██    
+#    ░░  ░░░     ░░░░░░░░   ██     
+#                          ░░      
+
+#stalonetray --kludges fix_window_pos,force_icons_size --dockapp-mode simple --geometry 1x1+2041 &
+set -x
+clock=124
+screens=$(xrandr | grep -c ' connected')
+primary=$(xrandr | awk -F+ '/primary/{print $2}')
+
+case $screens in
+	2|3|4)
+		offset=$(( primary + clock ))
+		;;
+	*)
+		offset=$clock
+		;;
+esac
+
+stalonetray --kludges force_icons_size --dockapp-mode simple --geometry 1x1+$offset+1 &
+

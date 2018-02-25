@@ -1,0 +1,4 @@
+#!/bin/bash
+
+CONF="$HOME/usr/vpn/vpn-home/home.ovpn"
+sudo openvpn --daemon homevpn --user ghost --group ghost --config "$CONF"

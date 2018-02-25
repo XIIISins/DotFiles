@@ -1,0 +1,12 @@
+set imap_user="example@gmail.com"
+set imap_pass="example"
+set smtp_url="smtp://example@gmail.com@smtp.gmail.com:587/"
+set smtp_pass="example"
+set from="example@gmail.com"
+set realname="example"
+set folder="imaps://imap.gmail.com:993"
+set spoolfile= "+INBOX"
+set postponed="+[Gmail]/Drafts"
+set header_cache=~/var/cache/mutt/com.gmail.example/headers
+set message_cachedir=~/var/cache/mutt/com.gmail.example/bodies
+set certificate_file=~/etc/mutt/certs/

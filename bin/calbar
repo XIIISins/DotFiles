@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#█▓▒░ lemonbar info load, vol, battery 
+#set -x
+#f="-Gohu-GohuFont-Medium-R-Normal--11-80-100-100-C-60-ISO10646-1"
+f="-*-berry-medium-r-normal-sans-11-*-*-*-m-*-*-1"
+fg='#ffd0d8e0'
+bg='#ff111111'
+
+screens=$(xrandr | grep -c ' connected')
+gap=$(bspc config window_gap)
+primary=$(xrandr | awk -F+ '/primary/{print $2}')
+res=$(xrandr | awk -F'current' -F',' 'NR==1{gsub("( | current)","");print $2}')
+
+case $screens in
+	2|3|4)
+		#offset=$(( primary + ${res/x*/} - ( gap + 111 ) ))
+		offset=$(( (primary * 2) - ( gap + (111 + 400) ) ))
+		;;
+	*)
+		offset=$(( ${res/x*/} - (gap + 111) ))
+		;;
+esac
+
+cal=/tmp/next_cal
+
+while :; do 
+	item=$(cut -d\  -f5- /tmp/next_cal)
+	echo "%{c}$item%{c}"
+	sleep 30 || break
+done | lemonbar -d -p -g 400x16+$offset+1 -f "$f" -B $bg -F $fg

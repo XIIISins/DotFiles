@@ -1,6 +1,0 @@
-#!/bin/bash
-#
-#
-
-sudo openconnect https://vpn.jitscale.com/2fa
-

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+printf "\nEnter IP: "
+while read line; do
+  printf "\n------------------------------------------------------\n"
+  whois $line
+  printf "\n------------------------------------------------------\n\nEnter IP: "
+done
