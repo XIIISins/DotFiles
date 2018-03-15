@@ -39,7 +39,7 @@ c.input.insert_mode.auto_leave = True
 c.messages.timeout = 6000
 
 
-c.url.default_page = 'https://xiiisins.info/homepage'
+c.url.default_page = 'https://homepage.xiiisins.com'
 c.url.start_pages = c.url.default_page
 c.url.searchengines["DEFAULT"] = "https://google.com/search?q={}"
 c.url.searchengines["google"] = "https://google.com/search?q={}"
